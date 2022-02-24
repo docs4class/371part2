@@ -4,16 +4,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 27 DPLYR Excercies | BADM 371 Intro to Data Analytics</title>
+<title>Chapter 13 More simple data wrangling | BADM 371 Intro to Data Analytics</title>
 <meta name="author" content="BADM 371">
-<meta name="description" content="Using the nycflights13 dataset and the dplyr package, answer these questions. Some answers are given in square brackets for you to check your answers. How many flights in Sept were late departing...">
+<meta name="description" content="13.1 a nice, fun little matrix for you #&gt;   [,1] [,2] [,3] [,4] [,5] #&gt; [1,]  1  4  7  10  13 #&gt; [2,]  2  5  8  11  14 #&gt; [3,]  3  6  9  12  15 Write the code that creates this matrix: Write...">
 <meta name="generator" content="bookdown 0.24 with bs4_book()">
-<meta property="og:title" content="Chapter 27 DPLYR Excercies | BADM 371 Intro to Data Analytics">
+<meta property="og:title" content="Chapter 13 More simple data wrangling | BADM 371 Intro to Data Analytics">
 <meta property="og:type" content="book">
-<meta property="og:description" content="Using the nycflights13 dataset and the dplyr package, answer these questions. Some answers are given in square brackets for you to check your answers. How many flights in Sept were late departing...">
+<meta property="og:description" content="13.1 a nice, fun little matrix for you #&gt;   [,1] [,2] [,3] [,4] [,5] #&gt; [1,]  1  4  7  10  13 #&gt; [2,]  2  5  8  11  14 #&gt; [3,]  3  6  9  12  15 Write the code that creates this matrix: Write...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 27 DPLYR Excercies | BADM 371 Intro to Data Analytics">
-<meta name="twitter:description" content="Using the nycflights13 dataset and the dplyr package, answer these questions. Some answers are given in square brackets for you to check your answers. How many flights in Sept were late departing...">
+<meta name="twitter:title" content="Chapter 13 More simple data wrangling | BADM 371 Intro to Data Analytics">
+<meta name="twitter:description" content="13.1 a nice, fun little matrix for you #&gt;   [,1] [,2] [,3] [,4] [,5] #&gt; [1,]  1  4  7  10  13 #&gt; [2,]  2  5  8  11  14 #&gt; [3,]  3  6  9  12  15 Write the code that creates this matrix: Write...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -51,7 +51,7 @@
 <li><a class="" href="summaries-and-subscripting.html"><span class="header-section-number">10</span> Summaries and Subscripting</a></li>
 <li><a class="" href="matrices.html"><span class="header-section-number">11</span> Matrices</a></li>
 <li><a class="" href="preloaded-data-and-mtcars.html"><span class="header-section-number">12</span> Preloaded data and mtcars</a></li>
-<li><a class="" href="more-simple-data-wrangling.html"><span class="header-section-number">13</span> More simple data wrangling</a></li>
+<li><a class="active" href="more-simple-data-wrangling.html"><span class="header-section-number">13</span> More simple data wrangling</a></li>
 <li><a class="" href="gdh-ice-cream.html"><span class="header-section-number">14</span> GDH Ice Cream</a></li>
 <li><a class="" href="quick-linear-regression.html"><span class="header-section-number">15</span> Quick Linear Regression</a></li>
 <li><a class="" href="linear-regression-with-mtcars.html"><span class="header-section-number">16</span> Linear Regression with mtcars</a></li>
@@ -65,7 +65,7 @@
 <li><a class="" href="creating-data-frames-data_frame.html"><span class="header-section-number">24</span> Creating data frames: data_frame</a></li>
 <li><a class="" href="joining-merging-tables-left_join-right_join-inner_join-full_join-semi_join-anti_join.html"><span class="header-section-number">25</span> Joining (merging) tables: left_join, right_join, inner_join, full_join, semi_join, anti_join</a></li>
 <li><a class="" href="viewing-more-output-print-view.html"><span class="header-section-number">26</span> Viewing more output: print, View</a></li>
-<li><a class="active" href="dplyr-excercies.html"><span class="header-section-number">27</span> DPLYR Excercies</a></li>
+<li><a class="" href="dplyr-excercies.html"><span class="header-section-number">27</span> DPLYR Excercies</a></li>
 </ul>
 
         <div class="book-extra">
@@ -73,35 +73,95 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="dplyr-excercies" class="section level1" number="27">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="more-simple-data-wrangling" class="section level1" number="13">
 <h1>
-<span class="header-section-number">27</span> DPLYR Excercies<a class="anchor" aria-label="anchor" href="#dplyr-excercies"><i class="fas fa-link"></i></a>
+<span class="header-section-number">13</span> More simple data wrangling<a class="anchor" aria-label="anchor" href="#more-simple-data-wrangling"><i class="fas fa-link"></i></a>
 </h1>
-<p>Using the nycflights13 dataset and the dplyr package, answer these questions. Some answers are given in square brackets for you to check your answers.</p>
+<div id="a-nice-fun-little-matrix-for-you" class="section level2" number="13.1">
+<h2>
+<span class="header-section-number">13.1</span> a nice, fun little matrix for <strong>you</strong><a class="anchor" aria-label="anchor" href="#a-nice-fun-little-matrix-for-you"><i class="fas fa-link"></i></a>
+</h2>
+<pre><code>#&gt;      [,1] [,2] [,3] [,4] [,5]
+#&gt; [1,]    1    4    7   10   13
+#&gt; [2,]    2    5    8   11   14
+#&gt; [3,]    3    6    9   12   15</code></pre>
 <ol style="list-style-type: decimal">
-<li>How many flights in Sept were late departing flights? [7815]</li>
-<li>How many flights in Sept were late departing flights that originated at JFK airport? [2649]</li>
-<li>How many flights in Sept were late departing flights with an origin of JFK airport and had an destination of anywhere except MIA? [2572]</li>
-<li>Which carrier had the most flights in this data set? [UA with 58665]</li>
-<li>Which destination had the most flights in this data set? [ORD with 17283]</li>
-<li>Which destination had the most flights with departure delays of greater than 60 minutes in this data set? [ORD with 1480]</li>
-<li>What was the longest arrival delay in this dataset? [1272]</li>
-<li>Which carrier in September had the most late departing flights? [UA with 1559]</li>
-<li>Create a variable called total.annoyance which arrival delay plus the departure delay for each flight.</li>
-<li>Which carrier with more than 10 flights in September had greatest % late departing flights?</li>
+<li><p>Write the code that creates this matrix:</p></li>
+<li><p>Write DIFFERENT code that creates this matrix in an alternate way:</p></li>
+<li><p>In the matrix above, what does <code>[,4]</code> mean?</p></li>
+<li><p>What code would return the value in the 3rd column and 3rd row?</p></li>
+<li><p>What single line of would give you the average of the all the numbers in columns 2, 4, and 5 and in rows 1 and 3?</p></li>
+<li><p>turn <code>x</code> into a data frame.</p></li>
+<li><p>How do you <strong>know</strong> you have turned <code>x</code> into a data frame?</p></li>
 </ol>
 </div>
+<div id="more-fun-this-class-is-really-awesome-isnt-it" class="section level2" number="13.2">
+<h2>
+<span class="header-section-number">13.2</span> More fun (this class is really <strong>awesome</strong> isn’t it?)<a class="anchor" aria-label="anchor" href="#more-fun-this-class-is-really-awesome-isnt-it"><i class="fas fa-link"></i></a>
+</h2>
+<div class="sourceCode" id="cb72"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">df</span>
+<span class="co">#&gt;    X1 X2 X3 X4 X5 X6 X7 X8 X9 X10</span>
+<span class="co">#&gt; 1   1 11 21 31 41 51 61 71 81  91</span>
+<span class="co">#&gt; 2   2 12 22 32 42 52 62 72 82  92</span>
+<span class="co">#&gt; 3   3 13 23 33 43 53 63 73 83  93</span>
+<span class="co">#&gt; 4   4 14 24 34 44 54 64 74 84  94</span>
+<span class="co">#&gt; 5   5 15 25 35 45 55 65 75 85  95</span>
+<span class="co">#&gt; 6   6 16 26 36 46 56 66 76 86  96</span>
+<span class="co">#&gt; 7   7 17 27 37 47 57 67 77 87  97</span>
+<span class="co">#&gt; 8   8 18 28 38 48 58 68 78 88  98</span>
+<span class="co">#&gt; 9   9 19 29 39 49 59 69 79 89  99</span>
+<span class="co">#&gt; 10 10 20 30 40 50 60 70 80 90 100</span></code></pre></div>
+<ol style="list-style-type: decimal">
+<li><p>Consider the dataframe above called <code>df</code>. What would running this code return <code>sum(df[7,7:10])</code></p></li>
+<li><p>How can you tell if an object in R is a dataframe?</p></li>
+<li><p>How could you create the dataframe above called <code>df</code>?</p></li>
+<li><p>What code would return the average of row 2 of <code>df</code>?</p></li>
+<li><p>Consider <code>mtcars</code> dataset that comes preloaded with R that looks like this:</p></li>
+</ol>
+<div class="sourceCode" id="cb73"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">mtcars</span><span class="op">)</span>
+<span class="co">#&gt;                    mpg cyl disp  hp drat    wt  qsec vs am</span>
+<span class="co">#&gt; Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1</span>
+<span class="co">#&gt; Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1</span>
+<span class="co">#&gt; Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1</span>
+<span class="co">#&gt; Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0</span>
+<span class="co">#&gt; Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0</span>
+<span class="co">#&gt; Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0</span>
+<span class="co">#&gt;                   gear carb</span>
+<span class="co">#&gt; Mazda RX4            4    4</span>
+<span class="co">#&gt; Mazda RX4 Wag        4    4</span>
+<span class="co">#&gt; Datsun 710           4    1</span>
+<span class="co">#&gt; Hornet 4 Drive       3    1</span>
+<span class="co">#&gt; Hornet Sportabout    3    2</span>
+<span class="co">#&gt; Valiant              3    1</span></code></pre></div>
+<ol start="6" style="list-style-type: decimal">
+<li>Why do I get this error when I run the code below: <code>Error in plot(hp, mpg) : object 'hp' not found</code>?</li>
+</ol>
+<div class="sourceCode" id="cb74"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">hp</span>,<span class="va">mpg</span><span class="op">)</span></code></pre></div>
+<p><code>Error in plot(hp, mpg) : object 'hp' not found</code></p>
+<blockquote>
+<p>Bonus: What is a topic that you find confusing at this point in class?</p>
+</blockquote>
+
+</div>
+</div>
   <div class="chapter-nav">
-<div class="prev"><a href="viewing-more-output-print-view.html"><span class="header-section-number">26</span> Viewing more output: print, View</a></div>
-<div class="empty"></div>
+<div class="prev"><a href="preloaded-data-and-mtcars.html"><span class="header-section-number">12</span> Preloaded data and mtcars</a></div>
+<div class="next"><a href="gdh-ice-cream.html"><span class="header-section-number">14</span> GDH Ice Cream</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav"><li><a class="nav-link" href="#dplyr-excercies"><span class="header-section-number">27</span> DPLYR Excercies</a></li></ul>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#more-simple-data-wrangling"><span class="header-section-number">13</span> More simple data wrangling</a></li>
+<li><a class="nav-link" href="#a-nice-fun-little-matrix-for-you"><span class="header-section-number">13.1</span> a nice, fun little matrix for you</a></li>
+<li><a class="nav-link" href="#more-fun-this-class-is-really-awesome-isnt-it"><span class="header-section-number">13.2</span> More fun (this class is really awesome isn’t it?)</a></li>
+</ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
-<li><a id="book-source" href="https://github.com/rstudio/bookdown-demo/blob/master/30-dplyr.Rmd">View source <i class="fab fa-github"></i></a></li>
-          <li><a id="book-edit" href="https://github.com/rstudio/bookdown-demo/edit/master/30-dplyr.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+<li><a id="book-source" href="https://github.com/rstudio/bookdown-demo/blob/master/16-mtcars.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/rstudio/bookdown-demo/edit/master/16-mtcars.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
         </ul>
 </div>
     </nav>

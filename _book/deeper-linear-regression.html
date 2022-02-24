@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 17 Deeper Linear Regression | BADM 371 Intro to Data Analytics</title>
+<meta name="author" content="BADM 371">
+<meta name="description" content="Let’s chat about why understaning linear regression is so important.  While there may always seem to be something new, cool, and shiny in the field of AI/ML, classic statistical methods that...">
+<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta property="og:title" content="Chapter 17 Deeper Linear Regression | BADM 371 Intro to Data Analytics">
+<meta property="og:type" content="book">
+<meta property="og:description" content="Let’s chat about why understaning linear regression is so important.  While there may always seem to be something new, cool, and shiny in the field of AI/ML, classic statistical methods that...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 17 Deeper Linear Regression | BADM 371 Intro to Data Analytics">
+<meta name="twitter:description" content="Let’s chat about why understaning linear regression is so important.  While there may always seem to be something new, cool, and shiny in the field of AI/ML, classic statistical methods that...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><link rel="stylesheet" href="bs4_style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">BADM 371 Intro to Data Analytics</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> Introduction</a></li>
+<li><a class="" href="syllabus.html"><span class="header-section-number">2</span> Syllabus</a></li>
+<li><a class="" href="our-class-rhythm.html"><span class="header-section-number">3</span> Our Class Rhythm</a></li>
+<li><a class="" href="end-in-mind.html"><span class="header-section-number">4</span> End in Mind</a></li>
+<li><a class="" href="schedule.html"><span class="header-section-number">5</span> Schedule</a></li>
+<li><a class="" href="elephant-in-the-room-r.html"><span class="header-section-number">6</span> Elephant in the room: R</a></li>
+<li><a class="" href="r-vs.-excel.html"><span class="header-section-number">7</span> R vs. Excel</a></li>
+<li><a class="" href="r-basics.html"><span class="header-section-number">8</span> R basics and workflows</a></li>
+<li><a class="" href="objects-and-arithmetic.html"><span class="header-section-number">9</span> Objects and Arithmetic</a></li>
+<li><a class="" href="summaries-and-subscripting.html"><span class="header-section-number">10</span> Summaries and Subscripting</a></li>
+<li><a class="" href="matrices.html"><span class="header-section-number">11</span> Matrices</a></li>
+<li><a class="" href="preloaded-data-and-mtcars.html"><span class="header-section-number">12</span> Preloaded data and mtcars</a></li>
+<li><a class="" href="more-simple-data-wrangling.html"><span class="header-section-number">13</span> More simple data wrangling</a></li>
+<li><a class="" href="gdh-ice-cream.html"><span class="header-section-number">14</span> GDH Ice Cream</a></li>
+<li><a class="" href="quick-linear-regression.html"><span class="header-section-number">15</span> Quick Linear Regression</a></li>
+<li><a class="" href="linear-regression-with-mtcars.html"><span class="header-section-number">16</span> Linear Regression with mtcars</a></li>
+<li><a class="active" href="deeper-linear-regression.html"><span class="header-section-number">17</span> Deeper Linear Regression</a></li>
+<li><a class="" href="linear-regression-practice.html"><span class="header-section-number">18</span> Linear Regression Practice</a></li>
+<li><a class="" href="filters-and-packages.html"><span class="header-section-number">19</span> Filters and packages</a></li>
+<li><a class="" href="dplyr.html"><span class="header-section-number">20</span> DPLYR</a></li>
+<li><a class="" href="starwars-excercises.html"><span class="header-section-number">21</span> starwars Excercises</a></li>
+<li><a class="" href="loading-dplyr-and-the-nycflights13-dataset.html"><span class="header-section-number">22</span> Loading dplyr and the nycflights13 dataset</a></li>
+<li><a class="" href="grouping-and-counting-summarise-tally-count-group_size-n_groups-ungroup.html"><span class="header-section-number">23</span> Grouping and counting: summarise, tally, count, group_size, n_groups, ungroup</a></li>
+<li><a class="" href="creating-data-frames-data_frame.html"><span class="header-section-number">24</span> Creating data frames: data_frame</a></li>
+<li><a class="" href="joining-merging-tables-left_join-right_join-inner_join-full_join-semi_join-anti_join.html"><span class="header-section-number">25</span> Joining (merging) tables: left_join, right_join, inner_join, full_join, semi_join, anti_join</a></li>
+<li><a class="" href="viewing-more-output-print-view.html"><span class="header-section-number">26</span> Viewing more output: print, View</a></li>
+<li><a class="" href="dplyr-excercies.html"><span class="header-section-number">27</span> DPLYR Excercies</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/rstudio/bookdown-demo">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="deeper-linear-regression" class="section level1" number="17">
+<h1>
+<span class="header-section-number">17</span> Deeper Linear Regression<a class="anchor" aria-label="anchor" href="#deeper-linear-regression"><i class="fas fa-link"></i></a>
+</h1>
+<blockquote>
+<p>Let’s chat about why understaning linear regression is so important.</p>
+</blockquote>
+<div class="rmdimportant">
+<p><strong>While there may always seem to be something new, cool, and shiny in the field of AI/ML, classic statistical methods that leverage machine learning techniques remain powerful and practical for solving many real-world business problems.</strong></p>
+</div>
+<p>Let’s look at a very simple model first. For this example, we will need to import the Introduction to Statistical Learning package (ISLR). We will use the “credit” data set that is part of the ISLR package.</p>
+<div class="sourceCode" id="cb79"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://www.statlearning.com">ISLR</a></span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"Credit"</span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/attach.html">attach</a></span><span class="op">(</span><span class="va">Credit</span><span class="op">)</span>
+
+<span class="va">M1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">Balance</span> <span class="op">~</span> <span class="va">Limit</span> <span class="op">+</span> <span class="va">Ethnicity</span><span class="op">)</span></code></pre></div>
+<p>lm is the function we use to create linear regression models. Now, before we discuss interpreting the results we get from this function, we will discuss the different parts of the model. The “~” symbol is the key to this entire equation. We are telling R to predict whatever is on the left side of the tilde using the variables on the right.</p>
+<div id="interpretation-of-the-model" class="section level2" number="17.1">
+<h2>
+<span class="header-section-number">17.1</span> Interpretation of the Model<a class="anchor" aria-label="anchor" href="#interpretation-of-the-model"><i class="fas fa-link"></i></a>
+</h2>
+<p>Let’s run a summary on this model and see what we get.</p>
+<div class="sourceCode" id="cb80"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">M1</span><span class="op">)</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Call:</span>
+<span class="co">#&gt; lm(formula = Balance ~ Limit + Ethnicity)</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Residuals:</span>
+<span class="co">#&gt;     Min      1Q  Median      3Q     Max </span>
+<span class="co">#&gt; -677.39 -145.75   -8.75  139.56  776.46 </span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Coefficients:</span>
+<span class="co">#&gt;                      Estimate Std. Error t value Pr(&gt;|t|)</span>
+<span class="co">#&gt; (Intercept)        -3.078e+02  3.417e+01  -9.007   &lt;2e-16</span>
+<span class="co">#&gt; Limit               1.718e-01  5.079e-03  33.831   &lt;2e-16</span>
+<span class="co">#&gt; EthnicityAsian      2.835e+01  3.304e+01   0.858    0.391</span>
+<span class="co">#&gt; EthnicityCaucasian  1.381e+01  2.878e+01   0.480    0.632</span>
+<span class="co">#&gt;                       </span>
+<span class="co">#&gt; (Intercept)        ***</span>
+<span class="co">#&gt; Limit              ***</span>
+<span class="co">#&gt; EthnicityAsian        </span>
+<span class="co">#&gt; EthnicityCaucasian    </span>
+<span class="co">#&gt; ---</span>
+<span class="co">#&gt; Signif. codes:  </span>
+<span class="co">#&gt; 0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Residual standard error: 234 on 396 degrees of freedom</span>
+<span class="co">#&gt; Multiple R-squared:  0.743,  Adjusted R-squared:  0.7411 </span>
+<span class="co">#&gt; F-statistic: 381.6 on 3 and 396 DF,  p-value: &lt; 2.2e-16</span></code></pre></div>
+<p>There is a lot of statistical jargon included in our summary that may be unfamiliar to those who have not taken statistics before. That is okay, however, because we are going to breakdown the main statistics we are interested in. Let’s start with our variables and their significance in the model.</p>
+<div id="p-values" class="section level3" number="17.1.1">
+<h3>
+<span class="header-section-number">17.1.1</span> P-Values<a class="anchor" aria-label="anchor" href="#p-values"><i class="fas fa-link"></i></a>
+</h3>
+<p>The p-value of our model helps us either prove or disprove the null-hypothesis of our test. In the case of this class, the null-hypothesis is that there is no relationship between the variables we are using to make the predictions and the actual variable we are predicting. In other words, the smaller our p-value the higher the level of significance there is between our variables. When we run a summary of our linear regression model we are give multiple p-values.</p>
+<p>First, under coefficients, they are listed for each variable. This can help us optimize our model because we can see what variables are helping make the model more accurate versus those that may be hindering its performance. Also notice the asterisks next to our p-values. R kindly puts up to three stars next to each variable to help us visually tell if they are significant, essentially more stars means a lower p-value and thus a higher correlation.
+The second place we see a p-value is at the bottom of our summary. This p-value will give us the overall correlation that exists in our model. As we see in this case, our p-values for this model is &lt; .00000000000000022, that is a tiny number and frankly a great p-value. Typically we want our p-value to be .05 or smaller. A p-value of .05 tells us that we have a confidence level of 95%.</p>
+</div>
+<div id="multiple-r-squared" class="section level3" number="17.1.2">
+<h3>
+<span class="header-section-number">17.1.2</span> Multiple R-Squared<a class="anchor" aria-label="anchor" href="#multiple-r-squared"><i class="fas fa-link"></i></a>
+</h3>
+<p>R-squared tells us how well our model explains the variance in our variable. In other words, is the reason for the change in the independent variable actually due to our model’s prediction? The higher the r-squared, the more accurate our model is because the better the data fits it. The maximum value r-squared can be is 1.</p>
+<p>In our model’s case, we have a multiple r-squared of .743, this means our model is approximately 74.3% accurate as this is the amount of variance in the data caused by our dependent variable. Our r-squared could certainly be better. In fact, in the real world you typically are aiming for an r-squared above .9 or .95, which means you would have 90%-95% accuracy.</p>
+</div>
+</div>
+<div id="applying-the-model-to-make-predictions" class="section level2" number="17.2">
+<h2>
+<span class="header-section-number">17.2</span> Applying the Model to Make Predictions<a class="anchor" aria-label="anchor" href="#applying-the-model-to-make-predictions"><i class="fas fa-link"></i></a>
+</h2>
+<p>This type of regression is refereed to as linear for a reason. If we were to visualize our model on a quadratic plane, we would see a line of best fit that would travel along through our data. This means we can simplify the model to fit the slope-intercept equation:</p>
+<p>y = m(x)+b</p>
+<p>In our case the slope of our line is related to the independent variables. The sum of these slopes will give us the overall slope of our line and the intercept is provided by the equation summary. If we modify this equation to be more applicable to our situation we would get something like this:</p>
+<p>y = m<sub>1</sub>x<sub>1</sub> + m<sub>2</sub>x<sub>2</sub> … + b</p>
+<p>Let’s look back at our example model from before</p>
+<div class="sourceCode" id="cb81"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">M1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">Balance</span> <span class="op">~</span> <span class="va">Limit</span> <span class="op">+</span> <span class="va">Ethnicity</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">M1</span><span class="op">)</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Call:</span>
+<span class="co">#&gt; lm(formula = Balance ~ Limit + Ethnicity)</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Residuals:</span>
+<span class="co">#&gt;     Min      1Q  Median      3Q     Max </span>
+<span class="co">#&gt; -677.39 -145.75   -8.75  139.56  776.46 </span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Coefficients:</span>
+<span class="co">#&gt;                      Estimate Std. Error t value Pr(&gt;|t|)</span>
+<span class="co">#&gt; (Intercept)        -3.078e+02  3.417e+01  -9.007   &lt;2e-16</span>
+<span class="co">#&gt; Limit               1.718e-01  5.079e-03  33.831   &lt;2e-16</span>
+<span class="co">#&gt; EthnicityAsian      2.835e+01  3.304e+01   0.858    0.391</span>
+<span class="co">#&gt; EthnicityCaucasian  1.381e+01  2.878e+01   0.480    0.632</span>
+<span class="co">#&gt;                       </span>
+<span class="co">#&gt; (Intercept)        ***</span>
+<span class="co">#&gt; Limit              ***</span>
+<span class="co">#&gt; EthnicityAsian        </span>
+<span class="co">#&gt; EthnicityCaucasian    </span>
+<span class="co">#&gt; ---</span>
+<span class="co">#&gt; Signif. codes:  </span>
+<span class="co">#&gt; 0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Residual standard error: 234 on 396 degrees of freedom</span>
+<span class="co">#&gt; Multiple R-squared:  0.743,  Adjusted R-squared:  0.7411 </span>
+<span class="co">#&gt; F-statistic: 381.6 on 3 and 396 DF,  p-value: &lt; 2.2e-16</span></code></pre></div>
+<p>We see that our limit variable has an estimate of 1.718e-01, this is our slope. When dealing with quantitative variables, we simply multiply our slope by the intended independent variable. So, if we wanted to find the balance of someone with a limit of 400, we would multiply 1.718e-01 by 400.</p>
+<p>With the qualitative variables, in this case ethnicity, we multiply the estimate of the TRUE values by 1 and FALSE values by 0, thus cancelling the FALSE values out.</p>
+<p>Let’s look at an example. If we used our above equation to predict the balance of someone who was Caucasian and has a credit limit of 500, here is the equation we would set up:</p>
+<div class="sourceCode" id="cb82"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">y</span> <span class="op">=</span> <span class="op">(</span><span class="fl">1.718e-1</span><span class="op">*</span><span class="fl">500</span><span class="op">)</span> <span class="op">+</span> <span class="op">(</span><span class="fl">1.381e+01</span><span class="op">*</span><span class="fl">1</span><span class="op">)</span> <span class="op">+</span> <span class="op">(</span><span class="fl">2.835e+01</span><span class="op">*</span><span class="fl">0</span><span class="op">)</span> <span class="op">+</span> <span class="op">(</span><span class="op">-</span><span class="fl">3.078e+02</span><span class="op">)</span>
+<span class="va">y</span>
+<span class="co">#&gt; [1] -208.09</span></code></pre></div>
+<p>So, according to our model our customer would have a balance of -208.09. This number may seem funny, but keep in mind that our r-squared was not the best for this model making it inaccurate and the ethnicity of the customer was not highly correlated with the balance. Both of these facts may cause our prediction to be off. If we were actually creating a model that could predict balance, we would want to look at some of the more correlated variables in the data set.</p>
+</div>
+<div id="review-questions-1" class="section level2" number="17.3">
+<h2>
+<span class="header-section-number">17.3</span> Review Questions<a class="anchor" aria-label="anchor" href="#review-questions-1"><i class="fas fa-link"></i></a>
+</h2>
+<ol style="list-style-type: decimal">
+<li><p>Create a linear model predicting using the ISLR data set that predicts a customer’s credit limit based on their age, current balance, and the number of cards they have.</p></li>
+<li><p>What is the p-value of this model? What does this tell us?</p></li>
+<li><p>List the variables in order from most correlated to least. How do you know that they are correlated?</p></li>
+<li><p>What is the multiple r-squared of the model? What does this tell us? Is this good or bad?</p></li>
+<li><p>What would be the credit limit of a 29 year old with 5 cards and a total balance of 1500?</p></li>
+<li><p>Explain what the following piece of code does</p></li>
+</ol>
+<div class="sourceCode" id="cb83"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://www.statlearning.com">ISLR</a></span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"Credit"</span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/attach.html">attach</a></span><span class="op">(</span><span class="va">Credit</span><span class="op">)</span>
+<span class="va">q1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">Cards</span> <span class="op">~</span> <span class="va">Limit</span> <span class="op">+</span> <span class="va">Balance</span> <span class="op">+</span> <span class="va">Education</span><span class="op">)</span></code></pre></div>
+
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="linear-regression-with-mtcars.html"><span class="header-section-number">16</span> Linear Regression with mtcars</a></div>
+<div class="next"><a href="linear-regression-practice.html"><span class="header-section-number">18</span> Linear Regression Practice</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#deeper-linear-regression"><span class="header-section-number">17</span> Deeper Linear Regression</a></li>
+<li>
+<a class="nav-link" href="#interpretation-of-the-model"><span class="header-section-number">17.1</span> Interpretation of the Model</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#p-values"><span class="header-section-number">17.1.1</span> P-Values</a></li>
+<li><a class="nav-link" href="#multiple-r-squared"><span class="header-section-number">17.1.2</span> Multiple R-Squared</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#applying-the-model-to-make-predictions"><span class="header-section-number">17.2</span> Applying the Model to Make Predictions</a></li>
+<li><a class="nav-link" href="#review-questions-1"><span class="header-section-number">17.3</span> Review Questions</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/rstudio/bookdown-demo/blob/master/21-linearregression.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/rstudio/bookdown-demo/edit/master/21-linearregression.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>BADM 371 Intro to Data Analytics</strong>" was written by BADM 371. It was last built on 2022-02-24.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+</body>
+</html>

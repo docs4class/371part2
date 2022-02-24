@@ -151,11 +151,2408 @@ Also, this book has benefited greatly from lots of free, readily available resou
   \href{https://stackoverflow.com/questions/4862178/remove-rows-with-all-or-some-nas-missing-values-in-data-frame?rq=1}{stackoverflow.com, for example}
 \end{itemize}
 
-\hypertarget{dplyr}{%
-\chapter{DPLYR}\label{dplyr}}
+\hypertarget{syllabus}{%
+\chapter{Syllabus}\label{syllabus}}
+
+Instructor: Tobin Turner
+
+Office Hours: mutually convenient time arranged by email e-mail: \href{mailto:jtturner@presby.edu}{\nolinkurl{jtturner@presby.edu}}
+
+\hypertarget{course-objectives-and-learning-outcomes}{%
+\section{Course Objectives and Learning Outcomes}\label{course-objectives-and-learning-outcomes}}
+
+This course is designed to introduce to data science. Students will apply statistical knowledge and techniques to both business and non-business contexts.
+
+At the end of this course students should be able to:
+
+\begin{itemize}
+\tightlist
+\item
+  Demonstrate mastery of the statistical software in R and the Rstudio IDE.
+\item
+  Data wrangle (the process of cleaning and unifying messy and complex data sets for easy access and analysis)
+\item
+  Demonstrate mastery of single and multiple regression.
+\item
+  Demonstrate mastery of these dplyr functions: filter, select, mutate, group\_by, summaize, and tally.
+\item
+  Demonstrate mastery of how business analytics is related to other business functions and is important to the success of the business entity.
+\end{itemize}
+
+This course will be focused on both understanding and applying key business analytical concepts. Although the text serves as a useful foundation for the concepts covered in the class, simple memorization of the material in the text will not be sufficient. Class participation, discussion, and application are critical.
+
+\hypertarget{text-and-resources}{%
+\section{Text and Resources}\label{text-and-resources}}
+
+\begin{itemize}
+\tightlist
+\item
+  The course website (primary reource)
+\item
+  An Introduction to Statistical Learning with Applications in R; by Gareth James, Daniela Witten, Trevor Hastie and Robert Tibshirani
+\item
+  R: A self-learn tutorial.
+\item
+  Other free, publicly available datasets and publications.
+\end{itemize}
+
+\hypertarget{performance-evaluation-grading}{%
+\section{Performance Evaluation (Grading)}\label{performance-evaluation-grading}}
+
+\begin{itemize}
+\tightlist
+\item
+  Quizzes and Assignments - 20\%
+\item
+  Exam 1 - 20\%
+\item
+  Exam 2 - 20\%
+\item
+  Exam 3 - 20\%
+\item
+  Final Exam - 20\%
+\end{itemize}
+
+\hypertarget{exams}{%
+\subsection{Exams}\label{exams}}
+
+Exams will cover assigned chapters in the textbook, other assigned readings, lectures, class exercises, class discussions, videos, and guest speakers. I will typically allocate time prior to each exam to clearly identify the body of knowledge each test will cover and to answer questions about the format and objectives of the exam.
+
+\hypertarget{quizzes-dont-miss-class}{%
+\subsection{\texorpdfstring{Quizzes -- \textbf{DON''T MISS CLASS}}{Quizzes -- DON''T MISS CLASS}}\label{quizzes-dont-miss-class}}
+
+\begin{itemize}
+\tightlist
+\item
+  The average of all quizzes and assignments will comprise the Quizzes and Assignments - 20\% portion of your final grade
+\item
+  Quizzes are designed to prepare you for your exams and to ensure you stay up wiht the course material
+\item
+  Missed quizzes cannot be made up later. Be present.
+\end{itemize}
+
+Quizzes rule. \textbf{LISTEN.}
+
+\hypertarget{final-average}{%
+\subsection{Final Average}\label{final-average}}
+
+\begin{itemize}
+\tightlist
+\item
+  Final Average Grade
+
+  \begin{itemize}
+  \tightlist
+  \item
+    90-100 A
+  \item
+    88-89 B+
+  \item
+    82-87 B+
+  \item
+    80-81 B-
+  \item
+    78-79 C+
+  \item
+    72-77 C+
+  \item
+    70-71 C-
+  \item
+    60-69 D
+  \item
+    59 and below F
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{class-participation}{%
+\section{Class Participation:}\label{class-participation}}
+
+I will frequently give readings or assignments for you to complete prior to the next class meeting. I expect you to fully engage the material: answer questions, pose questions, provide insightful observations. Keep in mind that quality is an important component in ``participation.'' Periodic cold calls will take place. I will also put students in the ``hot seat'' on occasion. In these class sessions, I may select a random group of students to lead us in the discussion and debate. Because the selection of participants will not be announced until class begins, everyone will be expected to prepare for the discussion. Reading the assigned chapters and articles are the best way to prepare for the discussion. If you have concerns about being called on in class, please see me to discuss. The purpose of the ``hot seat'' is not to stress or embarrass students, but to encourage students to actively engage the material.
+
+\hypertarget{phones}{%
+\section{Phones}\label{phones}}
+
+\textbf{Phones are not allowed to be used in class without the instructor's prior consent.} If you have a need of a phone during class please let me know before class. Unauthorized use of electronic devices may result in the lowering of the grade or dismissal from the class. \textbf{I mean this.}
+
+\textbf{The phone thing? I mean this.}
+
+\hypertarget{attendance}{%
+\section{Attendance}\label{attendance}}
+
+You are expected to be regular and punctual in your class attendance. Students are responsible for all the material missed and homework assignments made. If class is missed, notes/homework should be obtained from another student. If I am more than 15 minutes late, class is considered cancelled. No more than 4 absences are allowed during a semester. Exceeding the absence policy may result in receiving an F for the course. The professors roll is the official roll and students not present when roll is taken will be counted as absent. If a student must miss an exam, she or he must work out an agreeable time with the instructor to take the test prior to the exam being given. If a student misses a test due to an emergency, the student must inform the instructor as soon as is possible. In special cases, the instructor may allow the student to take a make-up exam.
+
+\hypertarget{accommodations}{%
+\section{Accommodations}\label{accommodations}}
+
+Presbyterian College is committed to providing reasonable accommodations for all students with documented disabilities. If you are seeking academic accommodations under the Americans with Disabilities Act, you must register with the Academic Success Office, located on 5th Avenue (beside Campus Police). To receive these accommodations, please obtain the proper Accommodations Approval Form from that office, and then meet with me at the beginning of the semester to discuss how we may deliver your approved accommodations. I especially encourage you to meet with me well in advance of the actual accommodations being provided, as it may not be feasible to offer immediate accommodations without sufficient advance notice (such as in the case of tests). I can assure you that all discussions will remain confidential. Disability Services information is located at this link \url{http://bit.ly/PCdisabilityservices}
+
+Additionally, it is the student's responsibility to give the instructor one week's notice prior to each instance where accommodation will be required.
+
+\hypertarget{honor-code-and-plagiarism}{%
+\section{Honor Code and Plagiarism:}\label{honor-code-and-plagiarism}}
+
+All assignments/exams must be your own work. Any copying or use of unauthorized assistance will be treated as a violation of PC's Honor Code. If you are unsure of what resources are allowed, please ask. Please note that all text longer than 7 words taken from ANY other source must be placed in quotations and cited. Also, summarizing ANY other source must also be cited. Using ANY other source and showing work to be your own is a violation of plagiarism and the honor code.
+
+\hypertarget{first-generation-version}{%
+\section{First-Generation Version:}\label{first-generation-version}}
+
+I am a Presby First+ Advocate. I am here to support our current first-generation students. At Presbyterian College, first-generation students are those in which neither parent nor legal guardian graduated from a four-year higher education institution with a bachelor's degree. If you are a first-generation college student, please contact me. For more information about support for first-generation college students on our campus visit our Presby First+ webpage.
+
+\hypertarget{continuing-advocate-version}{%
+\section{Continuing Advocate Version}\label{continuing-advocate-version}}
+
+I am a Presby First+ Advocate. I am committed to supporting first-generation students at Presbyterian College. At Presbyterian College, first-generation students are those in which neither parent nor legal guardian graduated from a four-year higher education institution with a bachelor's degree. If you are a first-generation college student, please contact me anytime or visit me during my office hours. For more information about support for first-generation college students on our campus visit our Presby First+ webpage.
+
+\hypertarget{our-class-rhythm}{%
+\chapter{Our Class Rhythm}\label{our-class-rhythm}}
+
+\textbf{Monday:} Wrap up previous topic and introduce what you've pre-read about. Chat. Play. Work some examples. Make sure the topics applies to real-life.
+
+\textbf{Wednesday:} Work more examples. Chat as needed. \textbf{Live our best lives. :)}.
+
+\textbf{Friday:} Apply what we've learned -- demonstrate your mastery (typically in the form of a quiz, lab, or assignment). Rinse. Repeat.
+
+\hypertarget{end-in-mind}{%
+\chapter{End in Mind}\label{end-in-mind}}
+
+\textbf{Dana Simmons:} ``Can you predict which students will enroll at PC?''
+
+\textbf{Christina Miller:} ??? Well, can you? ???
+
+\hypertarget{schedule}{%
+\chapter{Schedule}\label{schedule}}
+
+This is a tentative schedule, \textbf{BUT} I will do my very best to stick to it, so that you may plan accordingly!
+
+\hypertarget{spring-2022}{%
+\section*{Spring 2022}\label{spring-2022}}
+\addcontentsline{toc}{section}{Spring 2022}
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+Date & Topic \\
+\midrule
+\endhead
+Date & A1 \\
+Monday, January 10, 2022 & R basics and install \\
+Wednesday, January 12, 2022 & R basics and workflows \\
+Friday, January 14, 2022 & QUIZ 1 \\
+Monday, January 17, 2022 & MLK Holiday \\
+Wednesday, January 19, 2022 & Objects and Arithmetic \\
+Friday, January 21, 2022 & QUIZ \\
+Monday, January 24, 2022 & Summaries and Subscripting \\
+Wednesday, January 26, 2022 & Matrices and \texttt{mtcars} \\
+Friday, January 28, 2022 & QUIZ \\
+Monday, January 31, 2022 & Class \\
+Wednesday, February 2, 2022 & Class \\
+Friday, February 4, 2022 & QUIZ \\
+Monday, February 7, 2022 & Social Dilemma and Review \\
+Wednesday, February 9, 2022 & \textbf{EXAM 1} \\
+Friday, February 11, 2022 & Class \\
+Monday, February 14, 2022 & Class \\
+Wednesday, February 16, 2022 & Online Class \\
+Friday, February 18, 2022 & Online QUIZ \\
+Monday, February 21, 2022 & Class \\
+Wednesday, February 23, 2022 & Class \\
+Friday, February 25, 2022 & QUIZ \\
+Monday, February 28, 2022 & Class \\
+Wednesday, March 2, 2022 & Class \\
+Friday, March 4, 2022 & QUIZ \\
+Monday, March 7, 2022 & \textbf{EXAM 2} \\
+Wednesday, March 9, 2022 & Online Class \\
+Friday, March 11, 2022 & Online Class \\
+Monday, March 14, 2022 & SPRING BREAK \\
+Wednesday, March 16, 2022 & SPRING BREAK \\
+Friday, March 18, 2022 & SPRING BREAK \\
+Monday, March 21, 2022 & Class \\
+Wednesday, March 23, 2022 & Class \\
+Friday, March 25, 2022 & QUIZ \\
+Monday, March 28, 2022 & ADVISING WEEK \\
+Wednesday, March 30, 2022 & ADVISING WEEK \\
+Friday, April 1, 2022 & QUIZ \\
+Monday, April 4, 2022 & Class \\
+Wednesday, April 6, 2022 & Class \\
+Friday, April 8, 2022 & QUIZ \\
+Monday, April 11, 2022 & Class \\
+Wednesday, April 13, 2022 & \textbf{EXAM 3} \\
+Friday, April 15, 2022 & Easter Holidays \\
+Monday, April 18, 2022 & Easter Holidays \\
+Wednesday, April 20, 2022 & Class \\
+Friday, April 22, 2022 & QUIZ \\
+Monday, April 25, 2022 & Class \\
+Wednesday, April 27, 2022 & QUIZ \\
+Friday, April 29, 2022 & LAST DAY \\
+Monday, May 2, 2022 & \textbf{Final Exam} 5:30 p.m. -- E period \\
+\bottomrule
+\end{longtable}
+
+\hypertarget{elephant-in-the-room-r}{%
+\chapter{\texorpdfstring{Elephant in the room: \textbf{R}}{Elephant in the room: R}}\label{elephant-in-the-room-r}}
+
+There are a variety of different applications for R. Yes, the more obvious ones would be things such as machine learning, artificial intelligence, and data mining. However, the possibilities with this program are honestly limitless.
+
+\hypertarget{the-bad-news}{%
+\section{The bad news}\label{the-bad-news}}
+
+\begin{quote}
+\textbf{``The bad news is whenever you're learning a new tool, for a long time you're going to suck. It's going to be very frustrating. But, the good news is that that is typical, it's something that happens to everyone, and it's only temporary \ldots{} {[}T{]}here is no way to go from knowing nothing about a subject to knowing something about a subject and being an expert in it without going through a period of great frustration.''}
+\end{quote}
+
+-- Hadley Wickham
+
+\hypertarget{about-r}{%
+\section{About R}\label{about-r}}
+
+R is a software language for carrying out complicated (and simple) statistical analyses. It includes routines for data summary and exploration, graphical presentation and data modelling.
+
+\hypertarget{r-vs.-excel}{%
+\chapter{R vs.~Excel}\label{r-vs.-excel}}
+
+\hypertarget{both-are-useful}{%
+\section{Both are useful}\label{both-are-useful}}
+
+Data analytics are increasingly important components of decision-making in any business. Whether you're a part of a marketing team that needs to generate visuals to highlight industry trends, or you're looking to generate financial statements, you will need an analytics program to help you develop your reports and effectively communicate your findings.
+
+Both R and Excel are excellent data analytics tools, but they each have distinct functionality.
+
+\begin{quote}
+\textbf{Please make sure you can explain the distinct functions of both R and Excel! YOU WILL NEED TO KNOW THIS!}
+\end{quote}
+
+Excel is a well-known software program included in the Microsoft Office Suite. Used to create spreadsheets, execute calculations, produce charts, and perform statistical analysis, Excel is used by many professionals across a variety of industries. PC's \textbf{BADM 299} prepares you well for using Excel.
+
+R is a free, open-source programming language and software environment that's frequently used in big data analysis and statistical computing. R has many advanced functions and capabilities.
+
+\hypertarget{differences-between-r-and-excel}{%
+\section{Differences Between R and Excel}\label{differences-between-r-and-excel}}
+
+When choosing between R and Excel, it's important to understand how either software can get you the results you need. Here are some key differences between R and Excel to help you decide which makes the most sense to use.
+
+\hypertarget{ease-of-use-learning-the-software}{%
+\section{Ease of Use \& Learning the Software}\label{ease-of-use-learning-the-software}}
+
+Most people have likely already learned at least a few basic tips in Microsoft Excel. That's one substantial benefit of using Excel---the initial learning curve is quite minimal, and most analysis can be done via point-and-click on the top panel. Once a user imports their data into the program, it's not very hard to make basic graphs and charts.
+
+R is a programming language, however, meaning the initial learning curve is steeper. It will take most at least a few weeks to familiarize themselves with the interface and master the various functions. Luckily, using R can quickly become second-nature with practice.
+
+\hypertarget{replicating-analysis}{%
+\section{Replicating Analysis}\label{replicating-analysis}}
+
+R, while less user-friendly with a more intimidating user interface, has the capability to reproduce analyses repeatedly and with very different datasets. This can be incredibly helpful for large projects with multiple data sets, as you'll keep everything consistent and clean, without having to rewrite the script each time.
+
+Since Excel's user interface is point-and-click, you'll need to rely on memory and repetition frequently. You cannot import codes and scripts as you would with R, so you'll have to ``reinvent the wheel'' to perform the same analysis across different data sets. This is not detrimental if you are doing basic statistics, but it may become time-consuming with more complicated analyses.
+
+\begin{quote}
+For example, let's say you have thoroughly analyzed the analytics of 1 football season. How could R (vs Excel) help you quickly analyze a new season's data?
+\end{quote}
+
+\hypertarget{visualization}{%
+\section{Visualization}\label{visualization}}
+
+When deciding between R and Excel, ask yourself, ``How detailed do my visualizations need to be in order to achieve my goal(s)?'' In Excel, for example, you can quickly highlight a group of cells and make a simple chart for PowerPoint. If you need a more comprehensive graph, however, R may be your best bet. R can produce incredibly attractive, detailed visuals that can help stakeholders understand your findings.
+
+It all comes down to what you need your graphics to do. If you're just looking to cobble together a quick-and-dirty presentation to visualize data for your coworkers, then making simple straightforward charts in Excel will suffice. For those planning to publish large amounts of complicated data to various stakeholders, spending the time in R to create impressive interactive visual representations will likely be worth your while.
+
+For example, here's and example of a pretty easy visualization in R that would be challenging to do (and update) in Excel.
+
+\includegraphics{09-rvexcel_files/figure-latex/unnamed-chunk-1-1.pdf}
+
+\hypertarget{packages}{%
+\section{Packages}\label{packages}}
+
+In R, the fundamental unit of shareable code is the package. A package bundles together code, data, documentation, and tests, and is easy to share with others. As of June 2019, there were over 14,000 packages available on the Comprehensive R Archive Network, or CRAN, the public clearing house for R packages. This huge variety of packages is one of the reasons that R is so successful: the chances are that someone has already solved a problem that you're working on, and you can benefit from their work by downloading their package.
+
+But packages are useful even if you never share your code. As Hilary Parker says in her introduction to packages: ``Seriously, it doesn't have to be about sharing your code (although that is an added benefit!). It is about saving yourself time.'' Organising code in a package makes your life easier because packages come with conventions. For example, you put R code in R/, you put tests in tests/ and you put data in data/. These conventions are helpful because:
+
+\begin{itemize}
+\tightlist
+\item
+  They save you time --- you don't need to think about the best way to organise a project, you can just follow a template.
+\item
+  Standardized conventions lead to standardized tools --- if you buy into R's package conventions, you get many tools for free.
+\end{itemize}
+
+\begin{quote}
+We will chat more about packages, but for fun check out the links below\ldots{}
+\end{quote}
+
+\hypertarget{careers}{%
+\section{Careers}\label{careers}}
+
+Aptitude with Excel and R are incredibly valuable competencies that are in-demand across a variety of industries. Countless jobs are looking for applicants with at least some Excel experience (pivot tables look really good on a resumé), but R has a higher earning potential and is more in-demand than Excel.
+
+R is one of the most popular programming languages and is an industry-standard for data analytics and data science. If you want to enter either field, there's a good chance you'll have a competitive advantage by knowing R. Entry-level jobs for those focusing on R also tend to make a high salary, frequently starting off earning more than \$75,000.
+
+Countless job listings also require Excel competency. From administrative assistants, marketers, academics, and more, everyone is expected to use Excel to some degree, whereas 10 to 15 years ago it was optional. Having a good background in Excel is still attractive on a resumé and will help to land a career with a high earning potential, but there are not many jobs looking for Excel skills alone.
+
+\hypertarget{summary-using-r-and-excel}{%
+\section{Summary -- Using R and Excel}\label{summary-using-r-and-excel}}
+
+R and Excel are beneficial in different ways. Excel starts off easier to learn and is frequently cited as the go-to program for reporting, thanks to its speed and efficiency. R is designed to handle larger data sets, to be reproducible, and to create more detailed visualizations. It's not a question of choosing between R and Excel, but deciding which program to use for different needs.
+
+\hypertarget{r-basics}{%
+\chapter{R basics and workflows}\label{r-basics}}
+
+\hypertarget{basics-of-working-with-r-at-the-command-line-and-rstudio-goodies}{%
+\section{Basics of working with R at the command line and RStudio goodies}\label{basics-of-working-with-r-at-the-command-line-and-rstudio-goodies}}
+
+Launch RStudio/R.
+
+You will first intall R and then. RStudio.
+
+\begin{itemize}
+\item
+  \href{https://cran.case.edu/}{Installing R}
+\item
+  \href{https://www.rstudio.com/products/rstudio/download/}{Installing RStudio}
+\item
+  \href{https://support.rstudio.com/hc/en-us/articles/200549016-Customizing-the-RStudio-IDE}{Customizing RStudio}
+\item
+  \href{https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts-in-the-RStudio-IDE}{RStudio Quick keys}
+\end{itemize}
+
+\hypertarget{in-rstudio---where-we-will-live}{%
+\section{In Rstudio - where we will live}\label{in-rstudio---where-we-will-live}}
+
+Notice the default panes:
+
+\begin{itemize}
+\tightlist
+\item
+  Console (entire left)
+\item
+  Environment/History (tabbed in upper right)
+\item
+  Files/Plots/Packages/Help (tabbed in lower right)
+\end{itemize}
+
+\hypertarget{section}{%
+\section{}\label{section}}
+
+\href{http://www.sthda.com/sthda/RDoc/images/rstudio.png}{Rstudio Console}
+
+FYI: you can change the default location of the panes, among many other things: \href{https://support.rstudio.com/hc/en-us/articles/200549016-Customizing-the-RStudio-IDE}{Customizing RStudio}.
+
+Go into the Console, where we interact with the live R process.
+
+You can make an object by assigning a value or statement to a letter or string. We use \texttt{\textless{}-} to assign objects meaning. Create and inspect the following object:
+
+\textbf{Your first analysis in R:}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x }\OtherTok{\textless{}{-}} \DecValTok{3} \SpecialCharTok{*} \DecValTok{4}
+\NormalTok{x}
+\CommentTok{\#\textgreater{} [1] 12}
+\end{Highlighting}
+\end{Shaded}
+
+All R statements where you create objects -- ``assignments'' -- have this form:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{objectName }\OtherTok{\textless{}{-}}\NormalTok{ value}
+\end{Highlighting}
+\end{Shaded}
+
+and in my head I hear, e.g., ``x gets 12''.
+
+You will make lots of assignments and the operator \texttt{\textless{}-} is a pain to type. Don't be lazy and use \texttt{=}, although it would work, because it will just sow confusion later. Instead, utilize RStudio's keyboard shortcut: Alt + - (the minus sign).
+
+\textbf{I want to be your friend. As a friend, I implore you, learn this:}
+
+\begin{quote}
+In RStudio insert the \textless- assignment operator with Option + - (the minus sign)on a Mac, or Alt + - (the minus sign) on Windows.
+\end{quote}
+
+Notice that RStudio automatically surrounds \texttt{\textless{}-} with spaces, which demonstrates a useful code formatting practice. Code is miserable to read on a good day. Give your eyes a break and use spaces.
+
+RStudio offers many handy \href{https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts-in-the-RStudio-IDE}{RStudio Quick keys}. Also, Alt+Shift+K brings up a keyboard shortcut reference card.
+
+Object names cannot start with a digit and cannot contain certain other characters such as a comma or a space. You will be wise to adopt a \href{https://en.wikipedia.org/wiki/Snake_case}{convention for demarcating words} in names, but note that best practice is to choose ONE convention and stay true to it throughout your code.
+
+\begin{verbatim}
+i_use_snake_case
+other.people.use.periods
+evenOthersUseCamelCase
+\end{verbatim}
+
+Make another assignment:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{this\_is\_a\_really\_long\_name }\OtherTok{\textless{}{-}} \FloatTok{2.5}
+\end{Highlighting}
+\end{Shaded}
+
+To inspect this, try out RStudio's completion facility: type the first few characters, press TAB, add characters until you disambiguate, then press return.
+
+Make another assignment:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{turner\_rocks }\OtherTok{\textless{}{-}} \DecValTok{2} \SpecialCharTok{\^{}} \DecValTok{3}
+\end{Highlighting}
+\end{Shaded}
+
+When making assignments, it is best practice to keep the names brief, yet descriptive. For instance, while the name ``this\_is\_a\_really\_long\_name'' is accurate, so is ``long\_name'' and this is much more intuitive and easy to read/type over and over.
+
+Let's try to inspect:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{turnerrocks}
+\CommentTok{\#\textgreater{} Error in eval(expr, envir, enclos): object \textquotesingle{}turnerrocks\textquotesingle{} not found}
+\NormalTok{Turner\_rocks}
+\CommentTok{\#\textgreater{} Error in eval(expr, envir, enclos): object \textquotesingle{}Turner\_rocks\textquotesingle{} not found}
+\NormalTok{turner\_rocks}
+\CommentTok{\#\textgreater{} [1] 8}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{Implicit contract with the computer / scripting language: Computer will do tedious computation for you. In return, you will be completely precise in your instructions. Typos matter. Case matters. Get better at typing.}
+
+R has a mind-blowing collection of built-in functions that are accessed like so:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{functionName}\NormalTok{(}\AttributeTok{arg1 =}\NormalTok{ val1, }\AttributeTok{arg2 =}\NormalTok{ val2, and so on)}
+\end{Highlighting}
+\end{Shaded}
+
+Let's try using \texttt{seq()} which makes regular sequences of numbers and, while we're at it, demo more helpful features of RStudio.
+
+Type \texttt{se} and hit TAB. A pop up shows you possible completions. Specify \texttt{seq()} by typing more to disambiguate or using the up/down arrows to select. Notice the floating tool-tip-type help that pops up, reminding you of a function's arguments. If you want even more help, press F1 as directed to get the full documentation in the help tab of the lower right pane. Now open the parentheses and notice the automatic addition of the closing parenthesis and the placement of cursor in the middle. Type the arguments \texttt{1,\ 10} and hit return. RStudio also exits the parenthetical expression for you. IDEs are great.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{seq}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{10}\NormalTok{)}
+\CommentTok{\#\textgreater{}  [1]  1  2  3  4  5  6  7  8  9 10}
+\end{Highlighting}
+\end{Shaded}
+
+The above also demonstrates something about how R resolves function arguments. You can always specify in \texttt{name\ =\ value} form. But if you do not, R attempts to resolve by position. So above, it is assumed that we want a sequence \texttt{from\ =\ 1} that goes \texttt{to\ =\ 10}. Since we didn't specify step size, the default value of \texttt{by} in the function definition is used, which ends up being 1 in this case. For functions I call often, I might use this resolve by position for the first
+argument or maybe the first two. After that, I always use \texttt{name\ =\ value}.
+
+Make this assignment and notice similar help with quotation marks.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{yo }\OtherTok{\textless{}{-}} \StringTok{"hello world"}
+\end{Highlighting}
+\end{Shaded}
+
+If you just make an assignment, you don't get to see the value, so then you're tempted to immediately inspect.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{y }\OtherTok{\textless{}{-}} \FunctionTok{seq}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{10}\NormalTok{)}
+\NormalTok{y}
+\CommentTok{\#\textgreater{}  [1]  1  2  3  4  5  6  7  8  9 10}
+\end{Highlighting}
+\end{Shaded}
+
+This common action can be shortened by surrounding the assignment with parentheses, which causes assignment and ``print to screen'' to happen.
+
+It is best practice to always attempt to ``print'' your assignments after creating them. This will help leviate the issue of searching 200+ lines of code for that one error causing argument.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(y }\OtherTok{\textless{}{-}} \FunctionTok{seq}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{10}\NormalTok{))}
+\CommentTok{\#\textgreater{}  [1]  1  2  3  4  5  6  7  8  9 10}
+\end{Highlighting}
+\end{Shaded}
+
+Not all functions have (or require) arguments:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{date}\NormalTok{()}
+\CommentTok{\#\textgreater{} [1] "Thu Feb 24 08:59:39 2022"}
+\end{Highlighting}
+\end{Shaded}
+
+Now look at your workspace -- in the upper right pane. The workspace is where user-defined objects accumulate. You can also get a listing of these objects with commands:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{objects}\NormalTok{()}
+\CommentTok{\#\textgreater{} [1] "this\_is\_a\_really\_long\_name"}
+\CommentTok{\#\textgreater{} [2] "turner\_rocks"              }
+\CommentTok{\#\textgreater{} [3] "x"                         }
+\CommentTok{\#\textgreater{} [4] "y"                         }
+\CommentTok{\#\textgreater{} [5] "yo"}
+\FunctionTok{ls}\NormalTok{()}
+\CommentTok{\#\textgreater{} [1] "this\_is\_a\_really\_long\_name"}
+\CommentTok{\#\textgreater{} [2] "turner\_rocks"              }
+\CommentTok{\#\textgreater{} [3] "x"                         }
+\CommentTok{\#\textgreater{} [4] "y"                         }
+\CommentTok{\#\textgreater{} [5] "yo"}
+\end{Highlighting}
+\end{Shaded}
+
+If you want to remove the object named \texttt{y}, you can do this:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{rm}\NormalTok{(y)}
+\end{Highlighting}
+\end{Shaded}
+
+To remove everything:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{rm}\NormalTok{(}\AttributeTok{list =} \FunctionTok{ls}\NormalTok{())}
+\end{Highlighting}
+\end{Shaded}
+
+or click the broom in RStudio's Environment pane.
+
+\hypertarget{workspace-and-working-directory}{%
+\section{Workspace and working directory}\label{workspace-and-working-directory}}
+
+One day you will need to quit R, go do something else and return to your analysis later (this is a very happy day).
+
+One day you will have multiple analyses going that use R and you want to keep them separate (a not so happy day).
+
+One day you will need to bring data from the outside world into R and send numerical results and figures from R back out into the world (the happiest of days).
+
+To handle these real life situations, you need to make two decisions:
+
+\begin{itemize}
+\tightlist
+\item
+  What about your analysis is ``real'', i.e.~will you save it as your lasting record of what happened?
+\item
+  Where does your analysis ``live''?
+\end{itemize}
+
+\hypertarget{workspace-.rdata}{%
+\subsection{\texorpdfstring{Workspace, \texttt{.RData}}{Workspace, .RData}}\label{workspace-.rdata}}
+
+As a beginning R user, it's OK to consider your workspace ``real''. \emph{Very soon}, I urge you to evolve to the next level, where you consider your saved R scripts as ``real''. (In either case, of course the input data is very much real and requires preservation!) With the input data and the R code you used, you can reproduce
+\emph{everything}. You can make your analysis fancier. You can get to the bottom of puzzling results and discover and fix bugs in your code. You can reuse the code to conduct similar analyses in new projects. You can remake a figure with different aspect ratio or save is as TIFF instead of PDF. You are ready to take questions. You are ready for the future.
+
+If you regard your workspace as ``real'' (saving and reloading all the time), if you need to redo analysis \ldots{} you're going to either redo a lot of typing (making mistakes all the way) or will have to mine your R history for the commands you used. Rather than {[}becoming an expert on managing the R history{]}{[}rstudio-command-history{]}, a better use of your time and psychic energy is to keep your ``good'' R code in a script for future reuse.
+
+Because it can be useful sometimes, note the commands you've recently run appear in the History pane.
+
+But you don't have to choose right now and the two strategies are not incompatible. Let's demo the save / reload the workspace approach.
+
+Upon quitting R, you have to decide if you want to save your workspace, for potential restoration the next time you launch R. Depending on your set up, R or your IDE, e.g.~RStudio, will probably prompt you to make this decision.
+
+Quit R/RStudio, either from the menu, using a keyboard shortcut, or by typing \texttt{q()} in the Console. You'll get a prompt like this:
+
+\begin{quote}
+Save workspace image to \textasciitilde/.Rdata?
+\end{quote}
+
+\emph{Note where the workspace image is to be saved} and then click ``Save''.
+
+Using your favorite method, visit the directory where image was saved and verify there is a file named \texttt{.RData}. You will also see a file \texttt{.Rhistory}, holding the commands submitted in your recent session.
+
+Restart RStudio. In the Console you will see a line like this:
+
+\begin{verbatim}
+[Workspace loaded from ~/.RData]
+\end{verbatim}
+
+indicating that your workspace has been restored. Look in the Workspace pane and you'll see the same objects as before. In the History tab of the same pane, you should also see your command history. You're back in business. This way of starting and stopping analytical work will not serve you well for long but it's a start.
+
+\hypertarget{working-directory}{%
+\subsection{Working directory}\label{working-directory}}
+
+Any process running on your computer has a notion of its ``working directory''. In R, this is where R will look, by default, for files you ask it to load. It also where, by default, any files you write to disk will go. Chances are your current working directory is the directory we inspected above, i.e.~the one where RStudio wanted to save the workspace.
+
+You can explicitly check your working directory with:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{getwd}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+It is also displayed at the top of the RStudio console.
+
+As a beginning R user, it's OK let your home directory or any other weird directory on your computer be R's working directory. \emph{Very soon}, I urge you to evolve to the next level, where you organize your analytical projects into directories and, when working on project A, set R's working directory to the associated directory.
+
+\textbf{Although I do not recommend it}, in case you're curious, you can set R's working directory at the command line like so:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{setwd}\NormalTok{(}\StringTok{"\textasciitilde{}/myCoolProject"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{Although I do not recommend it}, you can also use RStudio's Files pane to navigate to a directory and then set it as working directory from the menu: \emph{Session \textgreater{} Set Working Directory \textgreater{} To Files Pane Location}. (You'll see even more options there). Or within the Files pane, choose ``More'' and ``Set As Working Directory''.
+
+But there's a better way. A way that also puts you on the path to managing your R work like an expert.
+
+\hypertarget{exercises}{%
+\section{Exercises}\label{exercises}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Create an object called ``cool\_object'' and assign it the number 100.
+\item
+  Create a new object called ``big\_brain'' and multiply the object from question one by 15.
+\item
+  Print both objects.
+\item
+  Use base R functions to return today's date and print it.
+\item
+  Create a sequence of numbers counting from 10 to 100 by 2.
+\item
+  Identify your working directory. What is it? Change it to where you want it.
+\item
+  Save the R script that answers questions 1 through 5 above. Save it; clean and close Rstudio; reopen your script and run it. Make sense?
+\end{enumerate}
+
+\hypertarget{objects-and-arithmetic}{%
+\chapter{Objects and Arithmetic}\label{objects-and-arithmetic}}
 
 \hypertarget{introduction-1}{%
 \section{Introduction}\label{introduction-1}}
+
+R stores information and operates on objects. The simplest objects are scalars, vectors and matrices.
+But there are many others: lists and dataframes for example. In advanced use of R it can also be
+useful to define new types of object, specific for particular application. We will stick with just the
+most commonly used objects here.
+An important feature of R is that it will do different things on different types of objects. For
+example, type:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{4}\SpecialCharTok{+}\DecValTok{6}
+\CommentTok{\#\textgreater{} [1] 10}
+\end{Highlighting}
+\end{Shaded}
+
+So, R does scalar arithmetic returning the scalar value 10. (In actual fact, R returns a vector of
+length 1 - hence the {[}1{]} denoting first element of the vector.
+We can assign objects values for subsequent use. For example:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x}\OtherTok{\textless{}{-}}\DecValTok{6}
+\NormalTok{y}\OtherTok{\textless{}{-}}\DecValTok{4}
+\NormalTok{z}\OtherTok{\textless{}{-}}\NormalTok{x}\SpecialCharTok{+}\NormalTok{y}
+\end{Highlighting}
+\end{Shaded}
+
+would do the same calculation as above, storing the result in an object called z. We can look at
+the contents of the object by simply typing its name:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{z}
+\CommentTok{\#\textgreater{} [1] 10}
+\end{Highlighting}
+\end{Shaded}
+
+Storing things such as calculations as objects is extremely useful, especially in longer scripts. Mainly because you will likely call the same equation multiple times and if you need to revise it in any way you only need to change the initial assignment rather than every line.
+
+\hypertarget{basic-functions}{%
+\section{Basic Functions}\label{basic-functions}}
+
+At any time we can list the objects which we have created:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ls}\NormalTok{()}
+\CommentTok{\#\textgreater{} [1] "x" "y" "z"}
+\end{Highlighting}
+\end{Shaded}
+
+Notice that ls is actually an object itself. Typing ls would result in a display of the contents of
+this object, in this case, the commands of the function. The use of parentheses, ls(), ensures that
+the function is executed and its result - in this case, a list of the objects in the directory - displayed.
+More commonly a function will operate on an object, for example:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sqrt}\NormalTok{(}\DecValTok{16}\NormalTok{)}
+\CommentTok{\#\textgreater{} [1] 4}
+\end{Highlighting}
+\end{Shaded}
+
+calculates the square root of 16. Objects can be removed from the current workspace with the rm
+function:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{rm}\NormalTok{(x,y)}
+\end{Highlighting}
+\end{Shaded}
+
+for example.
+
+There are many standard functions available in R, and it is also possible to create new ones.
+Vectors can be created in R in a number of ways. We can describe all of the elements:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{z}\OtherTok{\textless{}{-}}\FunctionTok{c}\NormalTok{(}\DecValTok{5}\NormalTok{,}\DecValTok{9}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Note the use of the function c to concatenate or glue together individual elements. This function
+can be used much more widely, for example
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x}\OtherTok{\textless{}{-}}\FunctionTok{c}\NormalTok{(}\DecValTok{5}\NormalTok{,}\DecValTok{9}\NormalTok{)}
+\NormalTok{y}\OtherTok{\textless{}{-}}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{)}
+\NormalTok{z}\OtherTok{\textless{}{-}}\FunctionTok{c}\NormalTok{(x,y)}
+\end{Highlighting}
+\end{Shaded}
+
+would lead to the same result by gluing together two vectors to create a single vector.
+
+Sequences can be generated as follows:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x}\OtherTok{\textless{}{-}}\DecValTok{1}\SpecialCharTok{:}\DecValTok{10}
+\end{Highlighting}
+\end{Shaded}
+
+while more general sequences can be generated using the seq command. For example:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{seq}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{9}\NormalTok{,}\AttributeTok{by=}\DecValTok{2}\NormalTok{)}
+\CommentTok{\#\textgreater{} [1] 1 3 5 7 9}
+\FunctionTok{seq}\NormalTok{(}\DecValTok{8}\NormalTok{,}\DecValTok{20}\NormalTok{,}\AttributeTok{length=}\DecValTok{6}\NormalTok{)}
+\CommentTok{\#\textgreater{} [1]  8.0 10.4 12.8 15.2 17.6 20.0}
+\end{Highlighting}
+\end{Shaded}
+
+These examples illustrate that many functions in R have optional arguments, in this case, either the step length or the total length of the sequence (it doesn't make sense to use both). If you leave out both of these options, R will make its own default choice, in this case assuming a step length
+of 1. So, for example,
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{seq}\NormalTok{(}\DecValTok{8}\NormalTok{,}\DecValTok{20}\NormalTok{,}\AttributeTok{length=}\DecValTok{6}\NormalTok{)}
+\CommentTok{\#\textgreater{} [1]  8.0 10.4 12.8 15.2 17.6 20.0}
+\NormalTok{x}\OtherTok{\textless{}{-}}\FunctionTok{seq}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{10}\NormalTok{)}
+\NormalTok{x}
+\CommentTok{\#\textgreater{}  [1]  1  2  3  4  5  6  7  8  9 10}
+\end{Highlighting}
+\end{Shaded}
+
+also generates a vector of integers from 1 to 10.
+
+At this point it's worth mentioning the help facility. If you don't know how to use a function,
+or don't know what the options or default values are, type help(functionname) where functionname is the name of the function you are interested in. This will usually help and will often include examples to make things even clearer.
+
+Another useful function for building vectors is the rep command for repeating things. For
+example:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{rep}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{100}\NormalTok{)}
+\CommentTok{\#\textgreater{}   [1] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\CommentTok{\#\textgreater{}  [28] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\CommentTok{\#\textgreater{}  [55] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\CommentTok{\#\textgreater{}  [82] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\FunctionTok{rep}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{3}\NormalTok{,}\DecValTok{6}\NormalTok{)}
+\CommentTok{\#\textgreater{}  [1] 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3}
+\FunctionTok{rep}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{3}\NormalTok{,}\FunctionTok{c}\NormalTok{(}\DecValTok{6}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{6}\NormalTok{))}
+\CommentTok{\#\textgreater{}  [1] 1 1 1 1 1 1 2 2 2 2 2 2 3 3 3 3 3 3}
+\end{Highlighting}
+\end{Shaded}
+
+which we could also simplify cleverly as:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{rep}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{3}\NormalTok{,}\FunctionTok{rep}\NormalTok{(}\DecValTok{6}\NormalTok{,}\DecValTok{3}\NormalTok{))}
+\CommentTok{\#\textgreater{}  [1] 1 1 1 1 1 1 2 2 2 2 2 2 3 3 3 3 3 3}
+\end{Highlighting}
+\end{Shaded}
+
+As explained above, R will often adapt to the objects it is asked to work on. For example:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x}\OtherTok{\textless{}{-}}\FunctionTok{c}\NormalTok{(}\DecValTok{6}\NormalTok{,}\DecValTok{8}\NormalTok{,}\DecValTok{9}\NormalTok{)}
+\NormalTok{y}\OtherTok{\textless{}{-}}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{4}\NormalTok{)}
+\NormalTok{x}\SpecialCharTok{+}\NormalTok{y}
+\CommentTok{\#\textgreater{} [1]  7 10 13}
+\end{Highlighting}
+\end{Shaded}
+
+and
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x}\SpecialCharTok{*}\NormalTok{y}
+\CommentTok{\#\textgreater{} [1]  6 16 36}
+\end{Highlighting}
+\end{Shaded}
+
+showing that R uses componentwise arithmetic on vectors. R will also try to make sense if objects
+are mixed. For example:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x}\OtherTok{\textless{}{-}}\FunctionTok{c}\NormalTok{(}\DecValTok{6}\NormalTok{,}\DecValTok{8}\NormalTok{,}\DecValTok{9}\NormalTok{)}
+\NormalTok{x}\SpecialCharTok{+}\DecValTok{2}
+\CommentTok{\#\textgreater{} [1]  8 10 11}
+\end{Highlighting}
+\end{Shaded}
+
+though care should be taken to make sure that R is doing what you would like it to in these circumstances.
+
+Two particularly useful functions worth remembering are length which returns the length of a vector (i.e.~the number of elements it contains) and sum which calculates the sum of the elements of a vector.
+
+\hypertarget{statistics-and-summaries}{%
+\section{Statistics and Summaries}\label{statistics-and-summaries}}
+
+One of the most useful functions of R is its ability to perform statistical analysis on large pieces of data. Later in this book we will cover how this analysis can be used to build complex models and test their accuracy. For now, the focus will be on how to perform basic statistical analysis and the definitions of the more basic terms.
+
+\hypertarget{statistical-analysis}{%
+\subsection{Statistical Analysis}\label{statistical-analysis}}
+
+You've undoubtedly have heard the terms mean, median, standard deviation and variance. However, if asked to define these terms and provide examples of their usefulness, what would you say? This section is going to answer the first part of that question.
+
+Mean is a pretty straight forward concept for most. Commonly referred to as the ``average'', you find this number by adding all the numbers in your data set together and then divide by the total number of points you used. This is easily done on a calculator if you are working with less then 20 digits, however this is almost never the case in data science. Often, especially with R, you will be dealing with data sets with hundreds, thousands, or maybe even hundreds of thousands of data points. Fortunately, R takes the pain away from this process and offers a very simple function that will do this for you. Start by creating an object that contains a list of numbers, and then simply use the mean function to calculate the average of your variable.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{a }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\FloatTok{3.8}\NormalTok{,}\DecValTok{4}\NormalTok{,}\FloatTok{3.1}\NormalTok{,}\FloatTok{2.1}\NormalTok{,}\FloatTok{12.6}\NormalTok{,}\DecValTok{17}\NormalTok{,}\FloatTok{8.43}\NormalTok{,}\DecValTok{11}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{9}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{3}\NormalTok{,}\FloatTok{0.5}\NormalTok{)}
+
+\FunctionTok{mean}\NormalTok{(a)}
+\CommentTok{\#\textgreater{} [1] 6.037857}
+\end{Highlighting}
+\end{Shaded}
+
+The median of a data set is data point that fall in the middle of all the other points when they are ordered from lowest to highest. Again, something easily found even without a calculator if you have small data sets, however humans can miscount and some data sets are just too massive for us to do on our own. R never makes these counting mistakes and by using a simple function you save yourself hours of mundane counting. Start the same way you found mean by creating an object with various numbers and then simply use the \texttt{median} function.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{b }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\FloatTok{3.8}\NormalTok{,}\DecValTok{4}\NormalTok{,}\FloatTok{3.1}\NormalTok{,}\FloatTok{2.1}\NormalTok{,}\FloatTok{12.6}\NormalTok{,}\DecValTok{17}\NormalTok{,}\FloatTok{8.43}\NormalTok{,}\DecValTok{11}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{9}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{3}\NormalTok{,}\FloatTok{0.5}\NormalTok{)}
+
+\FunctionTok{median}\NormalTok{(b)}
+\CommentTok{\#\textgreater{} [1] 3.9}
+\end{Highlighting}
+\end{Shaded}
+
+Many people have heard of standard deviation, but not many can provide an accurate definition. Standard deviation is the measure of variance (see next paragraph) between numbers in a data set and that data set's mean. Typically a lower standard deviation is what you want to see as this proves there is little variance in your data set and that typically means a higher correlation. If you wanted to find this by hand you would have to find the square root of the variance between each point and the mean. This is easy if you have all the numbers you need, but that is almost never the case and thus you would have to calculate all that variance by hand and that is too much work. Why take all those extra steps when R can do it for you? The \texttt{sd()} function does all the work without any hassle, all you have to do is identify the object you want it to find the standard deviation of.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{d }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\FloatTok{3.8}\NormalTok{,}\DecValTok{4}\NormalTok{,}\FloatTok{3.1}\NormalTok{,}\FloatTok{2.1}\NormalTok{,}\FloatTok{12.6}\NormalTok{,}\DecValTok{17}\NormalTok{,}\FloatTok{8.43}\NormalTok{,}\DecValTok{11}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{9}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{3}\NormalTok{,}\FloatTok{0.5}\NormalTok{)}
+
+\FunctionTok{sd}\NormalTok{(d)}
+\CommentTok{\#\textgreater{} [1] 4.821066}
+\end{Highlighting}
+\end{Shaded}
+
+Finally, we can cover variance. Variance is the measure of distance between two numbers. This statistic is often used to measure how spread out your data is and can be used to determine your model's accuracy. Typically, a higher variance means your model is inaccurate. So, when building models and reviewing your summary statistics, you want your variance to be as low as possible. There is a var() function that will find the variance of a variable for you, however typically you will create a confusion matrix (discussed in a later section) that will help you determine the variance, and thus accuracy of your model.
+
+\hypertarget{anscombes-quartet}{%
+\subsection{Anscombe's Quartet}\label{anscombes-quartet}}
+
+You may be asking now, why bother visualizing data if I have all these numbers that will tell me what I need to know about my data? You are correct in saying that statistical data is very useful, and in many cases essential, however visualization is equally as important. Anscombe's Quartet is a statistical phenomenon where four sets of data have very similar statistical properties, but very are completely different when graphed. Let's take a look at the data:
+
+\begin{verbatim}
+#>    x1 x2 x3 x4    y1   y2    y3    y4
+#> 1  10 10 10  8  8.04 9.14  7.46  6.58
+#> 2   8  8  8  8  6.95 8.14  6.77  5.76
+#> 3  13 13 13  8  7.58 8.74 12.74  7.71
+#> 4   9  9  9  8  8.81 8.77  7.11  8.84
+#> 5  11 11 11  8  8.33 9.26  7.81  8.47
+#> 6  14 14 14  8  9.96 8.10  8.84  7.04
+#> 7   6  6  6  8  7.24 6.13  6.08  5.25
+#> 8   4  4  4 19  4.26 3.10  5.39 12.50
+#> 9  12 12 12  8 10.84 9.13  8.15  5.56
+#> 10  7  7  7  8  4.82 7.26  6.42  7.91
+#> 11  5  5  5  8  5.68 4.74  5.73  6.89
+\end{verbatim}
+
+\begin{verbatim}
+#>                    x1        x2        x3        x4
+#> nobs        11.000000 11.000000 11.000000 11.000000
+#> NAs          0.000000  0.000000  0.000000  0.000000
+#> Minimum      4.000000  4.000000  4.000000  8.000000
+#> Maximum     14.000000 14.000000 14.000000 19.000000
+#> 1. Quartile  6.500000  6.500000  6.500000  8.000000
+#> 3. Quartile 11.500000 11.500000 11.500000  8.000000
+#> Mean         9.000000  9.000000  9.000000  9.000000
+#> Median       9.000000  9.000000  9.000000  8.000000
+#> Sum         99.000000 99.000000 99.000000 99.000000
+#> SE Mean      1.000000  1.000000  1.000000  1.000000
+#> LCL Mean     6.771861  6.771861  6.771861  6.771861
+#> UCL Mean    11.228139 11.228139 11.228139 11.228139
+#> Variance    11.000000 11.000000 11.000000 11.000000
+#> Stdev        3.316625  3.316625  3.316625  3.316625
+#> Skewness     0.000000  0.000000  0.000000  2.466911
+#> Kurtosis    -1.528926 -1.528926 -1.528926  4.520661
+#>                    y1        y2        y3        y4
+#> nobs        11.000000 11.000000 11.000000 11.000000
+#> NAs          0.000000  0.000000  0.000000  0.000000
+#> Minimum      4.260000  3.100000  5.390000  5.250000
+#> Maximum     10.840000  9.260000 12.740000 12.500000
+#> 1. Quartile  6.315000  6.695000  6.250000  6.170000
+#> 3. Quartile  8.570000  8.950000  7.980000  8.190000
+#> Mean         7.500909  7.500909  7.500000  7.500909
+#> Median       7.580000  8.140000  7.110000  7.040000
+#> Sum         82.510000 82.510000 82.500000 82.510000
+#> SE Mean      0.612541  0.612568  0.612196  0.612242
+#> LCL Mean     6.136083  6.136024  6.135943  6.136748
+#> UCL Mean     8.865735  8.865795  8.864057  8.865070
+#> Variance     4.127269  4.127629  4.122620  4.123249
+#> Stdev        2.031568  2.031657  2.030424  2.030579
+#> Skewness    -0.048374 -0.978693  1.380120  1.120774
+#> Kurtosis    -1.199123 -0.514319  1.240044  0.628751
+\end{verbatim}
+
+As you can see from the table, the summary statistics for the four tables look very similar, however let's graph these and see what kind of visualizations we get.
+
+\includegraphics{13-arithmetic_files/figure-latex/unnamed-chunk-23-1.pdf}
+
+Pretty rad right? So yes, statistical data is vital, however it should not be the only thing you look at, sometimes a visualization can help you understand the data more! Later in this book, and in the upper level data analytics courses, we will cover visualizations more and how they can be useful.
+
+\hypertarget{exercises-1}{%
+\section{Exercises}\label{exercises-1}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Define
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x}\OtherTok{\textless{}{-}}\FunctionTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{6}\NormalTok{)}
+\NormalTok{y}\OtherTok{\textless{}{-}}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{,}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Decide what the result will be of the following:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    length(x)
+  \item
+    sum(x)
+  \item
+    sum(x\^{}2)
+  \item
+    x+y
+  \item
+    x*y
+  \item
+    x-2
+  \item
+    x\^{}2
+  \end{itemize}
+\item
+  Use R to check your answers.
+\item
+  Decide what the following sequences are and use R to check your answers:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    7:11
+  \item
+    seq(2,9)
+  \item
+    seq(4,10,by=2)
+  \item
+    seq(3,30,length=10)
+  \item
+    seq(6,-4,by=-2)
+  \end{itemize}
+\item
+  Determine what the result will be of the following R expressions, and then use R to check if you are right:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    rep(2,4)
+  \item
+    rep(c(1,2),4)
+  \item
+    rep(c(1,2),c(4,4))
+  \item
+    rep(1:4,4)
+  \item
+    rep(1:4,rep(3,4))
+  \end{itemize}
+\item
+  Use the rep function to define simply the following vectors in R.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    6,6,6,6,6,6
+  \item
+    5,8,5,8,5,8,5,8
+  \item
+    5,5,5,5,8,8,8,8
+  \end{itemize}
+\end{enumerate}
+
+\hypertarget{summaries-and-subscripting}{%
+\chapter{Summaries and Subscripting}\label{summaries-and-subscripting}}
+
+\hypertarget{introduction-2}{%
+\section{Introduction}\label{introduction-2}}
+
+Let's suppose we've collected some data from an experiment and stored them in an object x:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x}\OtherTok{\textless{}{-}}\FunctionTok{c}\NormalTok{(}\FloatTok{7.5}\NormalTok{,}\FloatTok{8.2}\NormalTok{,}\FloatTok{3.1}\NormalTok{,}\FloatTok{5.6}\NormalTok{,}\FloatTok{8.2}\NormalTok{,}\FloatTok{9.3}\NormalTok{,}\FloatTok{6.5}\NormalTok{,}\FloatTok{7.0}\NormalTok{,}\FloatTok{9.3}\NormalTok{,}\FloatTok{1.2}\NormalTok{,}\FloatTok{14.5}\NormalTok{,}\FloatTok{6.2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Some simple summary statistics of these data can be produced:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{mean}\NormalTok{(x)}
+\CommentTok{\#\textgreater{} [1] 7.216667}
+\FunctionTok{var}\NormalTok{(x)}
+\CommentTok{\#\textgreater{} [1] 11.00879}
+\FunctionTok{sd}\NormalTok{(x)}
+\CommentTok{\#\textgreater{} [1] 3.317949}
+\FunctionTok{summary}\NormalTok{(x)}
+\CommentTok{\#\textgreater{}    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. }
+\CommentTok{\#\textgreater{}   1.200   6.050   7.250   7.217   8.475  14.500}
+\end{Highlighting}
+\end{Shaded}
+
+which should all be self explanatory.
+
+It may be, however, that we subsequently learn that the first 6 data points correspond to measurements made on one machine, and the second six on another machine.
+
+This might lead us to want to summarize the two sets of data separately, so we would need to extract from
+x the two relevant subvectors. This is achieved by subscripting:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x[}\DecValTok{1}\SpecialCharTok{:}\DecValTok{6}\NormalTok{]}
+\CommentTok{\#\textgreater{} [1] 7.5 8.2 3.1 5.6 8.2 9.3}
+\NormalTok{x[}\DecValTok{7}\SpecialCharTok{:}\DecValTok{12}\NormalTok{]}
+\CommentTok{\#\textgreater{} [1]  6.5  7.0  9.3  1.2 14.5  6.2}
+\FunctionTok{summary}\NormalTok{(x[}\DecValTok{1}\SpecialCharTok{:}\DecValTok{6}\NormalTok{])}
+\CommentTok{\#\textgreater{}    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. }
+\CommentTok{\#\textgreater{}   3.100   6.075   7.850   6.983   8.200   9.300}
+\FunctionTok{summary}\NormalTok{(x[}\DecValTok{7}\SpecialCharTok{:}\DecValTok{12}\NormalTok{])}
+\CommentTok{\#\textgreater{}    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. }
+\CommentTok{\#\textgreater{}   1.200   6.275   6.750   7.450   8.725  14.500}
+\end{Highlighting}
+\end{Shaded}
+
+Other subsets can be created in the obvious way. For example:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x[}\FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{9}\NormalTok{)]}
+\CommentTok{\#\textgreater{} [1] 8.2 5.6 9.3}
+\end{Highlighting}
+\end{Shaded}
+
+Negative integers can be used to exclude particular elements. For example
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x[}\SpecialCharTok{{-}}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{6}\NormalTok{)]}
+\CommentTok{\#\textgreater{} [1]  6.5  7.0  9.3  1.2 14.5  6.2}
+\end{Highlighting}
+\end{Shaded}
+
+has the same effect as
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x[}\DecValTok{7}\SpecialCharTok{:}\DecValTok{12}\NormalTok{]}
+\CommentTok{\#\textgreater{} [1]  6.5  7.0  9.3  1.2 14.5  6.2}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{exercises-summaries-and-subscripting}{%
+\section{Exercises (Summaries and Subscripting)}\label{exercises-summaries-and-subscripting}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  If x\textless- c(5,9,2,3,4,6,7,0,8,12,2,9) decide what each of the following is and use R to
+  check your answers:
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\tightlist
+\item
+  x{[}2{]}
+\item
+  x{[}2:4{]}
+\item
+  x{[}c(2,3,6){]}
+\item
+  x{[}c(1:5,10:12){]}
+\item
+  x{[}-(10:12){]}
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  The data y\textless-c(33,44,29,16,25,45,33,19,54,22,21,49,11,24,56) contain sales of milk
+  in gallons for 5 days in three different shops (the frst 3 values are for shops 1,2 and 3 on
+  Monday, etc.) Produce a statistical summary of the sales for each day of the week and also
+  for each shop.
+\end{enumerate}
+
+\hypertarget{matrices}{%
+\chapter{Matrices}\label{matrices}}
+
+\hypertarget{cbind-and-rbind}{%
+\section{CBind and RBind}\label{cbind-and-rbind}}
+
+Matrices can be created in R in a variety of ways. Perhaps the simplest is to create the columns (just a couple of objects) and then glue them together with the command cbind. For example,
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x}\OtherTok{\textless{}{-}}\FunctionTok{c}\NormalTok{(}\DecValTok{5}\NormalTok{,}\DecValTok{7}\NormalTok{,}\DecValTok{9}\NormalTok{)}
+\NormalTok{y}\OtherTok{\textless{}{-}}\FunctionTok{c}\NormalTok{(}\DecValTok{6}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{)}
+\NormalTok{z}\OtherTok{\textless{}{-}}\FunctionTok{cbind}\NormalTok{(x,y)}
+\NormalTok{z}
+\CommentTok{\#\textgreater{}      x y}
+\CommentTok{\#\textgreater{} [1,] 5 6}
+\CommentTok{\#\textgreater{} [2,] 7 3}
+\CommentTok{\#\textgreater{} [3,] 9 4}
+\end{Highlighting}
+\end{Shaded}
+
+The dimension of a matrix can be checked with the dim command:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{dim}\NormalTok{(z)}
+\CommentTok{\#\textgreater{} [1] 3 2}
+\end{Highlighting}
+\end{Shaded}
+
+{[}1{]} 3 2 i.e., three rows and two columns. There is a similar command, rbind, for building matrices by gluing rows together.
+
+The functions cbind and rbind can also be applied to matrices themselves (provided the dimensions match) to form larger matrices. For example,
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{rbind}\NormalTok{(z,z)}
+\CommentTok{\#\textgreater{}      x y}
+\CommentTok{\#\textgreater{} [1,] 5 6}
+\CommentTok{\#\textgreater{} [2,] 7 3}
+\CommentTok{\#\textgreater{} [3,] 9 4}
+\CommentTok{\#\textgreater{} [4,] 5 6}
+\CommentTok{\#\textgreater{} [5,] 7 3}
+\CommentTok{\#\textgreater{} [6,] 9 4}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{review-questions}{%
+\subsection{Review Questions}\label{review-questions}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\item
+  Create a matrix made up of two columns showing the GPAs and number of hours studied by seven students.
+\item
+  Recreate the following matrix in R:
+\end{enumerate}
+
+\begin{verbatim}
+#>      x   y
+#> [1,] 5 3.4
+#> [2,] 7 4.0
+#> [3,] 2 2.5
+#> [4,] 3 3.2
+#> [5,] 8 2.8
+#> [6,] 4 3.1
+#> [7,] 2 3.6
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Using the appropriate function, combine the two matrices you created above.
+\end{enumerate}
+
+\hypertarget{matrix-function}{%
+\section{Matrix Function}\label{matrix-function}}
+
+Matrices can also be built by explicit construction via the function matrix. For example,
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{z}\OtherTok{\textless{}{-}}\FunctionTok{matrix}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\DecValTok{5}\NormalTok{,}\DecValTok{7}\NormalTok{,}\DecValTok{9}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{),}\AttributeTok{nrow=}\DecValTok{3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+results in a matrix z identical to z above. Notice that the dimension of the matrix is determined by the size of the vector and the requirement that the number of rows is 3, as specified by the argument nrow=3. As an alternative we could have specified the number of columns with the argument ncol=2 (obviously, it is unnecessary to give both). Notice that the matrix is `flled up' column-wise. If instead you wish to fill up row-wise, add the option byrow=T. For example,
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{z}\OtherTok{\textless{}{-}}\FunctionTok{matrix}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\DecValTok{5}\NormalTok{,}\DecValTok{7}\NormalTok{,}\DecValTok{9}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{),}\AttributeTok{nr=}\DecValTok{3}\NormalTok{,}\AttributeTok{byrow=}\NormalTok{T)}
+\NormalTok{z}
+\CommentTok{\#\textgreater{}      [,1] [,2]}
+\CommentTok{\#\textgreater{} [1,]    5    7}
+\CommentTok{\#\textgreater{} [2,]    9    6}
+\CommentTok{\#\textgreater{} [3,]    3    4}
+\end{Highlighting}
+\end{Shaded}
+
+Notice that the argument nrow has been abbreviated to nr. Such abbreviations are always possible for function arguments provided it induces no ambiguity - if in doubt always use the full argument name.
+
+As usual, R will try to interpret operations on matrices in a natural way. For example, with z as above, and
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{y}\OtherTok{\textless{}{-}}\FunctionTok{matrix}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{9}\NormalTok{,}\DecValTok{5}\NormalTok{,}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{),}\AttributeTok{nrow=}\DecValTok{3}\NormalTok{,}\AttributeTok{byrow=}\NormalTok{T)}
+\NormalTok{y}
+\CommentTok{\#\textgreater{}      [,1] [,2]}
+\CommentTok{\#\textgreater{} [1,]    1    3}
+\CommentTok{\#\textgreater{} [2,]    0    9}
+\CommentTok{\#\textgreater{} [3,]    5   {-}1}
+\end{Highlighting}
+\end{Shaded}
+
+we obtain
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{y}\SpecialCharTok{+}\NormalTok{z}
+\CommentTok{\#\textgreater{}      [,1] [,2]}
+\CommentTok{\#\textgreater{} [1,]    6   10}
+\CommentTok{\#\textgreater{} [2,]    9   15}
+\CommentTok{\#\textgreater{} [3,]    8    3}
+\end{Highlighting}
+\end{Shaded}
+
+and
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{y}\SpecialCharTok{*}\NormalTok{z}
+\CommentTok{\#\textgreater{}      [,1] [,2]}
+\CommentTok{\#\textgreater{} [1,]    5   21}
+\CommentTok{\#\textgreater{} [2,]    0   54}
+\CommentTok{\#\textgreater{} [3,]   15   {-}4}
+\end{Highlighting}
+\end{Shaded}
+
+Other useful functions on matrices are to transpose a matrix:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{z}
+\CommentTok{\#\textgreater{}      [,1] [,2]}
+\CommentTok{\#\textgreater{} [1,]    5    7}
+\CommentTok{\#\textgreater{} [2,]    9    6}
+\CommentTok{\#\textgreater{} [3,]    3    4}
+\FunctionTok{t}\NormalTok{(z)}
+\CommentTok{\#\textgreater{}      [,1] [,2] [,3]}
+\CommentTok{\#\textgreater{} [1,]    5    9    3}
+\CommentTok{\#\textgreater{} [2,]    7    6    4}
+\end{Highlighting}
+\end{Shaded}
+
+As with vectors it is useful to be able to extract sub-components of matrices. In this case, wemay wish to pick out individual elements, rows or columns. As before, the {[} {]} notation is used to subscript. The following examples should make things clear:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{z[}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{]}
+\CommentTok{\#\textgreater{} [1] 5}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{z[}\FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{),}\DecValTok{2}\NormalTok{]}
+\CommentTok{\#\textgreater{} [1] 6 4}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{z[,}\DecValTok{2}\NormalTok{]}
+\CommentTok{\#\textgreater{} [1] 7 6 4}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{quote}
+\end{quote}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{z[}\DecValTok{1}\SpecialCharTok{:}\DecValTok{2}\NormalTok{,]}
+\CommentTok{\#\textgreater{}      [,1] [,2]}
+\CommentTok{\#\textgreater{} [1,]    5    7}
+\CommentTok{\#\textgreater{} [2,]    9    6}
+\end{Highlighting}
+\end{Shaded}
+
+So, in particular, it is necessary to specify which rows and columns are required, whilst omitting
+the integer for either dimension implies that every element in that dimension is selected.
+
+\hypertarget{exercises-2}{%
+\section{Exercises}\label{exercises-2}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Create this matrix in R
+\end{enumerate}
+
+\begin{verbatim}
+#>      [,1] [,2] [,3] [,4] [,5]
+#> [1,]    1    7    8   11   -5
+#> [2,]    3    8    6    3   -9
+#> [3,]    0   11   14   14   14
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Create in R these matrices:
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x}
+\CommentTok{\#\textgreater{}      [,1] [,2]}
+\CommentTok{\#\textgreater{} [1,]    1    7}
+\CommentTok{\#\textgreater{} [2,]    8   11}
+\CommentTok{\#\textgreater{} [3,]    5    9}
+\NormalTok{y}
+\CommentTok{\#\textgreater{}      [,1] [,2]}
+\CommentTok{\#\textgreater{} [1,]    6    8}
+\CommentTok{\#\textgreater{} [2,]    2    1}
+\CommentTok{\#\textgreater{} [3,]    1   {-}7}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Calculate the following and check your answers in R:
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\tightlist
+\item
+  2*x
+\item
+  x*x
+\item
+  t(y)
+\end{enumerate}
+
+\begin{verbatim}
+#>      [,1] [,2]
+#> [1,]    2   14
+#> [2,]   16   22
+#> [3,]   10   18
+#>      [,1] [,2]
+#> [1,]    1   49
+#> [2,]   64  121
+#> [3,]   25   81
+#>      [,1] [,2] [,3]
+#> [1,]    6    2    1
+#> [2,]    8    1   -7
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  With x and y as above, calculate the effect of the following subscript operations and check
+  your answers in R.
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\tightlist
+\item
+  x{[}1,{]}
+\item
+  x{[}2,{]}
+\item
+  x{[},2{]}
+\item
+  y{[}1,2{]}
+\item
+  y{[},2:3{]}
+\end{enumerate}
+
+\hypertarget{preloaded-data-and-mtcars}{%
+\chapter{\texorpdfstring{Preloaded data and \texttt{mtcars}}{Preloaded data and mtcars}}\label{preloaded-data-and-mtcars}}
+
+R comes with several built-in data sets, \textbf{which are generally used as demo data for playing with R functions.}
+
+To see the datasets type:
+
+\texttt{data()}
+
+\hypertarget{practicing-with-mtcars-data-set}{%
+\section{\texorpdfstring{Practicing with \texttt{mtcars} data set}{Practicing with mtcars data set}}\label{practicing-with-mtcars-data-set}}
+
+This demonstration is based on the datasset \texttt{mtcars}.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Read in \texttt{mtcars}
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{data}\NormalTok{(mtcars)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  View first few rows and last few rows of mtcars dataframe using functions \texttt{head()} and \texttt{tail()}
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{head}\NormalTok{(mtcars)}
+\CommentTok{\#\textgreater{}                    mpg cyl disp  hp drat    wt  qsec vs am}
+\CommentTok{\#\textgreater{} Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1}
+\CommentTok{\#\textgreater{} Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1}
+\CommentTok{\#\textgreater{} Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1}
+\CommentTok{\#\textgreater{} Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0}
+\CommentTok{\#\textgreater{} Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0}
+\CommentTok{\#\textgreater{} Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0}
+\CommentTok{\#\textgreater{}                   gear carb}
+\CommentTok{\#\textgreater{} Mazda RX4            4    4}
+\CommentTok{\#\textgreater{} Mazda RX4 Wag        4    4}
+\CommentTok{\#\textgreater{} Datsun 710           4    1}
+\CommentTok{\#\textgreater{} Hornet 4 Drive       3    1}
+\CommentTok{\#\textgreater{} Hornet Sportabout    3    2}
+\CommentTok{\#\textgreater{} Valiant              3    1}
+\FunctionTok{tail}\NormalTok{(mtcars)}
+\CommentTok{\#\textgreater{}                 mpg cyl  disp  hp drat    wt qsec vs am}
+\CommentTok{\#\textgreater{} Porsche 914{-}2  26.0   4 120.3  91 4.43 2.140 16.7  0  1}
+\CommentTok{\#\textgreater{} Lotus Europa   30.4   4  95.1 113 3.77 1.513 16.9  1  1}
+\CommentTok{\#\textgreater{} Ford Pantera L 15.8   8 351.0 264 4.22 3.170 14.5  0  1}
+\CommentTok{\#\textgreater{} Ferrari Dino   19.7   6 145.0 175 3.62 2.770 15.5  0  1}
+\CommentTok{\#\textgreater{} Maserati Bora  15.0   8 301.0 335 3.54 3.570 14.6  0  1}
+\CommentTok{\#\textgreater{} Volvo 142E     21.4   4 121.0 109 4.11 2.780 18.6  1  1}
+\CommentTok{\#\textgreater{}                gear carb}
+\CommentTok{\#\textgreater{} Porsche 914{-}2     5    2}
+\CommentTok{\#\textgreater{} Lotus Europa      5    2}
+\CommentTok{\#\textgreater{} Ford Pantera L    5    4}
+\CommentTok{\#\textgreater{} Ferrari Dino      5    6}
+\CommentTok{\#\textgreater{} Maserati Bora     5    8}
+\CommentTok{\#\textgreater{} Volvo 142E        4    2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Some info about mtcars dataframe using function \texttt{colnames()}, \texttt{rownames()}, \texttt{summary()}and \texttt{dim()}
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{colnames}\NormalTok{(mtcars)}
+\CommentTok{\#\textgreater{}  [1] "mpg"  "cyl"  "disp" "hp"   "drat" "wt"   "qsec" "vs"  }
+\CommentTok{\#\textgreater{}  [9] "am"   "gear" "carb"}
+\FunctionTok{rownames}\NormalTok{(mtcars)}
+\CommentTok{\#\textgreater{}  [1] "Mazda RX4"           "Mazda RX4 Wag"      }
+\CommentTok{\#\textgreater{}  [3] "Datsun 710"          "Hornet 4 Drive"     }
+\CommentTok{\#\textgreater{}  [5] "Hornet Sportabout"   "Valiant"            }
+\CommentTok{\#\textgreater{}  [7] "Duster 360"          "Merc 240D"          }
+\CommentTok{\#\textgreater{}  [9] "Merc 230"            "Merc 280"           }
+\CommentTok{\#\textgreater{} [11] "Merc 280C"           "Merc 450SE"         }
+\CommentTok{\#\textgreater{} [13] "Merc 450SL"          "Merc 450SLC"        }
+\CommentTok{\#\textgreater{} [15] "Cadillac Fleetwood"  "Lincoln Continental"}
+\CommentTok{\#\textgreater{} [17] "Chrysler Imperial"   "Fiat 128"           }
+\CommentTok{\#\textgreater{} [19] "Honda Civic"         "Toyota Corolla"     }
+\CommentTok{\#\textgreater{} [21] "Toyota Corona"       "Dodge Challenger"   }
+\CommentTok{\#\textgreater{} [23] "AMC Javelin"         "Camaro Z28"         }
+\CommentTok{\#\textgreater{} [25] "Pontiac Firebird"    "Fiat X1{-}9"          }
+\CommentTok{\#\textgreater{} [27] "Porsche 914{-}2"       "Lotus Europa"       }
+\CommentTok{\#\textgreater{} [29] "Ford Pantera L"      "Ferrari Dino"       }
+\CommentTok{\#\textgreater{} [31] "Maserati Bora"       "Volvo 142E"}
+\FunctionTok{summary}\NormalTok{(mtcars)}
+\CommentTok{\#\textgreater{}       mpg             cyl             disp      }
+\CommentTok{\#\textgreater{}  Min.   :10.40   Min.   :4.000   Min.   : 71.1  }
+\CommentTok{\#\textgreater{}  1st Qu.:15.43   1st Qu.:4.000   1st Qu.:120.8  }
+\CommentTok{\#\textgreater{}  Median :19.20   Median :6.000   Median :196.3  }
+\CommentTok{\#\textgreater{}  Mean   :20.09   Mean   :6.188   Mean   :230.7  }
+\CommentTok{\#\textgreater{}  3rd Qu.:22.80   3rd Qu.:8.000   3rd Qu.:326.0  }
+\CommentTok{\#\textgreater{}  Max.   :33.90   Max.   :8.000   Max.   :472.0  }
+\CommentTok{\#\textgreater{}        hp             drat             wt       }
+\CommentTok{\#\textgreater{}  Min.   : 52.0   Min.   :2.760   Min.   :1.513  }
+\CommentTok{\#\textgreater{}  1st Qu.: 96.5   1st Qu.:3.080   1st Qu.:2.581  }
+\CommentTok{\#\textgreater{}  Median :123.0   Median :3.695   Median :3.325  }
+\CommentTok{\#\textgreater{}  Mean   :146.7   Mean   :3.597   Mean   :3.217  }
+\CommentTok{\#\textgreater{}  3rd Qu.:180.0   3rd Qu.:3.920   3rd Qu.:3.610  }
+\CommentTok{\#\textgreater{}  Max.   :335.0   Max.   :4.930   Max.   :5.424  }
+\CommentTok{\#\textgreater{}       qsec             vs               am        }
+\CommentTok{\#\textgreater{}  Min.   :14.50   Min.   :0.0000   Min.   :0.0000  }
+\CommentTok{\#\textgreater{}  1st Qu.:16.89   1st Qu.:0.0000   1st Qu.:0.0000  }
+\CommentTok{\#\textgreater{}  Median :17.71   Median :0.0000   Median :0.0000  }
+\CommentTok{\#\textgreater{}  Mean   :17.85   Mean   :0.4375   Mean   :0.4062  }
+\CommentTok{\#\textgreater{}  3rd Qu.:18.90   3rd Qu.:1.0000   3rd Qu.:1.0000  }
+\CommentTok{\#\textgreater{}  Max.   :22.90   Max.   :1.0000   Max.   :1.0000  }
+\CommentTok{\#\textgreater{}       gear            carb      }
+\CommentTok{\#\textgreater{}  Min.   :3.000   Min.   :1.000  }
+\CommentTok{\#\textgreater{}  1st Qu.:3.000   1st Qu.:2.000  }
+\CommentTok{\#\textgreater{}  Median :4.000   Median :2.000  }
+\CommentTok{\#\textgreater{}  Mean   :3.688   Mean   :2.812  }
+\CommentTok{\#\textgreater{}  3rd Qu.:4.000   3rd Qu.:4.000  }
+\CommentTok{\#\textgreater{}  Max.   :5.000   Max.   :8.000}
+\FunctionTok{dim}\NormalTok{(mtcars)}
+\CommentTok{\#\textgreater{} [1] 32 11}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  To calculate the variance of weight:
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{var}\NormalTok{(mtcars}\SpecialCharTok{$}\NormalTok{wt)}
+\CommentTok{\#\textgreater{} [1] 0.957379}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  To get the histogram of hp, the code below will produce a histogram:
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{hist}\NormalTok{(mtcars}\SpecialCharTok{$}\NormalTok{hp)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{16-mtcars_files/figure-latex/unnamed-chunk-5-1.pdf}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  To calculate the quantiles by percent:
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{quantile}\NormalTok{(mtcars}\SpecialCharTok{$}\NormalTok{wt, }\FunctionTok{c}\NormalTok{(.}\DecValTok{2}\NormalTok{, .}\DecValTok{4}\NormalTok{, .}\DecValTok{8}\NormalTok{))}
+\CommentTok{\#\textgreater{}   20\%   40\%   80\% }
+\CommentTok{\#\textgreater{} 2.349 3.158 3.770}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{excerises-for-you}{%
+\section{Excerises for you:}\label{excerises-for-you}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Find the minimum and maximum value of \texttt{mpg}
+\item
+  Find the mean and standard deviation of data variable \texttt{mpg}
+\item
+  What variable has a 3rd quartile value of 180.0?
+\item
+  Create and explain what this means
+\end{enumerate}
+
+\includegraphics{16-mtcars_files/figure-latex/unnamed-chunk-7-1.pdf}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  Create and explain what this means
+\end{enumerate}
+
+\begin{verbatim}
+#>             mpg        cyl       disp         hp
+#> mpg   1.0000000 -0.8521620 -0.8475514 -0.7761684
+#> cyl  -0.8521620  1.0000000  0.9020329  0.8324475
+#> disp -0.8475514  0.9020329  1.0000000  0.7909486
+#> hp   -0.7761684  0.8324475  0.7909486  1.0000000
+#> drat  0.6811719 -0.6999381 -0.7102139 -0.4487591
+#> wt   -0.8676594  0.7824958  0.8879799  0.6587479
+#> qsec  0.4186840 -0.5912421 -0.4336979 -0.7082234
+#> vs    0.6640389 -0.8108118 -0.7104159 -0.7230967
+#> am    0.5998324 -0.5226070 -0.5912270 -0.2432043
+#> gear  0.4802848 -0.4926866 -0.5555692 -0.1257043
+#> carb -0.5509251  0.5269883  0.3949769  0.7498125
+#>             drat         wt        qsec         vs
+#> mpg   0.68117191 -0.8676594  0.41868403  0.6640389
+#> cyl  -0.69993811  0.7824958 -0.59124207 -0.8108118
+#> disp -0.71021393  0.8879799 -0.43369788 -0.7104159
+#> hp   -0.44875912  0.6587479 -0.70822339 -0.7230967
+#> drat  1.00000000 -0.7124406  0.09120476  0.4402785
+#> wt   -0.71244065  1.0000000 -0.17471588 -0.5549157
+#> qsec  0.09120476 -0.1747159  1.00000000  0.7445354
+#> vs    0.44027846 -0.5549157  0.74453544  1.0000000
+#> am    0.71271113 -0.6924953 -0.22986086  0.1683451
+#> gear  0.69961013 -0.5832870 -0.21268223  0.2060233
+#> carb -0.09078980  0.4276059 -0.65624923 -0.5696071
+#>               am       gear        carb
+#> mpg   0.59983243  0.4802848 -0.55092507
+#> cyl  -0.52260705 -0.4926866  0.52698829
+#> disp -0.59122704 -0.5555692  0.39497686
+#> hp   -0.24320426 -0.1257043  0.74981247
+#> drat  0.71271113  0.6996101 -0.09078980
+#> wt   -0.69249526 -0.5832870  0.42760594
+#> qsec -0.22986086 -0.2126822 -0.65624923
+#> vs    0.16834512  0.2060233 -0.56960714
+#> am    1.00000000  0.7940588  0.05753435
+#> gear  0.79405876  1.0000000  0.27407284
+#> carb  0.05753435  0.2740728  1.00000000
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  Create a variable called \texttt{efficiency} which is mpg divided by weight. Which car has the max \texttt{efficiency} and what is this value?
+\item
+  Which variable in this dataset has the greatest standard deviation?
+\item
+  How many cars have 3 gears?
+\item
+  How many cars get more than 17 mpg?
+\end{enumerate}
+
+\hypertarget{more-simple-data-wrangling}{%
+\chapter{More simple data wrangling}\label{more-simple-data-wrangling}}
+
+\hypertarget{a-nice-fun-little-matrix-for-you}{%
+\section{\texorpdfstring{a nice, fun little matrix for \textbf{you}}{a nice, fun little matrix for you}}\label{a-nice-fun-little-matrix-for-you}}
+
+\begin{verbatim}
+#>      [,1] [,2] [,3] [,4] [,5]
+#> [1,]    1    4    7   10   13
+#> [2,]    2    5    8   11   14
+#> [3,]    3    6    9   12   15
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Write the code that creates this matrix:
+\item
+  Write DIFFERENT code that creates this matrix in an alternate way:
+\item
+  In the matrix above, what does \texttt{{[},4{]}} mean?
+\item
+  What code would return the value in the 3rd column and 3rd row?
+\item
+  What single line of would give you the average of the all the numbers in columns 2, 4, and 5 and in rows 1 and 3?
+\item
+  turn \texttt{x} into a data frame.
+\item
+  How do you \textbf{know} you have turned \texttt{x} into a data frame?
+\end{enumerate}
+
+\hypertarget{more-fun-this-class-is-really-awesome-isnt-it}{%
+\section{\texorpdfstring{More fun (this class is really \textbf{awesome} isn't it?)}{More fun (this class is really awesome isn't it?)}}\label{more-fun-this-class-is-really-awesome-isnt-it}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df}
+\CommentTok{\#\textgreater{}    X1 X2 X3 X4 X5 X6 X7 X8 X9 X10}
+\CommentTok{\#\textgreater{} 1   1 11 21 31 41 51 61 71 81  91}
+\CommentTok{\#\textgreater{} 2   2 12 22 32 42 52 62 72 82  92}
+\CommentTok{\#\textgreater{} 3   3 13 23 33 43 53 63 73 83  93}
+\CommentTok{\#\textgreater{} 4   4 14 24 34 44 54 64 74 84  94}
+\CommentTok{\#\textgreater{} 5   5 15 25 35 45 55 65 75 85  95}
+\CommentTok{\#\textgreater{} 6   6 16 26 36 46 56 66 76 86  96}
+\CommentTok{\#\textgreater{} 7   7 17 27 37 47 57 67 77 87  97}
+\CommentTok{\#\textgreater{} 8   8 18 28 38 48 58 68 78 88  98}
+\CommentTok{\#\textgreater{} 9   9 19 29 39 49 59 69 79 89  99}
+\CommentTok{\#\textgreater{} 10 10 20 30 40 50 60 70 80 90 100}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Consider the dataframe above called \texttt{df}. What would running this code return \texttt{sum(df{[}7,7:10{]})}
+\item
+  How can you tell if an object in R is a dataframe?
+\item
+  How could you create the dataframe above called \texttt{df}?
+\item
+  What code would return the average of row 2 of \texttt{df}?
+\item
+  Consider \texttt{mtcars} dataset that comes preloaded with R that looks like this:
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{head}\NormalTok{(mtcars)}
+\CommentTok{\#\textgreater{}                    mpg cyl disp  hp drat    wt  qsec vs am}
+\CommentTok{\#\textgreater{} Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1}
+\CommentTok{\#\textgreater{} Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1}
+\CommentTok{\#\textgreater{} Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1}
+\CommentTok{\#\textgreater{} Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0}
+\CommentTok{\#\textgreater{} Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0}
+\CommentTok{\#\textgreater{} Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0}
+\CommentTok{\#\textgreater{}                   gear carb}
+\CommentTok{\#\textgreater{} Mazda RX4            4    4}
+\CommentTok{\#\textgreater{} Mazda RX4 Wag        4    4}
+\CommentTok{\#\textgreater{} Datsun 710           4    1}
+\CommentTok{\#\textgreater{} Hornet 4 Drive       3    1}
+\CommentTok{\#\textgreater{} Hornet Sportabout    3    2}
+\CommentTok{\#\textgreater{} Valiant              3    1}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  Why do I get this error when I run the code below: \texttt{Error\ in\ plot(hp,\ mpg)\ :\ object\ \textquotesingle{}hp\textquotesingle{}\ not\ found}?
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(hp,mpg)}
+\end{Highlighting}
+\end{Shaded}
+
+\texttt{Error\ in\ plot(hp,\ mpg)\ :\ object\ \textquotesingle{}hp\textquotesingle{}\ not\ found}
+
+\begin{quote}
+Bonus: What is a topic that you find confusing at this point in class?
+\end{quote}
+
+\hypertarget{gdh-ice-cream}{%
+\chapter{GDH Ice Cream}\label{gdh-ice-cream}}
+
+\hypertarget{problem-introduction}{%
+\section{Problem Introduction}\label{problem-introduction}}
+
+GDH provides ice cream for its wonderful customers. I LOVE GDH. Do you love it as much as me (let's discuss)?
+
+In the last three years GDH used ice cream, in pounds, by month, as shown in the attached file.
+
+\begin{verbatim}
+#>  Month.Name year1 year2 year3
+#>         Jan    60    67    64
+#>         Feb    68    67    72
+#>         Mar    83    62    61
+#>         Apr   102    95   107
+#>         May    95   105   101
+#>         Jun    57    89    75
+#>         Jul    61    57    81
+#>         Aug   109   109   104
+#>         Sep    56    86    88
+#>         Oct    53    53    65
+#>         Nov    74    72    72
+#>         Dec    73    64    65
+\end{verbatim}
+
+\hypertarget{assignment}{%
+\section{Assignment}\label{assignment}}
+
+Please answer the following questions \emph{using R}:.
+
+GDH provides ice cream cones for its customers. In the last three years GDH used ice cream, in pounds, by month, as shown in the attached file.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  In R, create the above data frame and name it ice.cream
+\item
+  What is another way you could have created the same data set?
+\item
+  Using R, what is the mean using for the months of Feb and Oct?
+\item
+  Create a chart showing ice cream use over time.
+\item
+  Which year used the most ice cream?
+\item
+  Which month has the highest standard deviation of ice cream use?
+\item
+  Which year has the highest standard deviation of ice cream use?
+\item
+  Also, you May want to check out this link to look at something called dataframes that may help with this assignment (but is not absolutely necessary) \url{https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/data.frame}
+\item
+  Can you transpose your matrix?
+\item
+  Can you add meaningful row names and column names?
+\end{enumerate}
+
+\#Machine Learning?
+
+\begin{quote}
+Have we talked about the Target Pregnancy Story yet?
+\end{quote}
+
+\textbf{How Target Figured Out A Teen Girl Was Pregnant Before Her Father Did}
+
+This is where the fun stuff begins! What we have learned up to this point has barely scratched the surface of what R is capable of. In the world of data science, R is used for three primary purposes, those purposes are \textbf{(1) data transformation, (2) data wrangling, (3) machine learning}. The other two purposes have been covered in earlier chapters of this book. The reason we covered the other topics first is that that lay the foundation. In the real world, it is likely you will never be given a clean data set, and you will have to do some wrangling and transformation before anything else is possible. After all, in the experience of many data science students, cleaning the data is the most tedious and time consuming process of a project.
+
+Enough of the old stuff, what is machine learning? According to the Merriam-Webster Dictionary, machine learning is ``the process by which a computer is able to improve its own performance by continuously incorporating new data into an existing statistical model.'' Let's take a trip back to the Target story discussed in the introductory chapter. The data scientist, or more likely data scientists (collaborative work is essential in this field), that worked on that model were likely experts in machine learning. They were able to train the computer to look through thousands (probably more) of customers' data and the computer, based off the algorithms written by these ``data nerds,'' was able to predict whether a customer was pregnant! Think of other possible applications of this technology? We could predict how well a student will preform on an exam, the risk of someone suffering from a heart attack, or the likelihood that someone will default on a loan. Every field in existence today could find a way to implement machine learning to optimize their business.
+
+There are two branches of machine learning, supervised and unsupervised. Both have their own unique uses, however in this course we will focus on supervised machine learning. Supervised machine learning required us to provide a clean data set with clearly defined variables and instructions. Essentially, we give the computer the information it needs and provide it with specific instructions detailing what we would like to see happen, and it does the rest. Linear regression is typically the first method of supervised learning people are introduced to, and it will be the focus of this chapter.
+
+Note, these concepts are not all common sense and can be difficult to wrap your head around at times. Be sure to constantly turn to your instructor or peers for assistance and remember that there are hundreds of online resources at your disposal. As with anything though, practice makes perfect. The popular rule states that mastering a skill can take upwards of 10,000 hours! Now, this course is not going to take you 10 years to complete, however the goal is that by the end of this chapter you will know your way around the basics of linear regression.
+
+\hypertarget{quick-linear-regression}{%
+\chapter{Quick Linear Regression}\label{quick-linear-regression}}
+
+\hypertarget{quick-linear-regression-using-loblolly}{%
+\section{\texorpdfstring{Quick Linear regression using \texttt{Loblolly}}{Quick Linear regression using Loblolly}}\label{quick-linear-regression-using-loblolly}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  load \texttt{Loblolly} and create a scatter plot of the data so plot so that age is the independent variable and height is the
+  dependent variable.
+\end{enumerate}
+
+\includegraphics{21-linearregression_files/figure-latex/unnamed-chunk-1-1.pdf}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Notice that R automatically labeled the x- and y-axes, but we also want our scatter plot to
+  have a main title. To add a title, use the command \texttt{title(main\ =\ “Loblolly\ Pine\ Tree\ Heights”)}.
+\end{enumerate}
+
+\includegraphics{21-linearregression_files/figure-latex/unnamed-chunk-2-1.pdf}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  To find a linear model that relates the age and height of the loblolly pine trees, we will use the
+  command \texttt{fit1\textless{}-lm(Loblolly\$height\textasciitilde{}Loblolly\$age)}.
+\end{enumerate}
+
+\begin{quote}
+Think of \texttt{lm(Loblolly\$height\textasciitilde{}Loblolly\$age)} as the slope-intercept form (y=mx+b).
+\end{quote}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  To see the model, type \texttt{fit1}
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{fit1 }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(Loblolly}\SpecialCharTok{$}\NormalTok{height}\SpecialCharTok{\textasciitilde{}}\NormalTok{Loblolly}\SpecialCharTok{$}\NormalTok{age)}
+\NormalTok{fit1}
+\CommentTok{\#\textgreater{} }
+\CommentTok{\#\textgreater{} Call:}
+\CommentTok{\#\textgreater{} lm(formula = Loblolly$height \textasciitilde{} Loblolly$age)}
+\CommentTok{\#\textgreater{} }
+\CommentTok{\#\textgreater{} Coefficients:}
+\CommentTok{\#\textgreater{}  (Intercept)  Loblolly$age  }
+\CommentTok{\#\textgreater{}       {-}1.312         2.591}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  Now we want to add the graph of this line of best fit to our scatter plot. To do this, use the
+  command \texttt{abline(fit1)}. .
+\end{enumerate}
+
+\includegraphics{21-linearregression_files/figure-latex/unnamed-chunk-4-1.pdf}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{8}
+\tightlist
+\item
+  The final piece of information we want about our data is the correlation of the age and height
+  of the Loblolly pine trees. To find the correlation coefficient, use the command \texttt{cor(Loblolly\$height,\ Loblolly\$age)}
+\end{enumerate}
+
+\begin{verbatim}
+#> [1] 0.9899132
+#> 
+#>  Pearson's product-moment correlation
+#> 
+#> data:  Loblolly$height and Loblolly$age
+#> t = 63.272, df = 82, p-value < 2.2e-16
+#> alternative hypothesis: true correlation is not equal to 0
+#> 95 percent confidence interval:
+#>  0.9844505 0.9934631
+#> sample estimates:
+#>       cor 
+#> 0.9899132
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{9}
+\tightlist
+\item
+  What does this command do and mean: \texttt{plot(Loblolly)}?
+\end{enumerate}
+
+\includegraphics{21-linearregression_files/figure-latex/unnamed-chunk-6-1.pdf}
+
+\hypertarget{linear-regression-with-mtcars}{%
+\chapter{Linear Regression with mtcars}\label{linear-regression-with-mtcars}}
+
+Remember: \textbf{\texttt{\textasciitilde{}}} here means ``explained by'', so the formula mpg \textasciitilde{} wt means we are predicting mpg as explained by wt. The most helpful way to view the output is with:
+
+\hypertarget{excercises-for-you}{%
+\section{\texorpdfstring{Excercises for \textbf{you}}{Excercises for you}}\label{excercises-for-you}}
+
+\hypertarget{mtcars}{%
+\subsection{\texorpdfstring{\texttt{mtcars}}{mtcars}}\label{mtcars}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Which variable in the \texttt{mtcars} dataset do you think best predicts \texttt{mpg} and why?
+\item
+  What \texttt{mpg} would you predict for a car with a displacement of 333?
+\item
+  What \texttt{mpg} would you predict for a car with a displacement of 12 cylinders?
+\item
+  What \texttt{mpg} would you predict for a car with a displacement of 333 and 12 cylinders?
+\item
+  What \texttt{mpg} would you predict for a car with a displacement of 333, 12 cylinders, and weighs 4,000 pounds?
+\end{enumerate}
+
+\hypertarget{trees}{%
+\subsection{\texorpdfstring{\texttt{trees}}{trees}}\label{trees}}
+
+Open the \texttt{trees} dataset in R.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  What are the variables and what do they mean?
+\item
+  Make a plot with Volume on the x axis and Height on the Y and add a best fit line.
+\item
+  Use Girth and Height to predict Volume. What would you predict for a tree with a Girth of 10 and a Height of 100 feet?
+\item
+  Use Girth and Height to predict Volume. What would you predict for a tree with a Girth of 10 and a Height of 15 meters?
+\item
+  What is the maximum circumference of a tree in this dataset?
+\end{enumerate}
+
+\hypertarget{more-excercises-for-you}{%
+\section{\texorpdfstring{More Excercises for \textbf{you}}{More Excercises for you}}\label{more-excercises-for-you}}
+
+1.Open the \texttt{women} data set. Add a new variable (column) to the \texttt{women} dataframe called GPA which is these 15 numbers: 1.5, 3.7, 4,1, 3, 2.5, 3.8, 0.8, 2, 4, 1, 3, 2.5, 3.0, 4.0. You shoud get something that looks similar to mine.
+
+\begin{verbatim}
+FALSE    height weight GPA
+FALSE 1      58    115 1.5
+FALSE 2      59    117 3.7
+FALSE 3      60    120 4.0
+FALSE 4      61    123 1.0
+FALSE 5      62    126 3.0
+FALSE 6      63    129 2.5
+FALSE 7      64    132 3.8
+FALSE 8      65    135 0.8
+FALSE 9      66    139 2.0
+FALSE 10     67    142 4.0
+FALSE 11     68    146 1.0
+FALSE 12     69    150 3.0
+FALSE 13     70    154 2.5
+FALSE 14     71    159 3.0
+FALSE 15     72    164 4.0
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\item
+  Use GPA and weight to predict the height of a person who is 155 pounds and has a GPA if 3.33. What is your prediction?
+\item
+  Is GPA a significant predictor of height and how do you know?
+\item
+  Create a figure showing a best fit line on of height and GPA.
+\item
+  Install the dplyr package into your Rstudio session.
+\end{enumerate}
+
+\hypertarget{deeper-linear-regression}{%
+\chapter{Deeper Linear Regression}\label{deeper-linear-regression}}
+
+\begin{quote}
+Let's chat about why understaning linear regression is so important.
+\end{quote}
+
+\textbf{While there may always seem to be something new, cool, and shiny in the field of AI/ML, classic statistical methods that leverage machine learning techniques remain powerful and practical for solving many real-world business problems.}
+
+Let's look at a very simple model first. For this example, we will need to import the Introduction to Statistical Learning package (ISLR). We will use the ``credit'' data set that is part of the ISLR package.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ISLR)}
+\FunctionTok{data}\NormalTok{(}\StringTok{"Credit"}\NormalTok{)}
+\FunctionTok{attach}\NormalTok{(Credit)}
+
+\NormalTok{M1 }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(Balance }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Limit }\SpecialCharTok{+}\NormalTok{ Ethnicity)}
+\end{Highlighting}
+\end{Shaded}
+
+lm is the function we use to create linear regression models. Now, before we discuss interpreting the results we get from this function, we will discuss the different parts of the model. The ``\textasciitilde{}'' symbol is the key to this entire equation. We are telling R to predict whatever is on the left side of the tilde using the variables on the right.
+
+\hypertarget{interpretation-of-the-model}{%
+\section{Interpretation of the Model}\label{interpretation-of-the-model}}
+
+Let's run a summary on this model and see what we get.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(M1)}
+\CommentTok{\#\textgreater{} }
+\CommentTok{\#\textgreater{} Call:}
+\CommentTok{\#\textgreater{} lm(formula = Balance \textasciitilde{} Limit + Ethnicity)}
+\CommentTok{\#\textgreater{} }
+\CommentTok{\#\textgreater{} Residuals:}
+\CommentTok{\#\textgreater{}     Min      1Q  Median      3Q     Max }
+\CommentTok{\#\textgreater{} {-}677.39 {-}145.75   {-}8.75  139.56  776.46 }
+\CommentTok{\#\textgreater{} }
+\CommentTok{\#\textgreater{} Coefficients:}
+\CommentTok{\#\textgreater{}                      Estimate Std. Error t value Pr(\textgreater{}|t|)}
+\CommentTok{\#\textgreater{} (Intercept)        {-}3.078e+02  3.417e+01  {-}9.007   \textless{}2e{-}16}
+\CommentTok{\#\textgreater{} Limit               1.718e{-}01  5.079e{-}03  33.831   \textless{}2e{-}16}
+\CommentTok{\#\textgreater{} EthnicityAsian      2.835e+01  3.304e+01   0.858    0.391}
+\CommentTok{\#\textgreater{} EthnicityCaucasian  1.381e+01  2.878e+01   0.480    0.632}
+\CommentTok{\#\textgreater{}                       }
+\CommentTok{\#\textgreater{} (Intercept)        ***}
+\CommentTok{\#\textgreater{} Limit              ***}
+\CommentTok{\#\textgreater{} EthnicityAsian        }
+\CommentTok{\#\textgreater{} EthnicityCaucasian    }
+\CommentTok{\#\textgreater{} {-}{-}{-}}
+\CommentTok{\#\textgreater{} Signif. codes:  }
+\CommentTok{\#\textgreater{} 0 \textquotesingle{}***\textquotesingle{} 0.001 \textquotesingle{}**\textquotesingle{} 0.01 \textquotesingle{}*\textquotesingle{} 0.05 \textquotesingle{}.\textquotesingle{} 0.1 \textquotesingle{} \textquotesingle{} 1}
+\CommentTok{\#\textgreater{} }
+\CommentTok{\#\textgreater{} Residual standard error: 234 on 396 degrees of freedom}
+\CommentTok{\#\textgreater{} Multiple R{-}squared:  0.743,  Adjusted R{-}squared:  0.7411 }
+\CommentTok{\#\textgreater{} F{-}statistic: 381.6 on 3 and 396 DF,  p{-}value: \textless{} 2.2e{-}16}
+\end{Highlighting}
+\end{Shaded}
+
+There is a lot of statistical jargon included in our summary that may be unfamiliar to those who have not taken statistics before. That is okay, however, because we are going to breakdown the main statistics we are interested in. Let's start with our variables and their significance in the model.
+
+\hypertarget{p-values}{%
+\subsection{P-Values}\label{p-values}}
+
+The p-value of our model helps us either prove or disprove the null-hypothesis of our test. In the case of this class, the null-hypothesis is that there is no relationship between the variables we are using to make the predictions and the actual variable we are predicting. In other words, the smaller our p-value the higher the level of significance there is between our variables. When we run a summary of our linear regression model we are give multiple p-values.
+
+First, under coefficients, they are listed for each variable. This can help us optimize our model because we can see what variables are helping make the model more accurate versus those that may be hindering its performance. Also notice the asterisks next to our p-values. R kindly puts up to three stars next to each variable to help us visually tell if they are significant, essentially more stars means a lower p-value and thus a higher correlation.
+The second place we see a p-value is at the bottom of our summary. This p-value will give us the overall correlation that exists in our model. As we see in this case, our p-values for this model is \textless{} .00000000000000022, that is a tiny number and frankly a great p-value. Typically we want our p-value to be .05 or smaller. A p-value of .05 tells us that we have a confidence level of 95\%.
+
+\hypertarget{multiple-r-squared}{%
+\subsection{Multiple R-Squared}\label{multiple-r-squared}}
+
+R-squared tells us how well our model explains the variance in our variable. In other words, is the reason for the change in the independent variable actually due to our model's prediction? The higher the r-squared, the more accurate our model is because the better the data fits it. The maximum value r-squared can be is 1.
+
+In our model's case, we have a multiple r-squared of .743, this means our model is approximately 74.3\% accurate as this is the amount of variance in the data caused by our dependent variable. Our r-squared could certainly be better. In fact, in the real world you typically are aiming for an r-squared above .9 or .95, which means you would have 90\%-95\% accuracy.
+
+\hypertarget{applying-the-model-to-make-predictions}{%
+\section{Applying the Model to Make Predictions}\label{applying-the-model-to-make-predictions}}
+
+This type of regression is refereed to as linear for a reason. If we were to visualize our model on a quadratic plane, we would see a line of best fit that would travel along through our data. This means we can simplify the model to fit the slope-intercept equation:
+
+y = m(x)+b
+
+In our case the slope of our line is related to the independent variables. The sum of these slopes will give us the overall slope of our line and the intercept is provided by the equation summary. If we modify this equation to be more applicable to our situation we would get something like this:
+
+y = m1x1 + m2x2 \ldots{} + b
+
+Let's look back at our example model from before
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{M1 }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(Balance }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Limit }\SpecialCharTok{+}\NormalTok{ Ethnicity)}
+\FunctionTok{summary}\NormalTok{(M1)}
+\CommentTok{\#\textgreater{} }
+\CommentTok{\#\textgreater{} Call:}
+\CommentTok{\#\textgreater{} lm(formula = Balance \textasciitilde{} Limit + Ethnicity)}
+\CommentTok{\#\textgreater{} }
+\CommentTok{\#\textgreater{} Residuals:}
+\CommentTok{\#\textgreater{}     Min      1Q  Median      3Q     Max }
+\CommentTok{\#\textgreater{} {-}677.39 {-}145.75   {-}8.75  139.56  776.46 }
+\CommentTok{\#\textgreater{} }
+\CommentTok{\#\textgreater{} Coefficients:}
+\CommentTok{\#\textgreater{}                      Estimate Std. Error t value Pr(\textgreater{}|t|)}
+\CommentTok{\#\textgreater{} (Intercept)        {-}3.078e+02  3.417e+01  {-}9.007   \textless{}2e{-}16}
+\CommentTok{\#\textgreater{} Limit               1.718e{-}01  5.079e{-}03  33.831   \textless{}2e{-}16}
+\CommentTok{\#\textgreater{} EthnicityAsian      2.835e+01  3.304e+01   0.858    0.391}
+\CommentTok{\#\textgreater{} EthnicityCaucasian  1.381e+01  2.878e+01   0.480    0.632}
+\CommentTok{\#\textgreater{}                       }
+\CommentTok{\#\textgreater{} (Intercept)        ***}
+\CommentTok{\#\textgreater{} Limit              ***}
+\CommentTok{\#\textgreater{} EthnicityAsian        }
+\CommentTok{\#\textgreater{} EthnicityCaucasian    }
+\CommentTok{\#\textgreater{} {-}{-}{-}}
+\CommentTok{\#\textgreater{} Signif. codes:  }
+\CommentTok{\#\textgreater{} 0 \textquotesingle{}***\textquotesingle{} 0.001 \textquotesingle{}**\textquotesingle{} 0.01 \textquotesingle{}*\textquotesingle{} 0.05 \textquotesingle{}.\textquotesingle{} 0.1 \textquotesingle{} \textquotesingle{} 1}
+\CommentTok{\#\textgreater{} }
+\CommentTok{\#\textgreater{} Residual standard error: 234 on 396 degrees of freedom}
+\CommentTok{\#\textgreater{} Multiple R{-}squared:  0.743,  Adjusted R{-}squared:  0.7411 }
+\CommentTok{\#\textgreater{} F{-}statistic: 381.6 on 3 and 396 DF,  p{-}value: \textless{} 2.2e{-}16}
+\end{Highlighting}
+\end{Shaded}
+
+We see that our limit variable has an estimate of 1.718e-01, this is our slope. When dealing with quantitative variables, we simply multiply our slope by the intended independent variable. So, if we wanted to find the balance of someone with a limit of 400, we would multiply 1.718e-01 by 400.
+
+With the qualitative variables, in this case ethnicity, we multiply the estimate of the TRUE values by 1 and FALSE values by 0, thus cancelling the FALSE values out.
+
+Let's look at an example. If we used our above equation to predict the balance of someone who was Caucasian and has a credit limit of 500, here is the equation we would set up:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{y }\OtherTok{=}\NormalTok{ (}\FloatTok{1.718e{-}1}\SpecialCharTok{*}\DecValTok{500}\NormalTok{) }\SpecialCharTok{+}\NormalTok{ (}\FloatTok{1.381e+01}\SpecialCharTok{*}\DecValTok{1}\NormalTok{) }\SpecialCharTok{+}\NormalTok{ (}\FloatTok{2.835e+01}\SpecialCharTok{*}\DecValTok{0}\NormalTok{) }\SpecialCharTok{+}\NormalTok{ (}\SpecialCharTok{{-}}\FloatTok{3.078e+02}\NormalTok{)}
+\NormalTok{y}
+\CommentTok{\#\textgreater{} [1] {-}208.09}
+\end{Highlighting}
+\end{Shaded}
+
+So, according to our model our customer would have a balance of -208.09. This number may seem funny, but keep in mind that our r-squared was not the best for this model making it inaccurate and the ethnicity of the customer was not highly correlated with the balance. Both of these facts may cause our prediction to be off. If we were actually creating a model that could predict balance, we would want to look at some of the more correlated variables in the data set.
+
+\hypertarget{review-questions-1}{%
+\section{Review Questions}\label{review-questions-1}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\item
+  Create a linear model predicting using the ISLR data set that predicts a customer's credit limit based on their age, current balance, and the number of cards they have.
+\item
+  What is the p-value of this model? What does this tell us?
+\item
+  List the variables in order from most correlated to least. How do you know that they are correlated?
+\item
+  What is the multiple r-squared of the model? What does this tell us? Is this good or bad?
+\item
+  What would be the credit limit of a 29 year old with 5 cards and a total balance of 1500?
+\item
+  Explain what the following piece of code does
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ISLR)}
+\FunctionTok{data}\NormalTok{(}\StringTok{"Credit"}\NormalTok{)}
+\FunctionTok{attach}\NormalTok{(Credit)}
+\NormalTok{q1 }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(Cards }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Limit }\SpecialCharTok{+}\NormalTok{ Balance }\SpecialCharTok{+}\NormalTok{ Education)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{linear-regression-practice}{%
+\chapter{Linear Regression Practice}\label{linear-regression-practice}}
+
+\hypertarget{your-homework-is-to-watch-these-videos-which-are-posted-under-the-linear-regression-header-on-brightspace-and-then-do-the-following-homework}{%
+\section{Your homework is to watch these videos which are posted under the linear regression header on Brightspace and then do the following homework:}\label{your-homework-is-to-watch-these-videos-which-are-posted-under-the-linear-regression-header-on-brightspace-and-then-do-the-following-homework}}
+
+\hypertarget{videos-to-watch}{%
+\subsection{Videos to watch:}\label{videos-to-watch}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Linear regression women
+\item
+  Best fit line women
+\end{enumerate}
+
+\hypertarget{problems}{%
+\section{Problems}\label{problems}}
+
+Once you have watched these videos, and you can refer to them as often as you would like, please answer and do the following:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Use linear regression to predict the weight of a woman who is 100 inches tall.
+\item
+  Use linear regression to predict the height of the woman who weighs 200 pounds.
+\item
+  Use linear regression to predict the height of a woman who weighs 5 pounds.
+\item
+  Use linear regression to predict the weight of a woman who is 200 inches tall.
+\item
+  Plot weight on the X axes and height on the y-axes and create a best fit line on your plot.
+\item
+  Plot height on the y-axes and wait on the X axes and create a best fit line on your plot.
+\item
+  Add a another column to the women dataframe called GPA which is these 15 numbers: 1.5,4,2,3.7,4,1, 3, 2.5, 3.8, 0.8, 2, 4, 1, 3, 2.
+\item
+  Use GPA to predict height. Is GPA a significant predictor and how do you know? Draw a best fit line on this relationship.
+\item
+  Use GPA to predict a weight. Is GPA a significant predictor and how do you know? Draw a bested line on this relationship, too.
+\item
+  Predict the height of a person with a GPA of 4.0.
+\end{enumerate}
+
+\hypertarget{multivariate-regression}{%
+\section{Multivariate Regression}\label{multivariate-regression}}
+
+I have posted a short video walking you through how to perform multiple linear regression -- where you have more than one variable predicting another.
+
+Using the data set mtcars data set:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Which variable predicts miles per gallon better gear or qsec? How can you tell?
+\item
+  Which two variables out of these four (qsec, vs, am, gear) together best predict miles per gallon?
+\item
+  Using only the number of cylinders, displacement, and weight what would mpg you would you predict for a car with a displacement of 400 inches, eight cylinders, and weighing 2000 pounds?
+\item
+  Be able to explain in a model which variables are significantly significant.
+\item
+  Be able to explain what adjusted R squared means.
+\end{enumerate}
+
+\hypertarget{filters-and-packages}{%
+\chapter{Filters and packages}\label{filters-and-packages}}
+
+Filtering data is one of the very basic operation when you work with data. You want to remove a part of the data that is invalid or simply you're not interested in. Or, you want to zero in on a particular part of the data you want to know more about
+
+For example, in the \texttt{randu} dataset, how many \texttt{y} variables are greater than 0.5? 0.6?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{length}\NormalTok{(randu}\SpecialCharTok{$}\NormalTok{y[randu}\SpecialCharTok{$}\NormalTok{y}\SpecialCharTok{\textgreater{}}\FloatTok{0.5}\NormalTok{])}
+\CommentTok{\#\textgreater{} [1] 191}
+\NormalTok{new.randu }\OtherTok{\textless{}{-}}\NormalTok{ randu}\SpecialCharTok{$}\NormalTok{y[randu}\SpecialCharTok{$}\NormalTok{y}\SpecialCharTok{\textgreater{}}\FloatTok{0.6}\NormalTok{]}
+\FunctionTok{head}\NormalTok{(new.randu)}
+\CommentTok{\#\textgreater{} [1] 0.873416 0.648545 0.826873 0.926590 0.741526 0.846041}
+\FunctionTok{length}\NormalTok{(new.randu)}
+\CommentTok{\#\textgreater{} [1] 161}
+\end{Highlighting}
+\end{Shaded}
+
+In the \texttt{randu} dataset, how many \texttt{z} variables are greater than 0.9? Less than 0.1? Greater than 0.9 or less than 0.1?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{length}\NormalTok{(randu}\SpecialCharTok{$}\NormalTok{z[randu}\SpecialCharTok{$}\NormalTok{z}\SpecialCharTok{\textgreater{}}\FloatTok{0.9}\NormalTok{])}
+\CommentTok{\#\textgreater{} [1] 29}
+\FunctionTok{length}\NormalTok{(randu}\SpecialCharTok{$}\NormalTok{z[randu}\SpecialCharTok{$}\NormalTok{z}\SpecialCharTok{\textless{}}\FloatTok{0.1}\NormalTok{])}
+\CommentTok{\#\textgreater{} [1] 37}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{r-packages}{%
+\section{R packages}\label{r-packages}}
+
+\begin{quote}
+From Wikipedia, the free encyclopedia, and fount of all knowledge
+\end{quote}
+
+R packages are extensions to the R statistical programming language. R packages contain code, data, and documentation in a standardised collection format that can be installed by users of R, typically via a centralised software repository such as CRAN (the Comprehensive R Archive Network).
+
+The large number of packages available for R, and the ease of installing and using them, has been cited as a major factor in driving the widespread adoption of the language in data science.
+
+\hypertarget{you-can-install-the-latest-released-version-from-cran-with}{%
+\section{You can install the latest released version from CRAN with:}\label{you-can-install-the-latest-released-version-from-cran-with}}
+
+\texttt{install.packages("dplyr")}
+
+\hypertarget{in-rstudio}{%
+\section{In RStudio}\label{in-rstudio}}
+
+Installing Packages
+
+\begin{itemize}
+\tightlist
+\item
+  Open RStudio. \ldots{}
+\item
+  In the lower-right pane of RStudio, select the Packages tab and the Install button.
+\item
+  Type the name of the packages to be installed in the ``Packages (separate multiple packages with a space or comma):'' box. \ldots{}
+\item
+  Press Install .
+\end{itemize}
+
+\hypertarget{check-this-out}{%
+\section{Check this out}\label{check-this-out}}
+
+\href{https://dplyr.tidyverse.org/}{dplyr link}
+
+\url{https://dplyr.tidyverse.org/}
+
+\hypertarget{dplyr}{%
+\chapter{DPLYR}\label{dplyr}}
+
+\hypertarget{introduction-3}{%
+\section{Introduction}\label{introduction-3}}
 
 For more help \textbf{PLEASE} check out \href{https://dplyr.tidyverse.org/articles/dplyr.html}{Introduction to dplyr} introducing the key functionality of the dplyr package.
 
@@ -210,8 +2607,159 @@ Columns:
 
 All of the \texttt{dplyr} functions take a data frame (or tibble) as the first argument. Rather than forcing the user to either save intermediate objects or nest functions, dplyr provides the \texttt{\%\textgreater{}\%} operator from magrittr. x \%\textgreater\% f(y) turns into f(x, y) so the result from one step is then ``piped'' into the next step. You can use the pipe to rewrite multiple operations that you can read left-to-right, top-to-bottom (reading the pipe operator as ``then'').
 
+\begin{quote}
+What is this: \texttt{\%\textgreater{}\%}?
+\end{quote}
+
+\hypertarget{loading-dplyr-and-the-starwars-dataset}{%
+\section{\texorpdfstring{Loading \texttt{dplyr} and the \texttt{starwars} dataset}{Loading dplyr and the starwars dataset}}\label{loading-dplyr-and-the-starwars-dataset}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# You should already have done this but you\textquotesingle{}ll need it}
+\FunctionTok{install.packages}\NormalTok{(}\StringTok{"dplyr"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(dplyr)}
+
+\NormalTok{starwars }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{filter}\NormalTok{(species }\SpecialCharTok{==} \StringTok{"Droid"}\NormalTok{)}
+\CommentTok{\#\textgreater{} \# A tibble: 6 x 14}
+\CommentTok{\#\textgreater{}   name   height  mass hair\_color skin\_color  eye\_color}
+\CommentTok{\#\textgreater{}   \textless{}chr\textgreater{}   \textless{}int\textgreater{} \textless{}dbl\textgreater{} \textless{}chr\textgreater{}      \textless{}chr\textgreater{}       \textless{}chr\textgreater{}    }
+\CommentTok{\#\textgreater{} 1 C{-}3PO     167    75 \textless{}NA\textgreater{}       gold        yellow   }
+\CommentTok{\#\textgreater{} 2 R2{-}D2      96    32 \textless{}NA\textgreater{}       white, blue red      }
+\CommentTok{\#\textgreater{} 3 R5{-}D4      97    32 \textless{}NA\textgreater{}       white, red  red      }
+\CommentTok{\#\textgreater{} 4 IG{-}88     200   140 none       metal       red      }
+\CommentTok{\#\textgreater{} 5 R4{-}P17     96    NA none       silver, red red, blue}
+\CommentTok{\#\textgreater{} 6 BB8        NA    NA none       none        black    }
+\CommentTok{\#\textgreater{} \# ... with 8 more variables: birth\_year \textless{}dbl\textgreater{}, sex \textless{}chr\textgreater{},}
+\CommentTok{\#\textgreater{} \#   gender \textless{}chr\textgreater{}, homeworld \textless{}chr\textgreater{}, species \textless{}chr\textgreater{},}
+\CommentTok{\#\textgreater{} \#   films \textless{}list\textgreater{}, vehicles \textless{}list\textgreater{}, starships \textless{}list\textgreater{}}
+
+
+\NormalTok{starwars }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{select}\NormalTok{(name, }\FunctionTok{ends\_with}\NormalTok{(}\StringTok{"color"}\NormalTok{))}
+\CommentTok{\#\textgreater{} \# A tibble: 87 x 4}
+\CommentTok{\#\textgreater{}    name               hair\_color    skin\_color  eye\_color}
+\CommentTok{\#\textgreater{}    \textless{}chr\textgreater{}              \textless{}chr\textgreater{}         \textless{}chr\textgreater{}       \textless{}chr\textgreater{}    }
+\CommentTok{\#\textgreater{}  1 Luke Skywalker     blond         fair        blue     }
+\CommentTok{\#\textgreater{}  2 C{-}3PO              \textless{}NA\textgreater{}          gold        yellow   }
+\CommentTok{\#\textgreater{}  3 R2{-}D2              \textless{}NA\textgreater{}          white, blue red      }
+\CommentTok{\#\textgreater{}  4 Darth Vader        none          white       yellow   }
+\CommentTok{\#\textgreater{}  5 Leia Organa        brown         light       brown    }
+\CommentTok{\#\textgreater{}  6 Owen Lars          brown, grey   light       blue     }
+\CommentTok{\#\textgreater{}  7 Beru Whitesun lars brown         light       blue     }
+\CommentTok{\#\textgreater{}  8 R5{-}D4              \textless{}NA\textgreater{}          white, red  red      }
+\CommentTok{\#\textgreater{}  9 Biggs Darklighter  black         light       brown    }
+\CommentTok{\#\textgreater{} 10 Obi{-}Wan Kenobi     auburn, white fair        blue{-}gray}
+\CommentTok{\#\textgreater{} \# ... with 77 more rows}
+
+
+\NormalTok{starwars }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(name, }\AttributeTok{bmi =}\NormalTok{ mass }\SpecialCharTok{/}\NormalTok{ ((height }\SpecialCharTok{/} \DecValTok{100}\NormalTok{)  }\SpecialCharTok{\^{}} \DecValTok{2}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{select}\NormalTok{(name}\SpecialCharTok{:}\NormalTok{mass, bmi)}
+\CommentTok{\#\textgreater{} \# A tibble: 87 x 4}
+\CommentTok{\#\textgreater{}    name               height  mass   bmi}
+\CommentTok{\#\textgreater{}    \textless{}chr\textgreater{}               \textless{}int\textgreater{} \textless{}dbl\textgreater{} \textless{}dbl\textgreater{}}
+\CommentTok{\#\textgreater{}  1 Luke Skywalker        172    77  26.0}
+\CommentTok{\#\textgreater{}  2 C{-}3PO                 167    75  26.9}
+\CommentTok{\#\textgreater{}  3 R2{-}D2                  96    32  34.7}
+\CommentTok{\#\textgreater{}  4 Darth Vader           202   136  33.3}
+\CommentTok{\#\textgreater{}  5 Leia Organa           150    49  21.8}
+\CommentTok{\#\textgreater{}  6 Owen Lars             178   120  37.9}
+\CommentTok{\#\textgreater{}  7 Beru Whitesun lars    165    75  27.5}
+\CommentTok{\#\textgreater{}  8 R5{-}D4                  97    32  34.0}
+\CommentTok{\#\textgreater{}  9 Biggs Darklighter     183    84  25.1}
+\CommentTok{\#\textgreater{} 10 Obi{-}Wan Kenobi        182    77  23.2}
+\CommentTok{\#\textgreater{} \# ... with 77 more rows}
+
+
+\NormalTok{starwars }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{arrange}\NormalTok{(}\FunctionTok{desc}\NormalTok{(mass))}
+\CommentTok{\#\textgreater{} \# A tibble: 87 x 14}
+\CommentTok{\#\textgreater{}    name       height  mass hair\_color skin\_color  eye\_color }
+\CommentTok{\#\textgreater{}    \textless{}chr\textgreater{}       \textless{}int\textgreater{} \textless{}dbl\textgreater{} \textless{}chr\textgreater{}      \textless{}chr\textgreater{}       \textless{}chr\textgreater{}     }
+\CommentTok{\#\textgreater{}  1 Jabba Des\textasciitilde{}    175  1358 \textless{}NA\textgreater{}       green{-}tan,\textasciitilde{} orange    }
+\CommentTok{\#\textgreater{}  2 Grievous      216   159 none       brown, whi\textasciitilde{} green, ye\textasciitilde{}}
+\CommentTok{\#\textgreater{}  3 IG{-}88         200   140 none       metal       red       }
+\CommentTok{\#\textgreater{}  4 Darth Vad\textasciitilde{}    202   136 none       white       yellow    }
+\CommentTok{\#\textgreater{}  5 Tarfful       234   136 brown      brown       blue      }
+\CommentTok{\#\textgreater{}  6 Owen Lars     178   120 brown, gr\textasciitilde{} light       blue      }
+\CommentTok{\#\textgreater{}  7 Bossk         190   113 none       green       red       }
+\CommentTok{\#\textgreater{}  8 Chewbacca     228   112 brown      unknown     blue      }
+\CommentTok{\#\textgreater{}  9 Jek Tono \textasciitilde{}    180   110 brown      fair        blue      }
+\CommentTok{\#\textgreater{} 10 Dexter Je\textasciitilde{}    198   102 none       brown       yellow    }
+\CommentTok{\#\textgreater{} \# ... with 77 more rows, and 8 more variables:}
+\CommentTok{\#\textgreater{} \#   birth\_year \textless{}dbl\textgreater{}, sex \textless{}chr\textgreater{}, gender \textless{}chr\textgreater{},}
+\CommentTok{\#\textgreater{} \#   homeworld \textless{}chr\textgreater{}, species \textless{}chr\textgreater{}, films \textless{}list\textgreater{},}
+\CommentTok{\#\textgreater{} \#   vehicles \textless{}list\textgreater{}, starships \textless{}list\textgreater{}}
+
+\NormalTok{starwars }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{group\_by}\NormalTok{(species) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{summarise}\NormalTok{(}
+    \AttributeTok{n =} \FunctionTok{n}\NormalTok{(),}
+    \AttributeTok{mass =} \FunctionTok{mean}\NormalTok{(mass, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{)}
+\NormalTok{  ) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{filter}\NormalTok{(}
+\NormalTok{    n }\SpecialCharTok{\textgreater{}} \DecValTok{1}\NormalTok{,}
+\NormalTok{    mass }\SpecialCharTok{\textgreater{}} \DecValTok{50}
+\NormalTok{  )}
+\CommentTok{\#\textgreater{} \# A tibble: 8 x 3}
+\CommentTok{\#\textgreater{}   species      n  mass}
+\CommentTok{\#\textgreater{}   \textless{}chr\textgreater{}    \textless{}int\textgreater{} \textless{}dbl\textgreater{}}
+\CommentTok{\#\textgreater{} 1 Droid        6  69.8}
+\CommentTok{\#\textgreater{} 2 Gungan       3  74  }
+\CommentTok{\#\textgreater{} 3 Human       35  82.8}
+\CommentTok{\#\textgreater{} 4 Kaminoan     2  88  }
+\CommentTok{\#\textgreater{} 5 Mirialan     2  53.1}
+\CommentTok{\#\textgreater{} 6 Twi\textquotesingle{}lek      2  55  }
+\CommentTok{\#\textgreater{} 7 Wookiee      2 124  }
+\CommentTok{\#\textgreater{} 8 Zabrak       2  80}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{starwars-excercises}{%
+\chapter{\texorpdfstring{\texttt{starwars} Excercises}{starwars Excercises}}\label{starwars-excercises}}
+
+Please use the \texttt{starwars} dataset from the \texttt{dplyr} package to answer the following questions:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  How may humans are in this dataset?
+\item
+  How many characters are taller than 89 cm?
+\item
+  How many characters are taller than 37 inches?
+\item
+  How many characters are taller than 37 inches and weigh more than 55 pounds?
+\item
+  How many characters are not human or droid?
+\item
+  How many characters are not human or droid and are taller than 47 inches?
+\item
+  Which species has the most individuals included in this data set?
+\item
+  Which species has the tallest individuals on average?
+\item
+  What is the tallest individual for each species?
+\item
+  Calculate the BMI for each individual and determine which individual has the highest BMI. Use the formula \texttt{bmi\ =\ mass/((height/100)\^{}2)} to calculate bmi.
+\item
+  Which homeworld has the most individuals included in this data set?
+\item
+  Which homeworld has the tallest individuals on average?
+\item
+  What is the tallest individual for each eye color?
+\end{enumerate}
+
 \hypertarget{loading-dplyr-and-the-nycflights13-dataset}{%
-\section{Loading dplyr and the nycflights13 dataset}\label{loading-dplyr-and-the-nycflights13-dataset}}
+\chapter{Loading dplyr and the nycflights13 dataset}\label{loading-dplyr-and-the-nycflights13-dataset}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -444,16 +2992,16 @@ All of the \texttt{dplyr} functions take a data frame (or tibble) as the first a
 \CommentTok{\#\textgreater{} \# Groups:   month, day [365]}
 \CommentTok{\#\textgreater{}     year month   day dep\_time sched\_dep\_time dep\_delay}
 \CommentTok{\#\textgreater{}    \textless{}int\textgreater{} \textless{}int\textgreater{} \textless{}int\textgreater{}    \textless{}int\textgreater{}          \textless{}int\textgreater{}     \textless{}dbl\textgreater{}}
-\CommentTok{\#\textgreater{}  1  2013     1     1     2058           2100        {-}2}
-\CommentTok{\#\textgreater{}  2  2013     1     1     1945           1940         5}
-\CommentTok{\#\textgreater{}  3  2013     1     1     1615           1602        13}
-\CommentTok{\#\textgreater{}  4  2013     1     2     2041           1942        59}
-\CommentTok{\#\textgreater{}  5  2013     1     2     1331           1201        90}
-\CommentTok{\#\textgreater{}  6  2013     1     2     1156           1200        {-}4}
-\CommentTok{\#\textgreater{}  7  2013     1     3     2030           2029         1}
-\CommentTok{\#\textgreater{}  8  2013     1     3      835            835         0}
-\CommentTok{\#\textgreater{}  9  2013     1     3      622            630        {-}8}
-\CommentTok{\#\textgreater{} 10  2013     1     4     1033           1000        33}
+\CommentTok{\#\textgreater{}  1  2013     1     1      811            630       101}
+\CommentTok{\#\textgreater{}  2  2013     1     1      858            900        {-}2}
+\CommentTok{\#\textgreater{}  3  2013     1     1      905            905         0}
+\CommentTok{\#\textgreater{}  4  2013     1     2     1341           1200       101}
+\CommentTok{\#\textgreater{}  5  2013     1     2     1459           1500        {-}1}
+\CommentTok{\#\textgreater{}  6  2013     1     2     1833           1745        48}
+\CommentTok{\#\textgreater{}  7  2013     1     3       NA            920        NA}
+\CommentTok{\#\textgreater{}  8  2013     1     3     1549           1545         4}
+\CommentTok{\#\textgreater{}  9  2013     1     3     1737           1725        12}
+\CommentTok{\#\textgreater{} 10  2013     1     4     1240           1200        40}
 \CommentTok{\#\textgreater{} \# ... with 1,085 more rows, and 13 more variables:}
 \CommentTok{\#\textgreater{} \#   arr\_time \textless{}int\textgreater{}, sched\_arr\_time \textless{}int\textgreater{}, arr\_delay \textless{}dbl\textgreater{},}
 \CommentTok{\#\textgreater{} \#   carrier \textless{}chr\textgreater{}, flight \textless{}int\textgreater{}, tailnum \textless{}chr\textgreater{},}
@@ -1144,142 +3692,6 @@ Using the nycflights13 dataset and the dplyr package, answer these questions. So
   Create a variable called total.annoyance which arrival delay plus the departure delay for each flight.
 \item
   Which carrier with more than 10 flights in September had greatest \% late departing flights?
-\end{enumerate}
-
-\hypertarget{more-dplyr}{%
-\chapter{More DPLYR}\label{more-dplyr}}
-
-\hypertarget{introduction-2}{%
-\section{Introduction}\label{introduction-2}}
-
-For more help \textbf{PLEASE} check out \href{https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html}{Introduction to dplyr} introducing the key functionality of the dplyr package.
-
-\begin{quote}
-Your life is about to change. \textbf{For the better, even.}
-\end{quote}
-
-\hypertarget{single-table-verbs-1}{%
-\section{Single table verbs}\label{single-table-verbs-1}}
-
-\texttt{dplyr} aims to provide a function for each basic verb of data manipulation. These verbs can be organised into three categories based on the component of the dataset that they work with:
-
-Rows:
-
-\begin{itemize}
-\tightlist
-\item
-  \texttt{filter()} chooses rows based on column values.
-\item
-  \texttt{slice()} chooses rows based on location.
-\item
-  \texttt{arrange()} changes the order of the rows.
-\end{itemize}
-
-Columns:
-
-\begin{itemize}
-\tightlist
-\item
-  \texttt{select()} changes whether or not a column is included.
-\item
-  \texttt{rename()} changes the name of columns.
-\item
-  \texttt{mutate()} changes the values of columns and creates new columns.
-\item
-  \texttt{relocate()} changes the order of the columns.
-  Groups of rows:
-\item
-  \texttt{summarise()} collapses a group into a single row. Itâs not that useful until we learn \texttt{group\_by()}
-\item
-  \texttt{group\_by()} usually works with \texttt{summarise()}
-\end{itemize}
-
-\hypertarget{more-with-the-pipe}{%
-\section{More with the pipe}\label{more-with-the-pipe}}
-
-All of the \texttt{dplyr} functions take a data frame (or tibble) as the first argument. Rather than forcing the user to either save intermediate objects or nest functions, dplyr provides the \texttt{\%\textgreater{}\%} operator from \texttt{magrittr}. One step is then âpipedâ into the next step. You can use the pipe to rewrite multiple operations that you can read left-to-right, top-to-bottom (reading the pipe operator as âthenâ).
-
-\begin{quote}
-What is this: \texttt{\%\textgreater{}\%}?
-\end{quote}
-
-\hypertarget{loading-dplyr-and-the-starwars-dataset}{%
-\section{\texorpdfstring{Loading \texttt{dplyr} and the \texttt{starwars} dataset}{Loading dplyr and the starwars dataset}}\label{loading-dplyr-and-the-starwars-dataset}}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{\# You should already have done this but you\textquotesingle{}ll need it}
-\FunctionTok{install.packages}\NormalTok{(}\StringTok{"dplyr"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{library}\NormalTok{(dplyr)}
-
-\NormalTok{starwars }\SpecialCharTok{\%\textgreater{}\%} 
-  \FunctionTok{filter}\NormalTok{(species }\SpecialCharTok{==} \StringTok{"Droid"}\NormalTok{)}
-
-
-\NormalTok{starwars }\SpecialCharTok{\%\textgreater{}\%} 
-  \FunctionTok{select}\NormalTok{(name, }\FunctionTok{ends\_with}\NormalTok{(}\StringTok{"color"}\NormalTok{))}
-
-
-\NormalTok{starwars }\SpecialCharTok{\%\textgreater{}\%} 
-  \FunctionTok{mutate}\NormalTok{(name, }\AttributeTok{bmi =}\NormalTok{ mass }\SpecialCharTok{/}\NormalTok{ ((height }\SpecialCharTok{/} \DecValTok{100}\NormalTok{)  }\SpecialCharTok{\^{}} \DecValTok{2}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{select}\NormalTok{(name}\SpecialCharTok{:}\NormalTok{mass, bmi)}
-
-
-\NormalTok{starwars }\SpecialCharTok{\%\textgreater{}\%} 
-  \FunctionTok{arrange}\NormalTok{(}\FunctionTok{desc}\NormalTok{(mass))}
-
-\NormalTok{starwars }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{group\_by}\NormalTok{(species) }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{summarise}\NormalTok{(}
-    \AttributeTok{n =} \FunctionTok{n}\NormalTok{(),}
-    \AttributeTok{mass =} \FunctionTok{mean}\NormalTok{(mass, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{)}
-\NormalTok{  ) }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{filter}\NormalTok{(}
-\NormalTok{    n }\SpecialCharTok{\textgreater{}} \DecValTok{1}\NormalTok{,}
-\NormalTok{    mass }\SpecialCharTok{\textgreater{}} \DecValTok{50}
-\NormalTok{  )}
-\end{Highlighting}
-\end{Shaded}
-
-\hypertarget{starwars-excercises}{%
-\section{\texorpdfstring{\texttt{starwars} Excercises}{starwars Excercises}}\label{starwars-excercises}}
-
-Please use the \texttt{starwars} dataset from the \texttt{dplyr} package to answer the following questions:
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  How may humans are in this dataset?
-\item
-  How many characters are taller than 89 cm?
-\item
-  How many characters are taller than 37 inches?
-\item
-  How many characters are taller than 37 inches and weigh more than 55 pounds?
-\item
-  How many characters are not human or droid?
-\item
-  How many characters are not human or droid and are taller than 47 inches?
-\item
-  Which species has the most individuals included in this data set?
-\item
-  Which species has the tallest individuals on average?
-\item
-  What is the tallest individual for each species?
-\item
-  Calculate the BMI for each individual and determine which individual has the highest BMI. Use the formula \texttt{bmi\ =\ mass/((height/100)\^{}2)} to calculate bmi.
-\item
-  Which homeworld has the most individuals included in this data set?
-\item
-  Which homeworld has the tallest individuals on average?
-\item
-  What is the tallest individual for each eye color?
 \end{enumerate}
 
   \bibliography{book.bib,packages.bib}

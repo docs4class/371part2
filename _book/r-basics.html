@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 8 R basics and workflows | BADM 371 Intro to Data Analytics</title>
+<meta name="author" content="BADM 371">
+<meta name="description" content="8.1 Basics of working with R at the command line and RStudio goodies Launch RStudio/R. You will first intall R and then. RStudio. Installing R Installing RStudio Customizing RStudio RStudio Quick...">
+<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta property="og:title" content="Chapter 8 R basics and workflows | BADM 371 Intro to Data Analytics">
+<meta property="og:type" content="book">
+<meta property="og:description" content="8.1 Basics of working with R at the command line and RStudio goodies Launch RStudio/R. You will first intall R and then. RStudio. Installing R Installing RStudio Customizing RStudio RStudio Quick...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 8 R basics and workflows | BADM 371 Intro to Data Analytics">
+<meta name="twitter:description" content="8.1 Basics of working with R at the command line and RStudio goodies Launch RStudio/R. You will first intall R and then. RStudio. Installing R Installing RStudio Customizing RStudio RStudio Quick...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><link rel="stylesheet" href="bs4_style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">BADM 371 Intro to Data Analytics</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> Introduction</a></li>
+<li><a class="" href="syllabus.html"><span class="header-section-number">2</span> Syllabus</a></li>
+<li><a class="" href="our-class-rhythm.html"><span class="header-section-number">3</span> Our Class Rhythm</a></li>
+<li><a class="" href="end-in-mind.html"><span class="header-section-number">4</span> End in Mind</a></li>
+<li><a class="" href="schedule.html"><span class="header-section-number">5</span> Schedule</a></li>
+<li><a class="" href="elephant-in-the-room-r.html"><span class="header-section-number">6</span> Elephant in the room: R</a></li>
+<li><a class="" href="r-vs.-excel.html"><span class="header-section-number">7</span> R vs. Excel</a></li>
+<li><a class="active" href="r-basics.html"><span class="header-section-number">8</span> R basics and workflows</a></li>
+<li><a class="" href="objects-and-arithmetic.html"><span class="header-section-number">9</span> Objects and Arithmetic</a></li>
+<li><a class="" href="summaries-and-subscripting.html"><span class="header-section-number">10</span> Summaries and Subscripting</a></li>
+<li><a class="" href="matrices.html"><span class="header-section-number">11</span> Matrices</a></li>
+<li><a class="" href="preloaded-data-and-mtcars.html"><span class="header-section-number">12</span> Preloaded data and mtcars</a></li>
+<li><a class="" href="more-simple-data-wrangling.html"><span class="header-section-number">13</span> More simple data wrangling</a></li>
+<li><a class="" href="gdh-ice-cream.html"><span class="header-section-number">14</span> GDH Ice Cream</a></li>
+<li><a class="" href="quick-linear-regression.html"><span class="header-section-number">15</span> Quick Linear Regression</a></li>
+<li><a class="" href="linear-regression-with-mtcars.html"><span class="header-section-number">16</span> Linear Regression with mtcars</a></li>
+<li><a class="" href="deeper-linear-regression.html"><span class="header-section-number">17</span> Deeper Linear Regression</a></li>
+<li><a class="" href="linear-regression-practice.html"><span class="header-section-number">18</span> Linear Regression Practice</a></li>
+<li><a class="" href="filters-and-packages.html"><span class="header-section-number">19</span> Filters and packages</a></li>
+<li><a class="" href="dplyr.html"><span class="header-section-number">20</span> DPLYR</a></li>
+<li><a class="" href="starwars-excercises.html"><span class="header-section-number">21</span> starwars Excercises</a></li>
+<li><a class="" href="loading-dplyr-and-the-nycflights13-dataset.html"><span class="header-section-number">22</span> Loading dplyr and the nycflights13 dataset</a></li>
+<li><a class="" href="grouping-and-counting-summarise-tally-count-group_size-n_groups-ungroup.html"><span class="header-section-number">23</span> Grouping and counting: summarise, tally, count, group_size, n_groups, ungroup</a></li>
+<li><a class="" href="creating-data-frames-data_frame.html"><span class="header-section-number">24</span> Creating data frames: data_frame</a></li>
+<li><a class="" href="joining-merging-tables-left_join-right_join-inner_join-full_join-semi_join-anti_join.html"><span class="header-section-number">25</span> Joining (merging) tables: left_join, right_join, inner_join, full_join, semi_join, anti_join</a></li>
+<li><a class="" href="viewing-more-output-print-view.html"><span class="header-section-number">26</span> Viewing more output: print, View</a></li>
+<li><a class="" href="dplyr-excercies.html"><span class="header-section-number">27</span> DPLYR Excercies</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/rstudio/bookdown-demo">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="r-basics" class="section level1" number="8">
+<h1>
+<span class="header-section-number">8</span> R basics and workflows<a class="anchor" aria-label="anchor" href="#r-basics"><i class="fas fa-link"></i></a>
+</h1>
+<div id="basics-of-working-with-r-at-the-command-line-and-rstudio-goodies" class="section level2" number="8.1">
+<h2>
+<span class="header-section-number">8.1</span> Basics of working with R at the command line and RStudio goodies<a class="anchor" aria-label="anchor" href="#basics-of-working-with-r-at-the-command-line-and-rstudio-goodies"><i class="fas fa-link"></i></a>
+</h2>
+<p>Launch RStudio/R.</p>
+<p>You will first intall R and then. RStudio.</p>
+<ul>
+<li><p><a href="https://cran.case.edu/">Installing R</a></p></li>
+<li><p><a href="https://www.rstudio.com/products/rstudio/download/">Installing RStudio</a></p></li>
+<li><p><a href="https://support.rstudio.com/hc/en-us/articles/200549016-Customizing-the-RStudio-IDE">Customizing RStudio</a></p></li>
+<li><p><a href="https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts-in-the-RStudio-IDE">RStudio Quick keys</a></p></li>
+</ul>
+</div>
+<div id="in-rstudio---where-we-will-live" class="section level2" number="8.2">
+<h2>
+<span class="header-section-number">8.2</span> In Rstudio - where we will live<a class="anchor" aria-label="anchor" href="#in-rstudio---where-we-will-live"><i class="fas fa-link"></i></a>
+</h2>
+<p>Notice the default panes:</p>
+<ul>
+<li>Console (entire left)</li>
+<li>Environment/History (tabbed in upper right)</li>
+<li>Files/Plots/Packages/Help (tabbed in lower right)</li>
+</ul>
+</div>
+<div id="section" class="section level2" number="8.3">
+<h2>
+<span class="header-section-number">8.3</span> <a class="anchor" aria-label="anchor" href="#section"><i class="fas fa-link"></i></a>
+</h2>
+<p><a href="http://www.sthda.com/sthda/RDoc/images/rstudio.png">Rstudio Console</a></p>
+<p>FYI: you can change the default location of the panes, among many other things: <a href="https://support.rstudio.com/hc/en-us/articles/200549016-Customizing-the-RStudio-IDE">Customizing RStudio</a>.</p>
+<p>Go into the Console, where we interact with the live R process.</p>
+<p>You can make an object by assigning a value or statement to a letter or string. We use <code>&lt;-</code> to assign objects meaning. Create and inspect the following object:</p>
+<div class="rmdimportant">
+<p><strong>Your first analysis in R:</strong></p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">x</span> <span class="op">&lt;-</span> <span class="fl">3</span> <span class="op">*</span> <span class="fl">4</span>
+<span class="va">x</span>
+<span class="co">#&gt; [1] 12</span></code></pre></div>
+</div>
+<p>All R statements where you create objects – “assignments” – have this form:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">objectName</span> <span class="op">&lt;-</span> <span class="va">value</span></code></pre></div>
+<p>and in my head I hear, e.g., “x gets 12.”</p>
+<p>You will make lots of assignments and the operator <code>&lt;-</code> is a pain to type. Don’t be lazy and use <code>=</code>, although it would work, because it will just sow confusion later. Instead, utilize RStudio’s keyboard shortcut: Alt + - (the minus sign).</p>
+<div class="rmdimportant">
+<p><strong>I want to be your friend. As a friend, I implore you, learn this:</strong></p>
+<blockquote>
+<p>In RStudio insert the &lt;- assignment operator with Option + - (the minus sign)on a Mac, or Alt + - (the minus sign) on Windows.</p>
+</blockquote>
+</div>
+<p>Notice that RStudio automatically surrounds <code>&lt;-</code> with spaces, which demonstrates a useful code formatting practice. Code is miserable to read on a good day. Give your eyes a break and use spaces.</p>
+<p>RStudio offers many handy <a href="https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts-in-the-RStudio-IDE">RStudio Quick keys</a>. Also, Alt+Shift+K brings up a keyboard shortcut reference card.</p>
+<p>Object names cannot start with a digit and cannot contain certain other characters such as a comma or a space. You will be wise to adopt a <a href="https://en.wikipedia.org/wiki/Snake_case">convention for demarcating words</a> in names, but note that best practice is to choose ONE convention and stay true to it throughout your code.</p>
+<pre><code>i_use_snake_case
+other.people.use.periods
+evenOthersUseCamelCase</code></pre>
+<p>Make another assignment:</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">this_is_a_really_long_name</span> <span class="op">&lt;-</span> <span class="fl">2.5</span></code></pre></div>
+<p>To inspect this, try out RStudio’s completion facility: type the first few characters, press TAB, add characters until you disambiguate, then press return.</p>
+<p>Make another assignment:</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">turner_rocks</span> <span class="op">&lt;-</span> <span class="fl">2</span> <span class="op">^</span> <span class="fl">3</span></code></pre></div>
+<p>When making assignments, it is best practice to keep the names brief, yet descriptive. For instance, while the name “this_is_a_really_long_name” is accurate, so is “long_name” and this is much more intuitive and easy to read/type over and over.</p>
+<p>Let’s try to inspect:</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">turnerrocks</span>
+<span class="co">#&gt; Error in eval(expr, envir, enclos): object 'turnerrocks' not found</span>
+<span class="va">Turner_rocks</span>
+<span class="co">#&gt; Error in eval(expr, envir, enclos): object 'Turner_rocks' not found</span>
+<span class="va">turner_rocks</span>
+<span class="co">#&gt; [1] 8</span></code></pre></div>
+<p><strong>Implicit contract with the computer / scripting language: Computer will do tedious computation for you. In return, you will be completely precise in your instructions. Typos matter. Case matters. Get better at typing.</strong></p>
+<p>R has a mind-blowing collection of built-in functions that are accessed like so:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="r-basics.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">functionName</span>(<span class="at">arg1 =</span> val1, <span class="at">arg2 =</span> val2, and so on)</span></code></pre></div>
+<p>Let’s try using <code><a href="https://rdrr.io/r/base/seq.html">seq()</a></code> which makes regular sequences of numbers and, while we’re at it, demo more helpful features of RStudio.</p>
+<p>Type <code>se</code> and hit TAB. A pop up shows you possible completions. Specify <code><a href="https://rdrr.io/r/base/seq.html">seq()</a></code> by typing more to disambiguate or using the up/down arrows to select. Notice the floating tool-tip-type help that pops up, reminding you of a function’s arguments. If you want even more help, press F1 as directed to get the full documentation in the help tab of the lower right pane. Now open the parentheses and notice the automatic addition of the closing parenthesis and the placement of cursor in the middle. Type the arguments <code>1, 10</code> and hit return. RStudio also exits the parenthetical expression for you. IDEs are great.</p>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">10</span><span class="op">)</span>
+<span class="co">#&gt;  [1]  1  2  3  4  5  6  7  8  9 10</span></code></pre></div>
+<p>The above also demonstrates something about how R resolves function arguments. You can always specify in <code>name = value</code> form. But if you do not, R attempts to resolve by position. So above, it is assumed that we want a sequence <code>from = 1</code> that goes <code>to = 10</code>. Since we didn’t specify step size, the default value of <code>by</code> in the function definition is used, which ends up being 1 in this case. For functions I call often, I might use this resolve by position for the first
+argument or maybe the first two. After that, I always use <code>name = value</code>.</p>
+<p>Make this assignment and notice similar help with quotation marks.</p>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">yo</span> <span class="op">&lt;-</span> <span class="st">"hello world"</span></code></pre></div>
+<p>If you just make an assignment, you don’t get to see the value, so then you’re tempted to immediately inspect.</p>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">y</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">10</span><span class="op">)</span>
+<span class="va">y</span>
+<span class="co">#&gt;  [1]  1  2  3  4  5  6  7  8  9 10</span></code></pre></div>
+<p>This common action can be shortened by surrounding the assignment with parentheses, which causes assignment and “print to screen” to happen.</p>
+<p>It is best practice to always attempt to “print” your assignments after creating them. This will help leviate the issue of searching 200+ lines of code for that one error causing argument.</p>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="op">(</span><span class="va">y</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">10</span><span class="op">)</span><span class="op">)</span>
+<span class="co">#&gt;  [1]  1  2  3  4  5  6  7  8  9 10</span></code></pre></div>
+<p>Not all functions have (or require) arguments:</p>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/date.html">date</a></span><span class="op">(</span><span class="op">)</span>
+<span class="co">#&gt; [1] "Thu Feb 24 08:58:49 2022"</span></code></pre></div>
+<p>Now look at your workspace – in the upper right pane. The workspace is where user-defined objects accumulate. You can also get a listing of these objects with commands:</p>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/ls.html">objects</a></span><span class="op">(</span><span class="op">)</span>
+<span class="co">#&gt; [1] "this_is_a_really_long_name"</span>
+<span class="co">#&gt; [2] "turner_rocks"              </span>
+<span class="co">#&gt; [3] "x"                         </span>
+<span class="co">#&gt; [4] "y"                         </span>
+<span class="co">#&gt; [5] "yo"</span>
+<span class="fu"><a href="https://rdrr.io/r/base/ls.html">ls</a></span><span class="op">(</span><span class="op">)</span>
+<span class="co">#&gt; [1] "this_is_a_really_long_name"</span>
+<span class="co">#&gt; [2] "turner_rocks"              </span>
+<span class="co">#&gt; [3] "x"                         </span>
+<span class="co">#&gt; [4] "y"                         </span>
+<span class="co">#&gt; [5] "yo"</span></code></pre></div>
+<p>If you want to remove the object named <code>y</code>, you can do this:</p>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/rm.html">rm</a></span><span class="op">(</span><span class="va">y</span><span class="op">)</span></code></pre></div>
+<p>To remove everything:</p>
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/rm.html">rm</a></span><span class="op">(</span>list <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ls.html">ls</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<p>or click the broom in RStudio’s Environment pane.</p>
+</div>
+<div id="workspace-and-working-directory" class="section level2" number="8.4">
+<h2>
+<span class="header-section-number">8.4</span> Workspace and working directory<a class="anchor" aria-label="anchor" href="#workspace-and-working-directory"><i class="fas fa-link"></i></a>
+</h2>
+<p>One day you will need to quit R, go do something else and return to your analysis later (this is a very happy day).</p>
+<p>One day you will have multiple analyses going that use R and you want to keep them separate (a not so happy day).</p>
+<p>One day you will need to bring data from the outside world into R and send numerical results and figures from R back out into the world (the happiest of days).</p>
+<p>To handle these real life situations, you need to make two decisions:</p>
+<ul>
+<li>What about your analysis is “real,” i.e. will you save it as your lasting record of what happened?</li>
+<li>Where does your analysis “live?”</li>
+</ul>
+<div id="workspace-.rdata" class="section level3" number="8.4.1">
+<h3>
+<span class="header-section-number">8.4.1</span> Workspace, <code>.RData</code><a class="anchor" aria-label="anchor" href="#workspace-.rdata"><i class="fas fa-link"></i></a>
+</h3>
+<p>As a beginning R user, it’s OK to consider your workspace “real.” <em>Very soon</em>, I urge you to evolve to the next level, where you consider your saved R scripts as “real.” (In either case, of course the input data is very much real and requires preservation!) With the input data and the R code you used, you can reproduce
+<em>everything</em>. You can make your analysis fancier. You can get to the bottom of puzzling results and discover and fix bugs in your code. You can reuse the code to conduct similar analyses in new projects. You can remake a figure with different aspect ratio or save is as TIFF instead of PDF. You are ready to take questions. You are ready for the future.</p>
+<p>If you regard your workspace as “real” (saving and reloading all the time), if you need to redo analysis … you’re going to either redo a lot of typing (making mistakes all the way) or will have to mine your R history for the commands you used. Rather than [becoming an expert on managing the R history][rstudio-command-history], a better use of your time and psychic energy is to keep your “good” R code in a script for future reuse.</p>
+<p>Because it can be useful sometimes, note the commands you’ve recently run appear in the History pane.</p>
+<p>But you don’t have to choose right now and the two strategies are not incompatible. Let’s demo the save / reload the workspace approach.</p>
+<p>Upon quitting R, you have to decide if you want to save your workspace, for potential restoration the next time you launch R. Depending on your set up, R or your IDE, e.g. RStudio, will probably prompt you to make this decision.</p>
+<p>Quit R/RStudio, either from the menu, using a keyboard shortcut, or by typing <code><a href="https://rdrr.io/r/base/quit.html">q()</a></code> in the Console. You’ll get a prompt like this:</p>
+<blockquote>
+<p>Save workspace image to ~/.Rdata?</p>
+</blockquote>
+<p><em>Note where the workspace image is to be saved</em> and then click “Save.”</p>
+<p>Using your favorite method, visit the directory where image was saved and verify there is a file named <code>.RData</code>. You will also see a file <code>.Rhistory</code>, holding the commands submitted in your recent session.</p>
+<p>Restart RStudio. In the Console you will see a line like this:</p>
+<pre><code>[Workspace loaded from ~/.RData]</code></pre>
+<p>indicating that your workspace has been restored. Look in the Workspace pane and you’ll see the same objects as before. In the History tab of the same pane, you should also see your command history. You’re back in business. This way of starting and stopping analytical work will not serve you well for long but it’s a start.</p>
+</div>
+<div id="working-directory" class="section level3" number="8.4.2">
+<h3>
+<span class="header-section-number">8.4.2</span> Working directory<a class="anchor" aria-label="anchor" href="#working-directory"><i class="fas fa-link"></i></a>
+</h3>
+<p>Any process running on your computer has a notion of its “working directory.” In R, this is where R will look, by default, for files you ask it to load. It also where, by default, any files you write to disk will go. Chances are your current working directory is the directory we inspected above, i.e. the one where RStudio wanted to save the workspace.</p>
+<p>You can explicitly check your working directory with:</p>
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/getwd.html">getwd</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<p>It is also displayed at the top of the RStudio console.</p>
+<p>As a beginning R user, it’s OK let your home directory or any other weird directory on your computer be R’s working directory. <em>Very soon</em>, I urge you to evolve to the next level, where you organize your analytical projects into directories and, when working on project A, set R’s working directory to the associated directory.</p>
+<p><strong>Although I do not recommend it</strong>, in case you’re curious, you can set R’s working directory at the command line like so:</p>
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/getwd.html">setwd</a></span><span class="op">(</span><span class="st">"~/myCoolProject"</span><span class="op">)</span></code></pre></div>
+<p><strong>Although I do not recommend it</strong>, you can also use RStudio’s Files pane to navigate to a directory and then set it as working directory from the menu: <em>Session &gt; Set Working Directory &gt; To Files Pane Location</em>. (You’ll see even more options there). Or within the Files pane, choose “More” and “Set As Working Directory.”</p>
+<p>But there’s a better way. A way that also puts you on the path to managing your R work like an expert.</p>
+</div>
+</div>
+<div id="exercises" class="section level2" number="8.5">
+<h2>
+<span class="header-section-number">8.5</span> Exercises<a class="anchor" aria-label="anchor" href="#exercises"><i class="fas fa-link"></i></a>
+</h2>
+<ol style="list-style-type: decimal">
+<li><p>Create an object called “cool_object” and assign it the number 100.</p></li>
+<li><p>Create a new object called “big_brain” and multiply the object from question one by 15.</p></li>
+<li><p>Print both objects.</p></li>
+<li><p>Use base R functions to return today’s date and print it.</p></li>
+<li><p>Create a sequence of numbers counting from 10 to 100 by 2.</p></li>
+<li><p>Identify your working directory. What is it? Change it to where you want it.</p></li>
+<li><p>Save the R script that answers questions 1 through 5 above. Save it; clean and close Rstudio; reopen your script and run it. Make sense?</p></li>
+</ol>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="r-vs.-excel.html"><span class="header-section-number">7</span> R vs. Excel</a></div>
+<div class="next"><a href="objects-and-arithmetic.html"><span class="header-section-number">9</span> Objects and Arithmetic</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#r-basics"><span class="header-section-number">8</span> R basics and workflows</a></li>
+<li><a class="nav-link" href="#basics-of-working-with-r-at-the-command-line-and-rstudio-goodies"><span class="header-section-number">8.1</span> Basics of working with R at the command line and RStudio goodies</a></li>
+<li><a class="nav-link" href="#in-rstudio---where-we-will-live"><span class="header-section-number">8.2</span> In Rstudio - where we will live</a></li>
+<li><a class="nav-link" href="#section"><span class="header-section-number">8.3</span></a></li>
+<li>
+<a class="nav-link" href="#workspace-and-working-directory"><span class="header-section-number">8.4</span> Workspace and working directory</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#workspace-.rdata"><span class="header-section-number">8.4.1</span> Workspace, .RData</a></li>
+<li><a class="nav-link" href="#working-directory"><span class="header-section-number">8.4.2</span> Working directory</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#exercises"><span class="header-section-number">8.5</span> Exercises</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/rstudio/bookdown-demo/blob/master/11-rbasics.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/rstudio/bookdown-demo/edit/master/11-rbasics.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>BADM 371 Intro to Data Analytics</strong>" was written by BADM 371. It was last built on 2022-02-24.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+</body>
+</html>

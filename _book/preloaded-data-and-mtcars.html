@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 12 Preloaded data and mtcars | BADM 371 Intro to Data Analytics</title>
+<meta name="author" content="BADM 371">
+<meta name="description" content="R comes with several built-in data sets, which are generally used as demo data for playing with R functions. To see the datasets type: data()  12.1 Practicing with mtcars data set This...">
+<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta property="og:title" content="Chapter 12 Preloaded data and mtcars | BADM 371 Intro to Data Analytics">
+<meta property="og:type" content="book">
+<meta property="og:description" content="R comes with several built-in data sets, which are generally used as demo data for playing with R functions. To see the datasets type: data()  12.1 Practicing with mtcars data set This...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 12 Preloaded data and mtcars | BADM 371 Intro to Data Analytics">
+<meta name="twitter:description" content="R comes with several built-in data sets, which are generally used as demo data for playing with R functions. To see the datasets type: data()  12.1 Practicing with mtcars data set This...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><link rel="stylesheet" href="bs4_style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">BADM 371 Intro to Data Analytics</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> Introduction</a></li>
+<li><a class="" href="syllabus.html"><span class="header-section-number">2</span> Syllabus</a></li>
+<li><a class="" href="our-class-rhythm.html"><span class="header-section-number">3</span> Our Class Rhythm</a></li>
+<li><a class="" href="end-in-mind.html"><span class="header-section-number">4</span> End in Mind</a></li>
+<li><a class="" href="schedule.html"><span class="header-section-number">5</span> Schedule</a></li>
+<li><a class="" href="elephant-in-the-room-r.html"><span class="header-section-number">6</span> Elephant in the room: R</a></li>
+<li><a class="" href="r-vs.-excel.html"><span class="header-section-number">7</span> R vs. Excel</a></li>
+<li><a class="" href="r-basics.html"><span class="header-section-number">8</span> R basics and workflows</a></li>
+<li><a class="" href="objects-and-arithmetic.html"><span class="header-section-number">9</span> Objects and Arithmetic</a></li>
+<li><a class="" href="summaries-and-subscripting.html"><span class="header-section-number">10</span> Summaries and Subscripting</a></li>
+<li><a class="" href="matrices.html"><span class="header-section-number">11</span> Matrices</a></li>
+<li><a class="active" href="preloaded-data-and-mtcars.html"><span class="header-section-number">12</span> Preloaded data and mtcars</a></li>
+<li><a class="" href="more-simple-data-wrangling.html"><span class="header-section-number">13</span> More simple data wrangling</a></li>
+<li><a class="" href="gdh-ice-cream.html"><span class="header-section-number">14</span> GDH Ice Cream</a></li>
+<li><a class="" href="quick-linear-regression.html"><span class="header-section-number">15</span> Quick Linear Regression</a></li>
+<li><a class="" href="linear-regression-with-mtcars.html"><span class="header-section-number">16</span> Linear Regression with mtcars</a></li>
+<li><a class="" href="deeper-linear-regression.html"><span class="header-section-number">17</span> Deeper Linear Regression</a></li>
+<li><a class="" href="linear-regression-practice.html"><span class="header-section-number">18</span> Linear Regression Practice</a></li>
+<li><a class="" href="filters-and-packages.html"><span class="header-section-number">19</span> Filters and packages</a></li>
+<li><a class="" href="dplyr.html"><span class="header-section-number">20</span> DPLYR</a></li>
+<li><a class="" href="starwars-excercises.html"><span class="header-section-number">21</span> starwars Excercises</a></li>
+<li><a class="" href="loading-dplyr-and-the-nycflights13-dataset.html"><span class="header-section-number">22</span> Loading dplyr and the nycflights13 dataset</a></li>
+<li><a class="" href="grouping-and-counting-summarise-tally-count-group_size-n_groups-ungroup.html"><span class="header-section-number">23</span> Grouping and counting: summarise, tally, count, group_size, n_groups, ungroup</a></li>
+<li><a class="" href="creating-data-frames-data_frame.html"><span class="header-section-number">24</span> Creating data frames: data_frame</a></li>
+<li><a class="" href="joining-merging-tables-left_join-right_join-inner_join-full_join-semi_join-anti_join.html"><span class="header-section-number">25</span> Joining (merging) tables: left_join, right_join, inner_join, full_join, semi_join, anti_join</a></li>
+<li><a class="" href="viewing-more-output-print-view.html"><span class="header-section-number">26</span> Viewing more output: print, View</a></li>
+<li><a class="" href="dplyr-excercies.html"><span class="header-section-number">27</span> DPLYR Excercies</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/rstudio/bookdown-demo">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="preloaded-data-and-mtcars" class="section level1" number="12">
+<h1>
+<span class="header-section-number">12</span> Preloaded data and <code>mtcars</code><a class="anchor" aria-label="anchor" href="#preloaded-data-and-mtcars"><i class="fas fa-link"></i></a>
+</h1>
+<p>R comes with several built-in data sets, <strong>which are generally used as demo data for playing with R functions.</strong></p>
+<p>To see the datasets type:</p>
+<p><code><a href="https://rdrr.io/r/utils/data.html">data()</a></code></p>
+<div id="practicing-with-mtcars-data-set" class="section level2" number="12.1">
+<h2>
+<span class="header-section-number">12.1</span> Practicing with <code>mtcars</code> data set<a class="anchor" aria-label="anchor" href="#practicing-with-mtcars-data-set"><i class="fas fa-link"></i></a>
+</h2>
+<p>This demonstration is based on the datasset <code>mtcars</code>.</p>
+<ol style="list-style-type: decimal">
+<li>Read in <code>mtcars</code>
+</li>
+</ol>
+<div class="sourceCode" id="cb64"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">mtcars</span><span class="op">)</span></code></pre></div>
+<ol start="2" style="list-style-type: decimal">
+<li>View first few rows and last few rows of mtcars dataframe using functions <code><a href="https://rdrr.io/r/utils/head.html">head()</a></code> and <code><a href="https://rdrr.io/r/utils/head.html">tail()</a></code>
+</li>
+</ol>
+<div class="sourceCode" id="cb65"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">mtcars</span><span class="op">)</span>
+<span class="co">#&gt;                    mpg cyl disp  hp drat    wt  qsec vs am</span>
+<span class="co">#&gt; Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1</span>
+<span class="co">#&gt; Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1</span>
+<span class="co">#&gt; Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1</span>
+<span class="co">#&gt; Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0</span>
+<span class="co">#&gt; Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0</span>
+<span class="co">#&gt; Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0</span>
+<span class="co">#&gt;                   gear carb</span>
+<span class="co">#&gt; Mazda RX4            4    4</span>
+<span class="co">#&gt; Mazda RX4 Wag        4    4</span>
+<span class="co">#&gt; Datsun 710           4    1</span>
+<span class="co">#&gt; Hornet 4 Drive       3    1</span>
+<span class="co">#&gt; Hornet Sportabout    3    2</span>
+<span class="co">#&gt; Valiant              3    1</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html">tail</a></span><span class="op">(</span><span class="va">mtcars</span><span class="op">)</span>
+<span class="co">#&gt;                 mpg cyl  disp  hp drat    wt qsec vs am</span>
+<span class="co">#&gt; Porsche 914-2  26.0   4 120.3  91 4.43 2.140 16.7  0  1</span>
+<span class="co">#&gt; Lotus Europa   30.4   4  95.1 113 3.77 1.513 16.9  1  1</span>
+<span class="co">#&gt; Ford Pantera L 15.8   8 351.0 264 4.22 3.170 14.5  0  1</span>
+<span class="co">#&gt; Ferrari Dino   19.7   6 145.0 175 3.62 2.770 15.5  0  1</span>
+<span class="co">#&gt; Maserati Bora  15.0   8 301.0 335 3.54 3.570 14.6  0  1</span>
+<span class="co">#&gt; Volvo 142E     21.4   4 121.0 109 4.11 2.780 18.6  1  1</span>
+<span class="co">#&gt;                gear carb</span>
+<span class="co">#&gt; Porsche 914-2     5    2</span>
+<span class="co">#&gt; Lotus Europa      5    2</span>
+<span class="co">#&gt; Ford Pantera L    5    4</span>
+<span class="co">#&gt; Ferrari Dino      5    6</span>
+<span class="co">#&gt; Maserati Bora     5    8</span>
+<span class="co">#&gt; Volvo 142E        4    2</span></code></pre></div>
+<ol start="3" style="list-style-type: decimal">
+<li>Some info about mtcars dataframe using function <code><a href="https://rdrr.io/r/base/colnames.html">colnames()</a></code>, <code><a href="https://rdrr.io/r/base/colnames.html">rownames()</a></code>, <code><a href="https://rdrr.io/r/base/summary.html">summary()</a></code>and <code><a href="https://rdrr.io/r/base/dim.html">dim()</a></code>
+</li>
+</ol>
+<div class="sourceCode" id="cb66"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">mtcars</span><span class="op">)</span>
+<span class="co">#&gt;  [1] "mpg"  "cyl"  "disp" "hp"   "drat" "wt"   "qsec" "vs"  </span>
+<span class="co">#&gt;  [9] "am"   "gear" "carb"</span>
+<span class="fu"><a href="https://rdrr.io/r/base/colnames.html">rownames</a></span><span class="op">(</span><span class="va">mtcars</span><span class="op">)</span>
+<span class="co">#&gt;  [1] "Mazda RX4"           "Mazda RX4 Wag"      </span>
+<span class="co">#&gt;  [3] "Datsun 710"          "Hornet 4 Drive"     </span>
+<span class="co">#&gt;  [5] "Hornet Sportabout"   "Valiant"            </span>
+<span class="co">#&gt;  [7] "Duster 360"          "Merc 240D"          </span>
+<span class="co">#&gt;  [9] "Merc 230"            "Merc 280"           </span>
+<span class="co">#&gt; [11] "Merc 280C"           "Merc 450SE"         </span>
+<span class="co">#&gt; [13] "Merc 450SL"          "Merc 450SLC"        </span>
+<span class="co">#&gt; [15] "Cadillac Fleetwood"  "Lincoln Continental"</span>
+<span class="co">#&gt; [17] "Chrysler Imperial"   "Fiat 128"           </span>
+<span class="co">#&gt; [19] "Honda Civic"         "Toyota Corolla"     </span>
+<span class="co">#&gt; [21] "Toyota Corona"       "Dodge Challenger"   </span>
+<span class="co">#&gt; [23] "AMC Javelin"         "Camaro Z28"         </span>
+<span class="co">#&gt; [25] "Pontiac Firebird"    "Fiat X1-9"          </span>
+<span class="co">#&gt; [27] "Porsche 914-2"       "Lotus Europa"       </span>
+<span class="co">#&gt; [29] "Ford Pantera L"      "Ferrari Dino"       </span>
+<span class="co">#&gt; [31] "Maserati Bora"       "Volvo 142E"</span>
+<span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">mtcars</span><span class="op">)</span>
+<span class="co">#&gt;       mpg             cyl             disp      </span>
+<span class="co">#&gt;  Min.   :10.40   Min.   :4.000   Min.   : 71.1  </span>
+<span class="co">#&gt;  1st Qu.:15.43   1st Qu.:4.000   1st Qu.:120.8  </span>
+<span class="co">#&gt;  Median :19.20   Median :6.000   Median :196.3  </span>
+<span class="co">#&gt;  Mean   :20.09   Mean   :6.188   Mean   :230.7  </span>
+<span class="co">#&gt;  3rd Qu.:22.80   3rd Qu.:8.000   3rd Qu.:326.0  </span>
+<span class="co">#&gt;  Max.   :33.90   Max.   :8.000   Max.   :472.0  </span>
+<span class="co">#&gt;        hp             drat             wt       </span>
+<span class="co">#&gt;  Min.   : 52.0   Min.   :2.760   Min.   :1.513  </span>
+<span class="co">#&gt;  1st Qu.: 96.5   1st Qu.:3.080   1st Qu.:2.581  </span>
+<span class="co">#&gt;  Median :123.0   Median :3.695   Median :3.325  </span>
+<span class="co">#&gt;  Mean   :146.7   Mean   :3.597   Mean   :3.217  </span>
+<span class="co">#&gt;  3rd Qu.:180.0   3rd Qu.:3.920   3rd Qu.:3.610  </span>
+<span class="co">#&gt;  Max.   :335.0   Max.   :4.930   Max.   :5.424  </span>
+<span class="co">#&gt;       qsec             vs               am        </span>
+<span class="co">#&gt;  Min.   :14.50   Min.   :0.0000   Min.   :0.0000  </span>
+<span class="co">#&gt;  1st Qu.:16.89   1st Qu.:0.0000   1st Qu.:0.0000  </span>
+<span class="co">#&gt;  Median :17.71   Median :0.0000   Median :0.0000  </span>
+<span class="co">#&gt;  Mean   :17.85   Mean   :0.4375   Mean   :0.4062  </span>
+<span class="co">#&gt;  3rd Qu.:18.90   3rd Qu.:1.0000   3rd Qu.:1.0000  </span>
+<span class="co">#&gt;  Max.   :22.90   Max.   :1.0000   Max.   :1.0000  </span>
+<span class="co">#&gt;       gear            carb      </span>
+<span class="co">#&gt;  Min.   :3.000   Min.   :1.000  </span>
+<span class="co">#&gt;  1st Qu.:3.000   1st Qu.:2.000  </span>
+<span class="co">#&gt;  Median :4.000   Median :2.000  </span>
+<span class="co">#&gt;  Mean   :3.688   Mean   :2.812  </span>
+<span class="co">#&gt;  3rd Qu.:4.000   3rd Qu.:4.000  </span>
+<span class="co">#&gt;  Max.   :5.000   Max.   :8.000</span>
+<span class="fu"><a href="https://rdrr.io/r/base/dim.html">dim</a></span><span class="op">(</span><span class="va">mtcars</span><span class="op">)</span>
+<span class="co">#&gt; [1] 32 11</span></code></pre></div>
+<ol start="4" style="list-style-type: decimal">
+<li>To calculate the variance of weight:</li>
+</ol>
+<div class="sourceCode" id="cb67"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/cor.html">var</a></span><span class="op">(</span><span class="va">mtcars</span><span class="op">$</span><span class="va">wt</span><span class="op">)</span>
+<span class="co">#&gt; [1] 0.957379</span></code></pre></div>
+<ol start="5" style="list-style-type: decimal">
+<li>To get the histogram of hp, the code below will produce a histogram:</li>
+</ol>
+<div class="sourceCode" id="cb68"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/graphics/hist.html">hist</a></span><span class="op">(</span><span class="va">mtcars</span><span class="op">$</span><span class="va">hp</span><span class="op">)</span></code></pre></div>
+<div class="inline-figure"><img src="16-mtcars_files/figure-html/unnamed-chunk-5-1.png" width="672"></div>
+<ol start="6" style="list-style-type: decimal">
+<li>To calculate the quantiles by percent:</li>
+</ol>
+<div class="sourceCode" id="cb69"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/quantile.html">quantile</a></span><span class="op">(</span><span class="va">mtcars</span><span class="op">$</span><span class="va">wt</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">.2</span>, <span class="fl">.4</span>, <span class="fl">.8</span><span class="op">)</span><span class="op">)</span>
+<span class="co">#&gt;   20%   40%   80% </span>
+<span class="co">#&gt; 2.349 3.158 3.770</span></code></pre></div>
+</div>
+<div id="excerises-for-you" class="section level2" number="12.2">
+<h2>
+<span class="header-section-number">12.2</span> Excerises for you:<a class="anchor" aria-label="anchor" href="#excerises-for-you"><i class="fas fa-link"></i></a>
+</h2>
+<ol style="list-style-type: decimal">
+<li><p>Find the minimum and maximum value of <code>mpg</code></p></li>
+<li><p>Find the mean and standard deviation of data variable <code>mpg</code></p></li>
+<li><p>What variable has a 3rd quartile value of 180.0?</p></li>
+<li><p>Create and explain what this means</p></li>
+</ol>
+<div class="inline-figure"><img src="16-mtcars_files/figure-html/unnamed-chunk-7-1.png" width="672"></div>
+<ol start="5" style="list-style-type: decimal">
+<li>Create and explain what this means</li>
+</ol>
+<pre><code>#&gt;             mpg        cyl       disp         hp
+#&gt; mpg   1.0000000 -0.8521620 -0.8475514 -0.7761684
+#&gt; cyl  -0.8521620  1.0000000  0.9020329  0.8324475
+#&gt; disp -0.8475514  0.9020329  1.0000000  0.7909486
+#&gt; hp   -0.7761684  0.8324475  0.7909486  1.0000000
+#&gt; drat  0.6811719 -0.6999381 -0.7102139 -0.4487591
+#&gt; wt   -0.8676594  0.7824958  0.8879799  0.6587479
+#&gt; qsec  0.4186840 -0.5912421 -0.4336979 -0.7082234
+#&gt; vs    0.6640389 -0.8108118 -0.7104159 -0.7230967
+#&gt; am    0.5998324 -0.5226070 -0.5912270 -0.2432043
+#&gt; gear  0.4802848 -0.4926866 -0.5555692 -0.1257043
+#&gt; carb -0.5509251  0.5269883  0.3949769  0.7498125
+#&gt;             drat         wt        qsec         vs
+#&gt; mpg   0.68117191 -0.8676594  0.41868403  0.6640389
+#&gt; cyl  -0.69993811  0.7824958 -0.59124207 -0.8108118
+#&gt; disp -0.71021393  0.8879799 -0.43369788 -0.7104159
+#&gt; hp   -0.44875912  0.6587479 -0.70822339 -0.7230967
+#&gt; drat  1.00000000 -0.7124406  0.09120476  0.4402785
+#&gt; wt   -0.71244065  1.0000000 -0.17471588 -0.5549157
+#&gt; qsec  0.09120476 -0.1747159  1.00000000  0.7445354
+#&gt; vs    0.44027846 -0.5549157  0.74453544  1.0000000
+#&gt; am    0.71271113 -0.6924953 -0.22986086  0.1683451
+#&gt; gear  0.69961013 -0.5832870 -0.21268223  0.2060233
+#&gt; carb -0.09078980  0.4276059 -0.65624923 -0.5696071
+#&gt;               am       gear        carb
+#&gt; mpg   0.59983243  0.4802848 -0.55092507
+#&gt; cyl  -0.52260705 -0.4926866  0.52698829
+#&gt; disp -0.59122704 -0.5555692  0.39497686
+#&gt; hp   -0.24320426 -0.1257043  0.74981247
+#&gt; drat  0.71271113  0.6996101 -0.09078980
+#&gt; wt   -0.69249526 -0.5832870  0.42760594
+#&gt; qsec -0.22986086 -0.2126822 -0.65624923
+#&gt; vs    0.16834512  0.2060233 -0.56960714
+#&gt; am    1.00000000  0.7940588  0.05753435
+#&gt; gear  0.79405876  1.0000000  0.27407284
+#&gt; carb  0.05753435  0.2740728  1.00000000</code></pre>
+<ol start="6" style="list-style-type: decimal">
+<li>Create a variable called <code>efficiency</code> which is mpg divided by weight. Which car has the max <code>efficiency</code> and what is this value?</li>
+<li>Which variable in this dataset has the greatest standard deviation?</li>
+<li>How many cars have 3 gears?</li>
+<li>How many cars get more than 17 mpg?</li>
+</ol>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="matrices.html"><span class="header-section-number">11</span> Matrices</a></div>
+<div class="next"><a href="more-simple-data-wrangling.html"><span class="header-section-number">13</span> More simple data wrangling</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#preloaded-data-and-mtcars"><span class="header-section-number">12</span> Preloaded data and mtcars</a></li>
+<li><a class="nav-link" href="#practicing-with-mtcars-data-set"><span class="header-section-number">12.1</span> Practicing with mtcars data set</a></li>
+<li><a class="nav-link" href="#excerises-for-you"><span class="header-section-number">12.2</span> Excerises for you:</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/rstudio/bookdown-demo/blob/master/16-mtcars.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/rstudio/bookdown-demo/edit/master/16-mtcars.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>BADM 371 Intro to Data Analytics</strong>" was written by BADM 371. It was last built on 2022-02-24.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+</body>
+</html>

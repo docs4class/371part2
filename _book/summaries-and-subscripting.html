@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 10 Summaries and Subscripting | BADM 371 Intro to Data Analytics</title>
+<meta name="author" content="BADM 371">
+<meta name="description" content="10.1 Introduction Let’s suppose we’ve collected some data from an experiment and stored them in an object x: x&lt;-c(7.5,8.2,3.1,5.6,8.2,9.3,6.5,7.0,9.3,1.2,14.5,6.2) Some simple summary statistics...">
+<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta property="og:title" content="Chapter 10 Summaries and Subscripting | BADM 371 Intro to Data Analytics">
+<meta property="og:type" content="book">
+<meta property="og:description" content="10.1 Introduction Let’s suppose we’ve collected some data from an experiment and stored them in an object x: x&lt;-c(7.5,8.2,3.1,5.6,8.2,9.3,6.5,7.0,9.3,1.2,14.5,6.2) Some simple summary statistics...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 10 Summaries and Subscripting | BADM 371 Intro to Data Analytics">
+<meta name="twitter:description" content="10.1 Introduction Let’s suppose we’ve collected some data from an experiment and stored them in an object x: x&lt;-c(7.5,8.2,3.1,5.6,8.2,9.3,6.5,7.0,9.3,1.2,14.5,6.2) Some simple summary statistics...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><link rel="stylesheet" href="bs4_style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">BADM 371 Intro to Data Analytics</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> Introduction</a></li>
+<li><a class="" href="syllabus.html"><span class="header-section-number">2</span> Syllabus</a></li>
+<li><a class="" href="our-class-rhythm.html"><span class="header-section-number">3</span> Our Class Rhythm</a></li>
+<li><a class="" href="end-in-mind.html"><span class="header-section-number">4</span> End in Mind</a></li>
+<li><a class="" href="schedule.html"><span class="header-section-number">5</span> Schedule</a></li>
+<li><a class="" href="elephant-in-the-room-r.html"><span class="header-section-number">6</span> Elephant in the room: R</a></li>
+<li><a class="" href="r-vs.-excel.html"><span class="header-section-number">7</span> R vs. Excel</a></li>
+<li><a class="" href="r-basics.html"><span class="header-section-number">8</span> R basics and workflows</a></li>
+<li><a class="" href="objects-and-arithmetic.html"><span class="header-section-number">9</span> Objects and Arithmetic</a></li>
+<li><a class="active" href="summaries-and-subscripting.html"><span class="header-section-number">10</span> Summaries and Subscripting</a></li>
+<li><a class="" href="matrices.html"><span class="header-section-number">11</span> Matrices</a></li>
+<li><a class="" href="preloaded-data-and-mtcars.html"><span class="header-section-number">12</span> Preloaded data and mtcars</a></li>
+<li><a class="" href="more-simple-data-wrangling.html"><span class="header-section-number">13</span> More simple data wrangling</a></li>
+<li><a class="" href="gdh-ice-cream.html"><span class="header-section-number">14</span> GDH Ice Cream</a></li>
+<li><a class="" href="quick-linear-regression.html"><span class="header-section-number">15</span> Quick Linear Regression</a></li>
+<li><a class="" href="linear-regression-with-mtcars.html"><span class="header-section-number">16</span> Linear Regression with mtcars</a></li>
+<li><a class="" href="deeper-linear-regression.html"><span class="header-section-number">17</span> Deeper Linear Regression</a></li>
+<li><a class="" href="linear-regression-practice.html"><span class="header-section-number">18</span> Linear Regression Practice</a></li>
+<li><a class="" href="filters-and-packages.html"><span class="header-section-number">19</span> Filters and packages</a></li>
+<li><a class="" href="dplyr.html"><span class="header-section-number">20</span> DPLYR</a></li>
+<li><a class="" href="starwars-excercises.html"><span class="header-section-number">21</span> starwars Excercises</a></li>
+<li><a class="" href="loading-dplyr-and-the-nycflights13-dataset.html"><span class="header-section-number">22</span> Loading dplyr and the nycflights13 dataset</a></li>
+<li><a class="" href="grouping-and-counting-summarise-tally-count-group_size-n_groups-ungroup.html"><span class="header-section-number">23</span> Grouping and counting: summarise, tally, count, group_size, n_groups, ungroup</a></li>
+<li><a class="" href="creating-data-frames-data_frame.html"><span class="header-section-number">24</span> Creating data frames: data_frame</a></li>
+<li><a class="" href="joining-merging-tables-left_join-right_join-inner_join-full_join-semi_join-anti_join.html"><span class="header-section-number">25</span> Joining (merging) tables: left_join, right_join, inner_join, full_join, semi_join, anti_join</a></li>
+<li><a class="" href="viewing-more-output-print-view.html"><span class="header-section-number">26</span> Viewing more output: print, View</a></li>
+<li><a class="" href="dplyr-excercies.html"><span class="header-section-number">27</span> DPLYR Excercies</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/rstudio/bookdown-demo">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="summaries-and-subscripting" class="section level1" number="10">
+<h1>
+<span class="header-section-number">10</span> Summaries and Subscripting<a class="anchor" aria-label="anchor" href="#summaries-and-subscripting"><i class="fas fa-link"></i></a>
+</h1>
+<div id="introduction-2" class="section level2" number="10.1">
+<h2>
+<span class="header-section-number">10.1</span> Introduction<a class="anchor" aria-label="anchor" href="#introduction-2"><i class="fas fa-link"></i></a>
+</h2>
+<p>Let’s suppose we’ve collected some data from an experiment and stored them in an object x:</p>
+<div class="sourceCode" id="cb41"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">x</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">7.5</span>,<span class="fl">8.2</span>,<span class="fl">3.1</span>,<span class="fl">5.6</span>,<span class="fl">8.2</span>,<span class="fl">9.3</span>,<span class="fl">6.5</span>,<span class="fl">7.0</span>,<span class="fl">9.3</span>,<span class="fl">1.2</span>,<span class="fl">14.5</span>,<span class="fl">6.2</span><span class="op">)</span></code></pre></div>
+<p>Some simple summary statistics of these data can be produced:</p>
+<div class="sourceCode" id="cb42"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>
+<span class="co">#&gt; [1] 7.216667</span>
+<span class="fu"><a href="https://rdrr.io/r/stats/cor.html">var</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>
+<span class="co">#&gt; [1] 11.00879</span>
+<span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>
+<span class="co">#&gt; [1] 3.317949</span>
+<span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>
+<span class="co">#&gt;    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. </span>
+<span class="co">#&gt;   1.200   6.050   7.250   7.217   8.475  14.500</span></code></pre></div>
+<p>which should all be self explanatory.</p>
+<p>It may be, however, that we subsequently learn that the first 6 data points correspond to measurements made on one machine, and the second six on another machine.</p>
+<p>This might lead us to want to summarize the two sets of data separately, so we would need to extract from
+x the two relevant subvectors. This is achieved by subscripting:</p>
+<div class="sourceCode" id="cb43"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">x</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">6</span><span class="op">]</span>
+<span class="co">#&gt; [1] 7.5 8.2 3.1 5.6 8.2 9.3</span>
+<span class="va">x</span><span class="op">[</span><span class="fl">7</span><span class="op">:</span><span class="fl">12</span><span class="op">]</span>
+<span class="co">#&gt; [1]  6.5  7.0  9.3  1.2 14.5  6.2</span>
+<span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">x</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">6</span><span class="op">]</span><span class="op">)</span>
+<span class="co">#&gt;    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. </span>
+<span class="co">#&gt;   3.100   6.075   7.850   6.983   8.200   9.300</span>
+<span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">x</span><span class="op">[</span><span class="fl">7</span><span class="op">:</span><span class="fl">12</span><span class="op">]</span><span class="op">)</span>
+<span class="co">#&gt;    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. </span>
+<span class="co">#&gt;   1.200   6.275   6.750   7.450   8.725  14.500</span></code></pre></div>
+<p>Other subsets can be created in the obvious way. For example:</p>
+<div class="sourceCode" id="cb44"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">x</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>,<span class="fl">4</span>,<span class="fl">9</span><span class="op">)</span><span class="op">]</span>
+<span class="co">#&gt; [1] 8.2 5.6 9.3</span></code></pre></div>
+<p>Negative integers can be used to exclude particular elements. For example</p>
+<div class="sourceCode" id="cb45"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">x</span><span class="op">[</span><span class="op">-</span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">6</span><span class="op">)</span><span class="op">]</span>
+<span class="co">#&gt; [1]  6.5  7.0  9.3  1.2 14.5  6.2</span></code></pre></div>
+<p>has the same effect as</p>
+<div class="sourceCode" id="cb46"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">x</span><span class="op">[</span><span class="fl">7</span><span class="op">:</span><span class="fl">12</span><span class="op">]</span>
+<span class="co">#&gt; [1]  6.5  7.0  9.3  1.2 14.5  6.2</span></code></pre></div>
+</div>
+<div id="exercises-summaries-and-subscripting" class="section level2" number="10.2">
+<h2>
+<span class="header-section-number">10.2</span> Exercises (Summaries and Subscripting)<a class="anchor" aria-label="anchor" href="#exercises-summaries-and-subscripting"><i class="fas fa-link"></i></a>
+</h2>
+<ol style="list-style-type: decimal">
+<li>If x&lt;- c(5,9,2,3,4,6,7,0,8,12,2,9) decide what each of the following is and use R to
+check your answers:</li>
+</ol>
+<ol style="list-style-type: lower-alpha">
+<li>x[2]</li>
+<li>x[2:4]</li>
+<li>x[c(2,3,6)]</li>
+<li>x[c(1:5,10:12)]</li>
+<li>x[-(10:12)]</li>
+</ol>
+<ol start="2" style="list-style-type: decimal">
+<li>The data y&lt;-c(33,44,29,16,25,45,33,19,54,22,21,49,11,24,56) contain sales of milk
+in gallons for 5 days in three different shops (the frst 3 values are for shops 1,2 and 3 on
+Monday, etc.) Produce a statistical summary of the sales for each day of the week and also
+for each shop.</li>
+</ol>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="objects-and-arithmetic.html"><span class="header-section-number">9</span> Objects and Arithmetic</a></div>
+<div class="next"><a href="matrices.html"><span class="header-section-number">11</span> Matrices</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#summaries-and-subscripting"><span class="header-section-number">10</span> Summaries and Subscripting</a></li>
+<li><a class="nav-link" href="#introduction-2"><span class="header-section-number">10.1</span> Introduction</a></li>
+<li><a class="nav-link" href="#exercises-summaries-and-subscripting"><span class="header-section-number">10.2</span> Exercises (Summaries and Subscripting)</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/rstudio/bookdown-demo/blob/master/14-subscripting.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/rstudio/bookdown-demo/edit/master/14-subscripting.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>BADM 371 Intro to Data Analytics</strong>" was written by BADM 371. It was last built on 2022-02-24.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+</body>
+</html>

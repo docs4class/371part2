@@ -4,16 +4,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 1 Introduction | BADM 371 Intro to Data Analytics</title>
+<title>Chapter 21 starwars Excercises | BADM 371 Intro to Data Analytics</title>
 <meta name="author" content="BADM 371">
-<meta name="description" content="This is a book that contains all of the materials and lessons for Dr. Turner’s data analytics one course.">
+<meta name="description" content="Please use the starwars dataset from the dplyr package to answer the following questions: How may humans are in this dataset? How many characters are taller than 89 cm? How many characters are...">
 <meta name="generator" content="bookdown 0.24 with bs4_book()">
-<meta property="og:title" content="Chapter 1 Introduction | BADM 371 Intro to Data Analytics">
+<meta property="og:title" content="Chapter 21 starwars Excercises | BADM 371 Intro to Data Analytics">
 <meta property="og:type" content="book">
-<meta property="og:description" content="This is a book that contains all of the materials and lessons for Dr. Turner’s data analytics one course.">
+<meta property="og:description" content="Please use the starwars dataset from the dplyr package to answer the following questions: How may humans are in this dataset? How many characters are taller than 89 cm? How many characters are...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 1 Introduction | BADM 371 Intro to Data Analytics">
-<meta name="twitter:description" content="This is a book that contains all of the materials and lessons for Dr. Turner’s data analytics one course.">
+<meta name="twitter:title" content="Chapter 21 starwars Excercises | BADM 371 Intro to Data Analytics">
+<meta name="twitter:description" content="Please use the starwars dataset from the dplyr package to answer the following questions: How may humans are in this dataset? How many characters are taller than 89 cm? How many characters are...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -39,7 +39,7 @@
 
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
         <ul class="book-toc list-unstyled">
-<li><a class="active" href="index.html"><span class="header-section-number">1</span> Introduction</a></li>
+<li><a class="" href="index.html"><span class="header-section-number">1</span> Introduction</a></li>
 <li><a class="" href="syllabus.html"><span class="header-section-number">2</span> Syllabus</a></li>
 <li><a class="" href="our-class-rhythm.html"><span class="header-section-number">3</span> Our Class Rhythm</a></li>
 <li><a class="" href="end-in-mind.html"><span class="header-section-number">4</span> End in Mind</a></li>
@@ -59,7 +59,7 @@
 <li><a class="" href="linear-regression-practice.html"><span class="header-section-number">18</span> Linear Regression Practice</a></li>
 <li><a class="" href="filters-and-packages.html"><span class="header-section-number">19</span> Filters and packages</a></li>
 <li><a class="" href="dplyr.html"><span class="header-section-number">20</span> DPLYR</a></li>
-<li><a class="" href="starwars-excercises.html"><span class="header-section-number">21</span> starwars Excercises</a></li>
+<li><a class="active" href="starwars-excercises.html"><span class="header-section-number">21</span> starwars Excercises</a></li>
 <li><a class="" href="loading-dplyr-and-the-nycflights13-dataset.html"><span class="header-section-number">22</span> Loading dplyr and the nycflights13 dataset</a></li>
 <li><a class="" href="grouping-and-counting-summarise-tally-count-group_size-n_groups-ungroup.html"><span class="header-section-number">23</span> Grouping and counting: summarise, tally, count, group_size, n_groups, ungroup</a></li>
 <li><a class="" href="creating-data-frames-data_frame.html"><span class="header-section-number">24</span> Creating data frames: data_frame</a></li>
@@ -73,33 +73,38 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><!--bookdown:title:end--><!--bookdown:title:start--><div id="introduction" class="section level1" number="1">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="starwars-excercises" class="section level1" number="21">
 <h1>
-<span class="header-section-number">1</span> Introduction<a class="anchor" aria-label="anchor" href="#introduction"><i class="fas fa-link"></i></a>
+<span class="header-section-number">21</span> <code>starwars</code> Excercises<a class="anchor" aria-label="anchor" href="#starwars-excercises"><i class="fas fa-link"></i></a>
 </h1>
-<p>This is a book written which contains all the materials and lessons for <strong>BADM 371 Intro to Data Analytics</strong>. If you miss a day, want to review something we covered in class, or for any reason want to look for a worksheet, this is where you can go.</p>
-<p>Each chapter contains a different topic we will cover during the semester. Some larger topics are split into two chapters to make accessing the materials a little more intuitive.</p>
-<p>This book is updated automatically with any changes made to the documents during the semester, so if at any point you are told there was a change in the assignment, you can come here to get the updated version.</p>
-<p>Also, this book has benefited greatly from lots of free, readily available resources posted on the web and we leverage these extensively. I would encourage you to review these resources in your analytics journey. Some that we specifically use with great frequency are these (and I say loud <strong>THANK YOU</strong> to the authors!):</p>
-<ul>
-<li><a href="https://r4ds.had.co.nz/">R for Data Science</a></li>
-<li><a href="https://trevorhastie.github.io/ISLR/">An Introduction to Statistical Learning with Applications in R</a></li>
-<li><a href="https://gsp.humboldt.edu/olm/R/Tutorials/BestFirstRTutorial.pdf">R: A self-learn tutorial</a></li>
-<li><a href="https://datasciencebox.org/">Data Science in a Box</a></li>
-<li><a href="https://stackoverflow.com/questions/4862178/remove-rows-with-all-or-some-nas-missing-values-in-data-frame?rq=1">stackoverflow.com, for example</a></li>
-</ul>
+<p>Please use the <code>starwars</code> dataset from the <code>dplyr</code> package to answer the following questions:</p>
+<ol style="list-style-type: decimal">
+<li>How may humans are in this dataset?</li>
+<li>How many characters are taller than 89 cm?</li>
+<li>How many characters are taller than 37 inches?</li>
+<li>How many characters are taller than 37 inches and weigh more than 55 pounds?</li>
+<li>How many characters are not human or droid?</li>
+<li>How many characters are not human or droid and are taller than 47 inches?</li>
+<li>Which species has the most individuals included in this data set?</li>
+<li>Which species has the tallest individuals on average?</li>
+<li>What is the tallest individual for each species?</li>
+<li>Calculate the BMI for each individual and determine which individual has the highest BMI. Use the formula <code>bmi = mass/((height/100)^2)</code> to calculate bmi.</li>
+<li>Which homeworld has the most individuals included in this data set?</li>
+<li>Which homeworld has the tallest individuals on average?</li>
+<li>What is the tallest individual for each eye color?</li>
+</ol>
 </div>
   <div class="chapter-nav">
-<div class="empty"></div>
-<div class="next"><a href="syllabus.html"><span class="header-section-number">2</span> Syllabus</a></div>
+<div class="prev"><a href="dplyr.html"><span class="header-section-number">20</span> DPLYR</a></div>
+<div class="next"><a href="loading-dplyr-and-the-nycflights13-dataset.html"><span class="header-section-number">22</span> Loading dplyr and the nycflights13 dataset</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav"><li><a class="nav-link" href="#introduction"><span class="header-section-number">1</span> Introduction</a></li></ul>
+      <ul class="nav navbar-nav"><li><a class="nav-link" href="#starwars-excercises"><span class="header-section-number">21</span> starwars Excercises</a></li></ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
-<li><a id="book-source" href="https://github.com/rstudio/bookdown-demo/blob/master/index.Rmd">View source <i class="fab fa-github"></i></a></li>
-          <li><a id="book-edit" href="https://github.com/rstudio/bookdown-demo/edit/master/index.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+<li><a id="book-source" href="https://github.com/rstudio/bookdown-demo/blob/master/30-dplyr.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/rstudio/bookdown-demo/edit/master/30-dplyr.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
         </ul>
 </div>
     </nav>

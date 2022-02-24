@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 7 R vs. Excel | BADM 371 Intro to Data Analytics</title>
+<meta name="author" content="BADM 371">
+<meta name="description" content="7.1 Both are useful Data analytics are increasingly important components of decision-making in any business. Whether you’re a part of a marketing team that needs to generate visuals to highlight...">
+<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta property="og:title" content="Chapter 7 R vs. Excel | BADM 371 Intro to Data Analytics">
+<meta property="og:type" content="book">
+<meta property="og:description" content="7.1 Both are useful Data analytics are increasingly important components of decision-making in any business. Whether you’re a part of a marketing team that needs to generate visuals to highlight...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 7 R vs. Excel | BADM 371 Intro to Data Analytics">
+<meta name="twitter:description" content="7.1 Both are useful Data analytics are increasingly important components of decision-making in any business. Whether you’re a part of a marketing team that needs to generate visuals to highlight...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><link rel="stylesheet" href="bs4_style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">BADM 371 Intro to Data Analytics</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> Introduction</a></li>
+<li><a class="" href="syllabus.html"><span class="header-section-number">2</span> Syllabus</a></li>
+<li><a class="" href="our-class-rhythm.html"><span class="header-section-number">3</span> Our Class Rhythm</a></li>
+<li><a class="" href="end-in-mind.html"><span class="header-section-number">4</span> End in Mind</a></li>
+<li><a class="" href="schedule.html"><span class="header-section-number">5</span> Schedule</a></li>
+<li><a class="" href="elephant-in-the-room-r.html"><span class="header-section-number">6</span> Elephant in the room: R</a></li>
+<li><a class="active" href="r-vs.-excel.html"><span class="header-section-number">7</span> R vs. Excel</a></li>
+<li><a class="" href="r-basics.html"><span class="header-section-number">8</span> R basics and workflows</a></li>
+<li><a class="" href="objects-and-arithmetic.html"><span class="header-section-number">9</span> Objects and Arithmetic</a></li>
+<li><a class="" href="summaries-and-subscripting.html"><span class="header-section-number">10</span> Summaries and Subscripting</a></li>
+<li><a class="" href="matrices.html"><span class="header-section-number">11</span> Matrices</a></li>
+<li><a class="" href="preloaded-data-and-mtcars.html"><span class="header-section-number">12</span> Preloaded data and mtcars</a></li>
+<li><a class="" href="more-simple-data-wrangling.html"><span class="header-section-number">13</span> More simple data wrangling</a></li>
+<li><a class="" href="gdh-ice-cream.html"><span class="header-section-number">14</span> GDH Ice Cream</a></li>
+<li><a class="" href="quick-linear-regression.html"><span class="header-section-number">15</span> Quick Linear Regression</a></li>
+<li><a class="" href="linear-regression-with-mtcars.html"><span class="header-section-number">16</span> Linear Regression with mtcars</a></li>
+<li><a class="" href="deeper-linear-regression.html"><span class="header-section-number">17</span> Deeper Linear Regression</a></li>
+<li><a class="" href="linear-regression-practice.html"><span class="header-section-number">18</span> Linear Regression Practice</a></li>
+<li><a class="" href="filters-and-packages.html"><span class="header-section-number">19</span> Filters and packages</a></li>
+<li><a class="" href="dplyr.html"><span class="header-section-number">20</span> DPLYR</a></li>
+<li><a class="" href="starwars-excercises.html"><span class="header-section-number">21</span> starwars Excercises</a></li>
+<li><a class="" href="loading-dplyr-and-the-nycflights13-dataset.html"><span class="header-section-number">22</span> Loading dplyr and the nycflights13 dataset</a></li>
+<li><a class="" href="grouping-and-counting-summarise-tally-count-group_size-n_groups-ungroup.html"><span class="header-section-number">23</span> Grouping and counting: summarise, tally, count, group_size, n_groups, ungroup</a></li>
+<li><a class="" href="creating-data-frames-data_frame.html"><span class="header-section-number">24</span> Creating data frames: data_frame</a></li>
+<li><a class="" href="joining-merging-tables-left_join-right_join-inner_join-full_join-semi_join-anti_join.html"><span class="header-section-number">25</span> Joining (merging) tables: left_join, right_join, inner_join, full_join, semi_join, anti_join</a></li>
+<li><a class="" href="viewing-more-output-print-view.html"><span class="header-section-number">26</span> Viewing more output: print, View</a></li>
+<li><a class="" href="dplyr-excercies.html"><span class="header-section-number">27</span> DPLYR Excercies</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/rstudio/bookdown-demo">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="r-vs.-excel" class="section level1" number="7">
+<h1>
+<span class="header-section-number">7</span> R vs. Excel<a class="anchor" aria-label="anchor" href="#r-vs.-excel"><i class="fas fa-link"></i></a>
+</h1>
+<div id="both-are-useful" class="section level2" number="7.1">
+<h2>
+<span class="header-section-number">7.1</span> Both are useful<a class="anchor" aria-label="anchor" href="#both-are-useful"><i class="fas fa-link"></i></a>
+</h2>
+<p>Data analytics are increasingly important components of decision-making in any business. Whether you’re a part of a marketing team that needs to generate visuals to highlight industry trends, or you’re looking to generate financial statements, you will need an analytics program to help you develop your reports and effectively communicate your findings.</p>
+<p>Both R and Excel are excellent data analytics tools, but they each have distinct functionality.</p>
+<div class="rmdimportant">
+<blockquote>
+<p><strong>Please make sure you can explain the distinct functions of both R and Excel! YOU WILL NEED TO KNOW THIS!</strong></p>
+</blockquote>
+</div>
+<p>Excel is a well-known software program included in the Microsoft Office Suite. Used to create spreadsheets, execute calculations, produce charts, and perform statistical analysis, Excel is used by many professionals across a variety of industries. PC’s <strong>BADM 299</strong> prepares you well for using Excel.</p>
+<p>R is a free, open-source programming language and software environment that’s frequently used in big data analysis and statistical computing. R has many advanced functions and capabilities.</p>
+</div>
+<div id="differences-between-r-and-excel" class="section level2" number="7.2">
+<h2>
+<span class="header-section-number">7.2</span> Differences Between R and Excel<a class="anchor" aria-label="anchor" href="#differences-between-r-and-excel"><i class="fas fa-link"></i></a>
+</h2>
+<p>When choosing between R and Excel, it’s important to understand how either software can get you the results you need. Here are some key differences between R and Excel to help you decide which makes the most sense to use.</p>
+</div>
+<div id="ease-of-use-learning-the-software" class="section level2" number="7.3">
+<h2>
+<span class="header-section-number">7.3</span> Ease of Use &amp; Learning the Software<a class="anchor" aria-label="anchor" href="#ease-of-use-learning-the-software"><i class="fas fa-link"></i></a>
+</h2>
+<p>Most people have likely already learned at least a few basic tips in Microsoft Excel. That’s one substantial benefit of using Excel—the initial learning curve is quite minimal, and most analysis can be done via point-and-click on the top panel. Once a user imports their data into the program, it’s not very hard to make basic graphs and charts.</p>
+<p>R is a programming language, however, meaning the initial learning curve is steeper. It will take most at least a few weeks to familiarize themselves with the interface and master the various functions. Luckily, using R can quickly become second-nature with practice.</p>
+</div>
+<div id="replicating-analysis" class="section level2" number="7.4">
+<h2>
+<span class="header-section-number">7.4</span> Replicating Analysis<a class="anchor" aria-label="anchor" href="#replicating-analysis"><i class="fas fa-link"></i></a>
+</h2>
+<p>R, while less user-friendly with a more intimidating user interface, has the capability to reproduce analyses repeatedly and with very different datasets. This can be incredibly helpful for large projects with multiple data sets, as you’ll keep everything consistent and clean, without having to rewrite the script each time.</p>
+<p>Since Excel’s user interface is point-and-click, you’ll need to rely on memory and repetition frequently. You cannot import codes and scripts as you would with R, so you’ll have to “reinvent the wheel” to perform the same analysis across different data sets. This is not detrimental if you are doing basic statistics, but it may become time-consuming with more complicated analyses.</p>
+<blockquote>
+<p>For example, let’s say you have thoroughly analyzed the analytics of 1 football season. How could R (vs Excel) help you quickly analyze a new season’s data?</p>
+</blockquote>
+</div>
+<div id="visualization" class="section level2" number="7.5">
+<h2>
+<span class="header-section-number">7.5</span> Visualization<a class="anchor" aria-label="anchor" href="#visualization"><i class="fas fa-link"></i></a>
+</h2>
+<p>When deciding between R and Excel, ask yourself, “How detailed do my visualizations need to be in order to achieve my goal(s)?” In Excel, for example, you can quickly highlight a group of cells and make a simple chart for PowerPoint. If you need a more comprehensive graph, however, R may be your best bet. R can produce incredibly attractive, detailed visuals that can help stakeholders understand your findings.</p>
+<p>It all comes down to what you need your graphics to do. If you’re just looking to cobble together a quick-and-dirty presentation to visualize data for your coworkers, then making simple straightforward charts in Excel will suffice. For those planning to publish large amounts of complicated data to various stakeholders, spending the time in R to create impressive interactive visual representations will likely be worth your while.</p>
+<p>For example, here’s and example of a pretty easy visualization in R that would be challenging to do (and update) in Excel.</p>
+<div class="inline-figure"><img src="09-rvexcel_files/figure-html/unnamed-chunk-1-1.png" width="672"></div>
+</div>
+<div id="packages" class="section level2" number="7.6">
+<h2>
+<span class="header-section-number">7.6</span> Packages<a class="anchor" aria-label="anchor" href="#packages"><i class="fas fa-link"></i></a>
+</h2>
+<p>In R, the fundamental unit of shareable code is the package. A package bundles together code, data, documentation, and tests, and is easy to share with others. As of June 2019, there were over 14,000 packages available on the Comprehensive R Archive Network, or CRAN, the public clearing house for R packages. This huge variety of packages is one of the reasons that R is so successful: the chances are that someone has already solved a problem that you’re working on, and you can benefit from their work by downloading their package.</p>
+<p>But packages are useful even if you never share your code. As Hilary Parker says in her introduction to packages: “Seriously, it doesn’t have to be about sharing your code (although that is an added benefit!). It is about saving yourself time.” Organising code in a package makes your life easier because packages come with conventions. For example, you put R code in R/, you put tests in tests/ and you put data in data/. These conventions are helpful because:</p>
+<ul>
+<li>They save you time — you don’t need to think about the best way to organise a project, you can just follow a template.</li>
+<li>Standardized conventions lead to standardized tools — if you buy into R’s package conventions, you get many tools for free.</li>
+</ul>
+<blockquote>
+<p>We will chat more about packages, but for fun check out the links below…</p>
+</blockquote>
+</div>
+<div id="careers" class="section level2" number="7.7">
+<h2>
+<span class="header-section-number">7.7</span> Careers<a class="anchor" aria-label="anchor" href="#careers"><i class="fas fa-link"></i></a>
+</h2>
+<p>Aptitude with Excel and R are incredibly valuable competencies that are in-demand across a variety of industries. Countless jobs are looking for applicants with at least some Excel experience (pivot tables look really good on a resumé), but R has a higher earning potential and is more in-demand than Excel.</p>
+<p>R is one of the most popular programming languages and is an industry-standard for data analytics and data science. If you want to enter either field, there’s a good chance you’ll have a competitive advantage by knowing R. Entry-level jobs for those focusing on R also tend to make a high salary, frequently starting off earning more than $75,000.</p>
+<p>Countless job listings also require Excel competency. From administrative assistants, marketers, academics, and more, everyone is expected to use Excel to some degree, whereas 10 to 15 years ago it was optional. Having a good background in Excel is still attractive on a resumé and will help to land a career with a high earning potential, but there are not many jobs looking for Excel skills alone.</p>
+</div>
+<div id="summary-using-r-and-excel" class="section level2" number="7.8">
+<h2>
+<span class="header-section-number">7.8</span> Summary – Using R and Excel<a class="anchor" aria-label="anchor" href="#summary-using-r-and-excel"><i class="fas fa-link"></i></a>
+</h2>
+<p>R and Excel are beneficial in different ways. Excel starts off easier to learn and is frequently cited as the go-to program for reporting, thanks to its speed and efficiency. R is designed to handle larger data sets, to be reproducible, and to create more detailed visualizations. It’s not a question of choosing between R and Excel, but deciding which program to use for different needs.</p>
+
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="elephant-in-the-room-r.html"><span class="header-section-number">6</span> Elephant in the room: R</a></div>
+<div class="next"><a href="r-basics.html"><span class="header-section-number">8</span> R basics and workflows</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#r-vs.-excel"><span class="header-section-number">7</span> R vs. Excel</a></li>
+<li><a class="nav-link" href="#both-are-useful"><span class="header-section-number">7.1</span> Both are useful</a></li>
+<li><a class="nav-link" href="#differences-between-r-and-excel"><span class="header-section-number">7.2</span> Differences Between R and Excel</a></li>
+<li><a class="nav-link" href="#ease-of-use-learning-the-software"><span class="header-section-number">7.3</span> Ease of Use &amp; Learning the Software</a></li>
+<li><a class="nav-link" href="#replicating-analysis"><span class="header-section-number">7.4</span> Replicating Analysis</a></li>
+<li><a class="nav-link" href="#visualization"><span class="header-section-number">7.5</span> Visualization</a></li>
+<li><a class="nav-link" href="#packages"><span class="header-section-number">7.6</span> Packages</a></li>
+<li><a class="nav-link" href="#careers"><span class="header-section-number">7.7</span> Careers</a></li>
+<li><a class="nav-link" href="#summary-using-r-and-excel"><span class="header-section-number">7.8</span> Summary – Using R and Excel</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/rstudio/bookdown-demo/blob/master/09-rvexcel.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/rstudio/bookdown-demo/edit/master/09-rvexcel.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>BADM 371 Intro to Data Analytics</strong>" was written by BADM 371. It was last built on 2022-02-24.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+</body>
+</html>

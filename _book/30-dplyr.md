@@ -35,7 +35,141 @@ Columns:
 
 All of the `dplyr` functions take a data frame (or tibble) as the first argument. Rather than forcing the user to either save intermediate objects or nest functions, dplyr provides the `%>%` operator from magrittr. x %>% f(y) turns into f(x, y) so the result from one step is then “piped” into the next step. You can use the pipe to rewrite multiple operations that you can read left-to-right, top-to-bottom (reading the pipe operator as “then”).
 
-## Loading dplyr and the nycflights13 dataset
+> What is this: `%>%`?
+
+## Loading `dplyr` and the `starwars` dataset
+
+
+```r
+# You should already have done this but you'll need it
+install.packages("dplyr")
+```
+
+
+
+
+
+
+```r
+library(dplyr)
+
+starwars %>% 
+  filter(species == "Droid")
+#> # A tibble: 6 x 14
+#>   name   height  mass hair_color skin_color  eye_color
+#>   <chr>   <int> <dbl> <chr>      <chr>       <chr>    
+#> 1 C-3PO     167    75 <NA>       gold        yellow   
+#> 2 R2-D2      96    32 <NA>       white, blue red      
+#> 3 R5-D4      97    32 <NA>       white, red  red      
+#> 4 IG-88     200   140 none       metal       red      
+#> 5 R4-P17     96    NA none       silver, red red, blue
+#> 6 BB8        NA    NA none       none        black    
+#> # ... with 8 more variables: birth_year <dbl>, sex <chr>,
+#> #   gender <chr>, homeworld <chr>, species <chr>,
+#> #   films <list>, vehicles <list>, starships <list>
+
+
+starwars %>% 
+  select(name, ends_with("color"))
+#> # A tibble: 87 x 4
+#>    name               hair_color    skin_color  eye_color
+#>    <chr>              <chr>         <chr>       <chr>    
+#>  1 Luke Skywalker     blond         fair        blue     
+#>  2 C-3PO              <NA>          gold        yellow   
+#>  3 R2-D2              <NA>          white, blue red      
+#>  4 Darth Vader        none          white       yellow   
+#>  5 Leia Organa        brown         light       brown    
+#>  6 Owen Lars          brown, grey   light       blue     
+#>  7 Beru Whitesun lars brown         light       blue     
+#>  8 R5-D4              <NA>          white, red  red      
+#>  9 Biggs Darklighter  black         light       brown    
+#> 10 Obi-Wan Kenobi     auburn, white fair        blue-gray
+#> # ... with 77 more rows
+
+
+starwars %>% 
+  mutate(name, bmi = mass / ((height / 100)  ^ 2)) %>%
+  select(name:mass, bmi)
+#> # A tibble: 87 x 4
+#>    name               height  mass   bmi
+#>    <chr>               <int> <dbl> <dbl>
+#>  1 Luke Skywalker        172    77  26.0
+#>  2 C-3PO                 167    75  26.9
+#>  3 R2-D2                  96    32  34.7
+#>  4 Darth Vader           202   136  33.3
+#>  5 Leia Organa           150    49  21.8
+#>  6 Owen Lars             178   120  37.9
+#>  7 Beru Whitesun lars    165    75  27.5
+#>  8 R5-D4                  97    32  34.0
+#>  9 Biggs Darklighter     183    84  25.1
+#> 10 Obi-Wan Kenobi        182    77  23.2
+#> # ... with 77 more rows
+
+
+starwars %>% 
+  arrange(desc(mass))
+#> # A tibble: 87 x 14
+#>    name       height  mass hair_color skin_color  eye_color 
+#>    <chr>       <int> <dbl> <chr>      <chr>       <chr>     
+#>  1 Jabba Des~    175  1358 <NA>       green-tan,~ orange    
+#>  2 Grievous      216   159 none       brown, whi~ green, ye~
+#>  3 IG-88         200   140 none       metal       red       
+#>  4 Darth Vad~    202   136 none       white       yellow    
+#>  5 Tarfful       234   136 brown      brown       blue      
+#>  6 Owen Lars     178   120 brown, gr~ light       blue      
+#>  7 Bossk         190   113 none       green       red       
+#>  8 Chewbacca     228   112 brown      unknown     blue      
+#>  9 Jek Tono ~    180   110 brown      fair        blue      
+#> 10 Dexter Je~    198   102 none       brown       yellow    
+#> # ... with 77 more rows, and 8 more variables:
+#> #   birth_year <dbl>, sex <chr>, gender <chr>,
+#> #   homeworld <chr>, species <chr>, films <list>,
+#> #   vehicles <list>, starships <list>
+
+starwars %>%
+  group_by(species) %>%
+  summarise(
+    n = n(),
+    mass = mean(mass, na.rm = TRUE)
+  ) %>%
+  filter(
+    n > 1,
+    mass > 50
+  )
+#> # A tibble: 8 x 3
+#>   species      n  mass
+#>   <chr>    <int> <dbl>
+#> 1 Droid        6  69.8
+#> 2 Gungan       3  74  
+#> 3 Human       35  82.8
+#> 4 Kaminoan     2  88  
+#> 5 Mirialan     2  53.1
+#> 6 Twi'lek      2  55  
+#> 7 Wookiee      2 124  
+#> 8 Zabrak       2  80
+```
+
+
+
+# `starwars` Excercises
+
+Please use the `starwars` dataset from the `dplyr` package to answer the following questions:
+
+1. How may humans are in this dataset?
+2. How many characters are taller than 89 cm?
+3. How many characters are taller than 37 inches?
+4. How many characters are taller than 37 inches and weigh more than 55 pounds?
+6. How many characters are not human or droid?
+6. How many characters are not human or droid and are taller than 47 inches?
+1. Which species has the most individuals included in this data set?
+2. Which species has the tallest individuals on average?
+3. What is the tallest individual for each species?
+4. Calculate the BMI for each individual and determine which individual has the highest BMI.  Use the formula `bmi = mass/((height/100)^2)` to calculate bmi.
+5. Which homeworld has the most individuals included in this data set?
+6. Which homeworld has the tallest individuals on average?
+7. What is the tallest individual for each eye color?
+
+# Loading dplyr and the nycflights13 dataset
 
 
 ```r
@@ -262,16 +396,16 @@ flights %>% group_by(month, day) %>% sample_n(3)
 #> # Groups:   month, day [365]
 #>     year month   day dep_time sched_dep_time dep_delay
 #>    <int> <int> <int>    <int>          <int>     <dbl>
-#>  1  2013     1     1     1253           1212        41
-#>  2  2013     1     1     1204           1200         4
-#>  3  2013     1     1      950            954        -4
-#>  4  2013     1     2     1720           1730       -10
-#>  5  2013     1     2     1658           1700        -2
-#>  6  2013     1     2     1153           1200        -7
-#>  7  2013     1     3     1547           1545         2
-#>  8  2013     1     3     1957           2000        -3
-#>  9  2013     1     3     1338           1320        18
-#> 10  2013     1     4     1205           1200         5
+#>  1  2013     1     1     1650           1615        35
+#>  2  2013     1     1      655            655         0
+#>  3  2013     1     1     1635           1630         5
+#>  4  2013     1     2      754            755        -1
+#>  5  2013     1     2     1526           1518         8
+#>  6  2013     1     2      126           2250       156
+#>  7  2013     1     3     1126           1130        -4
+#>  8  2013     1     3      909            908         1
+#>  9  2013     1     3     1607           1535        32
+#> 10  2013     1     4      606            600         6
 #> # ... with 1,085 more rows, and 13 more variables:
 #> #   arr_time <int>, sched_arr_time <int>, arr_delay <dbl>,
 #> #   carrier <chr>, flight <int>, tailnum <chr>,

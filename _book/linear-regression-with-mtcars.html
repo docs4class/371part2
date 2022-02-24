@@ -4,16 +4,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 1 Introduction | BADM 371 Intro to Data Analytics</title>
+<title>Chapter 16 Linear Regression with mtcars | BADM 371 Intro to Data Analytics</title>
 <meta name="author" content="BADM 371">
-<meta name="description" content="This is a book that contains all of the materials and lessons for Dr. Turner’s data analytics one course.">
+<meta name="description" content="Remember: ~ here means “explained by,” so the formula mpg ~ wt means we are predicting mpg as explained by wt. The most helpful way to view the output is with:  16.1 Excercises for you  16.1.1...">
 <meta name="generator" content="bookdown 0.24 with bs4_book()">
-<meta property="og:title" content="Chapter 1 Introduction | BADM 371 Intro to Data Analytics">
+<meta property="og:title" content="Chapter 16 Linear Regression with mtcars | BADM 371 Intro to Data Analytics">
 <meta property="og:type" content="book">
-<meta property="og:description" content="This is a book that contains all of the materials and lessons for Dr. Turner’s data analytics one course.">
+<meta property="og:description" content="Remember: ~ here means “explained by,” so the formula mpg ~ wt means we are predicting mpg as explained by wt. The most helpful way to view the output is with:  16.1 Excercises for you  16.1.1...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 1 Introduction | BADM 371 Intro to Data Analytics">
-<meta name="twitter:description" content="This is a book that contains all of the materials and lessons for Dr. Turner’s data analytics one course.">
+<meta name="twitter:title" content="Chapter 16 Linear Regression with mtcars | BADM 371 Intro to Data Analytics">
+<meta name="twitter:description" content="Remember: ~ here means “explained by,” so the formula mpg ~ wt means we are predicting mpg as explained by wt. The most helpful way to view the output is with:  16.1 Excercises for you  16.1.1...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -39,7 +39,7 @@
 
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
         <ul class="book-toc list-unstyled">
-<li><a class="active" href="index.html"><span class="header-section-number">1</span> Introduction</a></li>
+<li><a class="" href="index.html"><span class="header-section-number">1</span> Introduction</a></li>
 <li><a class="" href="syllabus.html"><span class="header-section-number">2</span> Syllabus</a></li>
 <li><a class="" href="our-class-rhythm.html"><span class="header-section-number">3</span> Our Class Rhythm</a></li>
 <li><a class="" href="end-in-mind.html"><span class="header-section-number">4</span> End in Mind</a></li>
@@ -54,7 +54,7 @@
 <li><a class="" href="more-simple-data-wrangling.html"><span class="header-section-number">13</span> More simple data wrangling</a></li>
 <li><a class="" href="gdh-ice-cream.html"><span class="header-section-number">14</span> GDH Ice Cream</a></li>
 <li><a class="" href="quick-linear-regression.html"><span class="header-section-number">15</span> Quick Linear Regression</a></li>
-<li><a class="" href="linear-regression-with-mtcars.html"><span class="header-section-number">16</span> Linear Regression with mtcars</a></li>
+<li><a class="active" href="linear-regression-with-mtcars.html"><span class="header-section-number">16</span> Linear Regression with mtcars</a></li>
 <li><a class="" href="deeper-linear-regression.html"><span class="header-section-number">17</span> Deeper Linear Regression</a></li>
 <li><a class="" href="linear-regression-practice.html"><span class="header-section-number">18</span> Linear Regression Practice</a></li>
 <li><a class="" href="filters-and-packages.html"><span class="header-section-number">19</span> Filters and packages</a></li>
@@ -73,33 +73,90 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><!--bookdown:title:end--><!--bookdown:title:start--><div id="introduction" class="section level1" number="1">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="linear-regression-with-mtcars" class="section level1" number="16">
 <h1>
-<span class="header-section-number">1</span> Introduction<a class="anchor" aria-label="anchor" href="#introduction"><i class="fas fa-link"></i></a>
+<span class="header-section-number">16</span> Linear Regression with mtcars<a class="anchor" aria-label="anchor" href="#linear-regression-with-mtcars"><i class="fas fa-link"></i></a>
 </h1>
-<p>This is a book written which contains all the materials and lessons for <strong>BADM 371 Intro to Data Analytics</strong>. If you miss a day, want to review something we covered in class, or for any reason want to look for a worksheet, this is where you can go.</p>
-<p>Each chapter contains a different topic we will cover during the semester. Some larger topics are split into two chapters to make accessing the materials a little more intuitive.</p>
-<p>This book is updated automatically with any changes made to the documents during the semester, so if at any point you are told there was a change in the assignment, you can come here to get the updated version.</p>
-<p>Also, this book has benefited greatly from lots of free, readily available resources posted on the web and we leverage these extensively. I would encourage you to review these resources in your analytics journey. Some that we specifically use with great frequency are these (and I say loud <strong>THANK YOU</strong> to the authors!):</p>
-<ul>
-<li><a href="https://r4ds.had.co.nz/">R for Data Science</a></li>
-<li><a href="https://trevorhastie.github.io/ISLR/">An Introduction to Statistical Learning with Applications in R</a></li>
-<li><a href="https://gsp.humboldt.edu/olm/R/Tutorials/BestFirstRTutorial.pdf">R: A self-learn tutorial</a></li>
-<li><a href="https://datasciencebox.org/">Data Science in a Box</a></li>
-<li><a href="https://stackoverflow.com/questions/4862178/remove-rows-with-all-or-some-nas-missing-values-in-data-frame?rq=1">stackoverflow.com, for example</a></li>
-</ul>
+<p>Remember: <strong><code>~</code></strong> here means “explained by,” so the formula mpg ~ wt means we are predicting mpg as explained by wt. The most helpful way to view the output is with:</p>
+<div id="excercises-for-you" class="section level2" number="16.1">
+<h2>
+<span class="header-section-number">16.1</span> Excercises for <strong>you</strong><a class="anchor" aria-label="anchor" href="#excercises-for-you"><i class="fas fa-link"></i></a>
+</h2>
+<div id="mtcars" class="section level3" number="16.1.1">
+<h3>
+<span class="header-section-number">16.1.1</span> <code>mtcars</code><a class="anchor" aria-label="anchor" href="#mtcars"><i class="fas fa-link"></i></a>
+</h3>
+<ol style="list-style-type: decimal">
+<li>Which variable in the <code>mtcars</code> dataset do you think best predicts <code>mpg</code> and why?</li>
+<li>What <code>mpg</code> would you predict for a car with a displacement of 333?</li>
+<li>What <code>mpg</code> would you predict for a car with a displacement of 12 cylinders?</li>
+<li>What <code>mpg</code> would you predict for a car with a displacement of 333 and 12 cylinders?</li>
+<li>What <code>mpg</code> would you predict for a car with a displacement of 333, 12 cylinders, and weighs 4,000 pounds?</li>
+</ol>
+</div>
+<div id="trees" class="section level3" number="16.1.2">
+<h3>
+<span class="header-section-number">16.1.2</span> <code>trees</code><a class="anchor" aria-label="anchor" href="#trees"><i class="fas fa-link"></i></a>
+</h3>
+<p>Open the <code>trees</code> dataset in R.</p>
+<ol style="list-style-type: decimal">
+<li>What are the variables and what do they mean?</li>
+<li>Make a plot with Volume on the x axis and Height on the Y and add a best fit line.</li>
+<li>Use Girth and Height to predict Volume. What would you predict for a tree with a Girth of 10 and a Height of 100 feet?</li>
+<li>Use Girth and Height to predict Volume. What would you predict for a tree with a Girth of 10 and a Height of 15 meters?</li>
+<li>What is the maximum circumference of a tree in this dataset?</li>
+</ol>
+</div>
+</div>
+<div id="more-excercises-for-you" class="section level2" number="16.2">
+<h2>
+<span class="header-section-number">16.2</span> More Excercises for <strong>you</strong><a class="anchor" aria-label="anchor" href="#more-excercises-for-you"><i class="fas fa-link"></i></a>
+</h2>
+<p>1.Open the <code>women</code> data set. Add a new variable (column) to the <code>women</code> dataframe called GPA which is these 15 numbers: 1.5, 3.7, 4,1, 3, 2.5, 3.8, 0.8, 2, 4, 1, 3, 2.5, 3.0, 4.0. You shoud get something that looks similar to mine.</p>
+<pre><code>FALSE    height weight GPA
+FALSE 1      58    115 1.5
+FALSE 2      59    117 3.7
+FALSE 3      60    120 4.0
+FALSE 4      61    123 1.0
+FALSE 5      62    126 3.0
+FALSE 6      63    129 2.5
+FALSE 7      64    132 3.8
+FALSE 8      65    135 0.8
+FALSE 9      66    139 2.0
+FALSE 10     67    142 4.0
+FALSE 11     68    146 1.0
+FALSE 12     69    150 3.0
+FALSE 13     70    154 2.5
+FALSE 14     71    159 3.0
+FALSE 15     72    164 4.0</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li><p>Use GPA and weight to predict the height of a person who is 155 pounds and has a GPA if 3.33. What is your prediction?</p></li>
+<li><p>Is GPA a significant predictor of height and how do you know?</p></li>
+<li><p>Create a figure showing a best fit line on of height and GPA.</p></li>
+<li><p>Install the dplyr package into your Rstudio session.</p></li>
+</ol>
+</div>
 </div>
   <div class="chapter-nav">
-<div class="empty"></div>
-<div class="next"><a href="syllabus.html"><span class="header-section-number">2</span> Syllabus</a></div>
+<div class="prev"><a href="quick-linear-regression.html"><span class="header-section-number">15</span> Quick Linear Regression</a></div>
+<div class="next"><a href="deeper-linear-regression.html"><span class="header-section-number">17</span> Deeper Linear Regression</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav"><li><a class="nav-link" href="#introduction"><span class="header-section-number">1</span> Introduction</a></li></ul>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#linear-regression-with-mtcars"><span class="header-section-number">16</span> Linear Regression with mtcars</a></li>
+<li>
+<a class="nav-link" href="#excercises-for-you"><span class="header-section-number">16.1</span> Excercises for you</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#mtcars"><span class="header-section-number">16.1.1</span> mtcars</a></li>
+<li><a class="nav-link" href="#trees"><span class="header-section-number">16.1.2</span> trees</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#more-excercises-for-you"><span class="header-section-number">16.2</span> More Excercises for you</a></li>
+</ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
-<li><a id="book-source" href="https://github.com/rstudio/bookdown-demo/blob/master/index.Rmd">View source <i class="fab fa-github"></i></a></li>
-          <li><a id="book-edit" href="https://github.com/rstudio/bookdown-demo/edit/master/index.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+<li><a id="book-source" href="https://github.com/rstudio/bookdown-demo/blob/master/21-linearregression.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/rstudio/bookdown-demo/edit/master/21-linearregression.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
         </ul>
 </div>
     </nav>

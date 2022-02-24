@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 9 Objects and Arithmetic | BADM 371 Intro to Data Analytics</title>
+<meta name="author" content="BADM 371">
+<meta name="description" content="9.1 Introduction R stores information and operates on objects. The simplest objects are scalars, vectors and matrices. But there are many others: lists and dataframes for example. In advanced use...">
+<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta property="og:title" content="Chapter 9 Objects and Arithmetic | BADM 371 Intro to Data Analytics">
+<meta property="og:type" content="book">
+<meta property="og:description" content="9.1 Introduction R stores information and operates on objects. The simplest objects are scalars, vectors and matrices. But there are many others: lists and dataframes for example. In advanced use...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 9 Objects and Arithmetic | BADM 371 Intro to Data Analytics">
+<meta name="twitter:description" content="9.1 Introduction R stores information and operates on objects. The simplest objects are scalars, vectors and matrices. But there are many others: lists and dataframes for example. In advanced use...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><link rel="stylesheet" href="bs4_style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">BADM 371 Intro to Data Analytics</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> Introduction</a></li>
+<li><a class="" href="syllabus.html"><span class="header-section-number">2</span> Syllabus</a></li>
+<li><a class="" href="our-class-rhythm.html"><span class="header-section-number">3</span> Our Class Rhythm</a></li>
+<li><a class="" href="end-in-mind.html"><span class="header-section-number">4</span> End in Mind</a></li>
+<li><a class="" href="schedule.html"><span class="header-section-number">5</span> Schedule</a></li>
+<li><a class="" href="elephant-in-the-room-r.html"><span class="header-section-number">6</span> Elephant in the room: R</a></li>
+<li><a class="" href="r-vs.-excel.html"><span class="header-section-number">7</span> R vs. Excel</a></li>
+<li><a class="" href="r-basics.html"><span class="header-section-number">8</span> R basics and workflows</a></li>
+<li><a class="active" href="objects-and-arithmetic.html"><span class="header-section-number">9</span> Objects and Arithmetic</a></li>
+<li><a class="" href="summaries-and-subscripting.html"><span class="header-section-number">10</span> Summaries and Subscripting</a></li>
+<li><a class="" href="matrices.html"><span class="header-section-number">11</span> Matrices</a></li>
+<li><a class="" href="preloaded-data-and-mtcars.html"><span class="header-section-number">12</span> Preloaded data and mtcars</a></li>
+<li><a class="" href="more-simple-data-wrangling.html"><span class="header-section-number">13</span> More simple data wrangling</a></li>
+<li><a class="" href="gdh-ice-cream.html"><span class="header-section-number">14</span> GDH Ice Cream</a></li>
+<li><a class="" href="quick-linear-regression.html"><span class="header-section-number">15</span> Quick Linear Regression</a></li>
+<li><a class="" href="linear-regression-with-mtcars.html"><span class="header-section-number">16</span> Linear Regression with mtcars</a></li>
+<li><a class="" href="deeper-linear-regression.html"><span class="header-section-number">17</span> Deeper Linear Regression</a></li>
+<li><a class="" href="linear-regression-practice.html"><span class="header-section-number">18</span> Linear Regression Practice</a></li>
+<li><a class="" href="filters-and-packages.html"><span class="header-section-number">19</span> Filters and packages</a></li>
+<li><a class="" href="dplyr.html"><span class="header-section-number">20</span> DPLYR</a></li>
+<li><a class="" href="starwars-excercises.html"><span class="header-section-number">21</span> starwars Excercises</a></li>
+<li><a class="" href="loading-dplyr-and-the-nycflights13-dataset.html"><span class="header-section-number">22</span> Loading dplyr and the nycflights13 dataset</a></li>
+<li><a class="" href="grouping-and-counting-summarise-tally-count-group_size-n_groups-ungroup.html"><span class="header-section-number">23</span> Grouping and counting: summarise, tally, count, group_size, n_groups, ungroup</a></li>
+<li><a class="" href="creating-data-frames-data_frame.html"><span class="header-section-number">24</span> Creating data frames: data_frame</a></li>
+<li><a class="" href="joining-merging-tables-left_join-right_join-inner_join-full_join-semi_join-anti_join.html"><span class="header-section-number">25</span> Joining (merging) tables: left_join, right_join, inner_join, full_join, semi_join, anti_join</a></li>
+<li><a class="" href="viewing-more-output-print-view.html"><span class="header-section-number">26</span> Viewing more output: print, View</a></li>
+<li><a class="" href="dplyr-excercies.html"><span class="header-section-number">27</span> DPLYR Excercies</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/rstudio/bookdown-demo">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="objects-and-arithmetic" class="section level1" number="9">
+<h1>
+<span class="header-section-number">9</span> Objects and Arithmetic<a class="anchor" aria-label="anchor" href="#objects-and-arithmetic"><i class="fas fa-link"></i></a>
+</h1>
+<div id="introduction-1" class="section level2" number="9.1">
+<h2>
+<span class="header-section-number">9.1</span> Introduction<a class="anchor" aria-label="anchor" href="#introduction-1"><i class="fas fa-link"></i></a>
+</h2>
+<p>R stores information and operates on objects. The simplest objects are scalars, vectors and matrices.
+But there are many others: lists and dataframes for example. In advanced use of R it can also be
+useful to define new types of object, specific for particular application. We will stick with just the
+most commonly used objects here.
+An important feature of R is that it will do different things on different types of objects. For
+example, type:</p>
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fl">4</span><span class="op">+</span><span class="fl">6</span>
+<span class="co">#&gt; [1] 10</span></code></pre></div>
+<p>So, R does scalar arithmetic returning the scalar value 10. (In actual fact, R returns a vector of
+length 1 - hence the [1] denoting first element of the vector.
+We can assign objects values for subsequent use. For example:</p>
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">x</span><span class="op">&lt;-</span><span class="fl">6</span>
+<span class="va">y</span><span class="op">&lt;-</span><span class="fl">4</span>
+<span class="va">z</span><span class="op">&lt;-</span><span class="va">x</span><span class="op">+</span><span class="va">y</span></code></pre></div>
+<p>would do the same calculation as above, storing the result in an object called z. We can look at
+the contents of the object by simply typing its name:</p>
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">z</span>
+<span class="co">#&gt; [1] 10</span></code></pre></div>
+<p>Storing things such as calculations as objects is extremely useful, especially in longer scripts. Mainly because you will likely call the same equation multiple times and if you need to revise it in any way you only need to change the initial assignment rather than every line.</p>
+</div>
+<div id="basic-functions" class="section level2" number="9.2">
+<h2>
+<span class="header-section-number">9.2</span> Basic Functions<a class="anchor" aria-label="anchor" href="#basic-functions"><i class="fas fa-link"></i></a>
+</h2>
+<p>At any time we can list the objects which we have created:</p>
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/ls.html">ls</a></span><span class="op">(</span><span class="op">)</span>
+<span class="co">#&gt; [1] "x" "y" "z"</span></code></pre></div>
+<p>Notice that ls is actually an object itself. Typing ls would result in a display of the contents of
+this object, in this case, the commands of the function. The use of parentheses, ls(), ensures that
+the function is executed and its result - in this case, a list of the objects in the directory - displayed.
+More commonly a function will operate on an object, for example:</p>
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="fl">16</span><span class="op">)</span>
+<span class="co">#&gt; [1] 4</span></code></pre></div>
+<p>calculates the square root of 16. Objects can be removed from the current workspace with the rm
+function:</p>
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/rm.html">rm</a></span><span class="op">(</span><span class="va">x</span>,<span class="va">y</span><span class="op">)</span></code></pre></div>
+<p>for example.</p>
+<p>There are many standard functions available in R, and it is also possible to create new ones.
+Vectors can be created in R in a number of ways. We can describe all of the elements:</p>
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">z</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">5</span>,<span class="fl">9</span>,<span class="fl">1</span>,<span class="fl">0</span><span class="op">)</span></code></pre></div>
+<p>Note the use of the function c to concatenate or glue together individual elements. This function
+can be used much more widely, for example</p>
+<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">x</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">5</span>,<span class="fl">9</span><span class="op">)</span>
+<span class="va">y</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">0</span><span class="op">)</span>
+<span class="va">z</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">x</span>,<span class="va">y</span><span class="op">)</span></code></pre></div>
+<p>would lead to the same result by gluing together two vectors to create a single vector.</p>
+<p>Sequences can be generated as follows:</p>
+<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">x</span><span class="op">&lt;-</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span></code></pre></div>
+<p>while more general sequences can be generated using the seq command. For example:</p>
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">9</span>,by<span class="op">=</span><span class="fl">2</span><span class="op">)</span>
+<span class="co">#&gt; [1] 1 3 5 7 9</span>
+<span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">8</span>,<span class="fl">20</span>,length<span class="op">=</span><span class="fl">6</span><span class="op">)</span>
+<span class="co">#&gt; [1]  8.0 10.4 12.8 15.2 17.6 20.0</span></code></pre></div>
+<p>These examples illustrate that many functions in R have optional arguments, in this case, either the step length or the total length of the sequence (it doesn’t make sense to use both). If you leave out both of these options, R will make its own default choice, in this case assuming a step length
+of 1. So, for example,</p>
+<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">8</span>,<span class="fl">20</span>,length<span class="op">=</span><span class="fl">6</span><span class="op">)</span>
+<span class="co">#&gt; [1]  8.0 10.4 12.8 15.2 17.6 20.0</span>
+<span class="va">x</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">10</span><span class="op">)</span>
+<span class="va">x</span>
+<span class="co">#&gt;  [1]  1  2  3  4  5  6  7  8  9 10</span></code></pre></div>
+<p>also generates a vector of integers from 1 to 10.</p>
+<p>At this point it’s worth mentioning the help facility. If you don’t know how to use a function,
+or don’t know what the options or default values are, type help(functionname) where functionname is the name of the function you are interested in. This will usually help and will often include examples to make things even clearer.</p>
+<p>Another useful function for building vectors is the rep command for repeating things. For
+example:</p>
+<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">100</span><span class="op">)</span>
+<span class="co">#&gt;   [1] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</span>
+<span class="co">#&gt;  [28] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</span>
+<span class="co">#&gt;  [55] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</span>
+<span class="co">#&gt;  [82] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</span>
+<span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">3</span>,<span class="fl">6</span><span class="op">)</span>
+<span class="co">#&gt;  [1] 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3</span>
+<span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">3</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">6</span>,<span class="fl">6</span>,<span class="fl">6</span><span class="op">)</span><span class="op">)</span>
+<span class="co">#&gt;  [1] 1 1 1 1 1 1 2 2 2 2 2 2 3 3 3 3 3 3</span></code></pre></div>
+<p>which we could also simplify cleverly as:</p>
+<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">3</span>,<span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="fl">6</span>,<span class="fl">3</span><span class="op">)</span><span class="op">)</span>
+<span class="co">#&gt;  [1] 1 1 1 1 1 1 2 2 2 2 2 2 3 3 3 3 3 3</span></code></pre></div>
+<p>As explained above, R will often adapt to the objects it is asked to work on. For example:</p>
+<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">x</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">6</span>,<span class="fl">8</span>,<span class="fl">9</span><span class="op">)</span>
+<span class="va">y</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">4</span><span class="op">)</span>
+<span class="va">x</span><span class="op">+</span><span class="va">y</span>
+<span class="co">#&gt; [1]  7 10 13</span></code></pre></div>
+<p>and</p>
+<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">x</span><span class="op">*</span><span class="va">y</span>
+<span class="co">#&gt; [1]  6 16 36</span></code></pre></div>
+<p>showing that R uses componentwise arithmetic on vectors. R will also try to make sense if objects
+are mixed. For example:</p>
+<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">x</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">6</span>,<span class="fl">8</span>,<span class="fl">9</span><span class="op">)</span>
+<span class="va">x</span><span class="op">+</span><span class="fl">2</span>
+<span class="co">#&gt; [1]  8 10 11</span></code></pre></div>
+<p>though care should be taken to make sure that R is doing what you would like it to in these circumstances.</p>
+<p>Two particularly useful functions worth remembering are length which returns the length of a vector (i.e. the number of elements it contains) and sum which calculates the sum of the elements of a vector.</p>
+</div>
+<div id="statistics-and-summaries" class="section level2" number="9.3">
+<h2>
+<span class="header-section-number">9.3</span> Statistics and Summaries<a class="anchor" aria-label="anchor" href="#statistics-and-summaries"><i class="fas fa-link"></i></a>
+</h2>
+<p>One of the most useful functions of R is its ability to perform statistical analysis on large pieces of data. Later in this book we will cover how this analysis can be used to build complex models and test their accuracy. For now, the focus will be on how to perform basic statistical analysis and the definitions of the more basic terms.</p>
+<div id="statistical-analysis" class="section level3" number="9.3.1">
+<h3>
+<span class="header-section-number">9.3.1</span> Statistical Analysis<a class="anchor" aria-label="anchor" href="#statistical-analysis"><i class="fas fa-link"></i></a>
+</h3>
+<p>You’ve undoubtedly have heard the terms mean, median, standard deviation and variance. However, if asked to define these terms and provide examples of their usefulness, what would you say? This section is going to answer the first part of that question.</p>
+<p>Mean is a pretty straight forward concept for most. Commonly referred to as the “average,” you find this number by adding all the numbers in your data set together and then divide by the total number of points you used. This is easily done on a calculator if you are working with less then 20 digits, however this is almost never the case in data science. Often, especially with R, you will be dealing with data sets with hundreds, thousands, or maybe even hundreds of thousands of data points. Fortunately, R takes the pain away from this process and offers a very simple function that will do this for you. Start by creating an object that contains a list of numbers, and then simply use the mean function to calculate the average of your variable.</p>
+<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">a</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">3.8</span>,<span class="fl">4</span>,<span class="fl">3.1</span>,<span class="fl">2.1</span>,<span class="fl">12.6</span>,<span class="fl">17</span>,<span class="fl">8.43</span>,<span class="fl">11</span>,<span class="fl">2</span>,<span class="fl">3</span>,<span class="fl">9</span>,<span class="fl">5</span>,<span class="fl">3</span>,<span class="fl">0.5</span><span class="op">)</span>
+
+<span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">a</span><span class="op">)</span>
+<span class="co">#&gt; [1] 6.037857</span></code></pre></div>
+<p>The median of a data set is data point that fall in the middle of all the other points when they are ordered from lowest to highest. Again, something easily found even without a calculator if you have small data sets, however humans can miscount and some data sets are just too massive for us to do on our own. R never makes these counting mistakes and by using a simple function you save yourself hours of mundane counting. Start the same way you found mean by creating an object with various numbers and then simply use the <code>median</code> function.</p>
+<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">b</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">3.8</span>,<span class="fl">4</span>,<span class="fl">3.1</span>,<span class="fl">2.1</span>,<span class="fl">12.6</span>,<span class="fl">17</span>,<span class="fl">8.43</span>,<span class="fl">11</span>,<span class="fl">2</span>,<span class="fl">3</span>,<span class="fl">9</span>,<span class="fl">5</span>,<span class="fl">3</span>,<span class="fl">0.5</span><span class="op">)</span>
+
+<span class="fu"><a href="https://rdrr.io/r/stats/median.html">median</a></span><span class="op">(</span><span class="va">b</span><span class="op">)</span>
+<span class="co">#&gt; [1] 3.9</span></code></pre></div>
+<p>Many people have heard of standard deviation, but not many can provide an accurate definition. Standard deviation is the measure of variance (see next paragraph) between numbers in a data set and that data set’s mean. Typically a lower standard deviation is what you want to see as this proves there is little variance in your data set and that typically means a higher correlation. If you wanted to find this by hand you would have to find the square root of the variance between each point and the mean. This is easy if you have all the numbers you need, but that is almost never the case and thus you would have to calculate all that variance by hand and that is too much work. Why take all those extra steps when R can do it for you? The <code><a href="https://rdrr.io/r/stats/sd.html">sd()</a></code> function does all the work without any hassle, all you have to do is identify the object you want it to find the standard deviation of.</p>
+<div class="sourceCode" id="cb37"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">d</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">3.8</span>,<span class="fl">4</span>,<span class="fl">3.1</span>,<span class="fl">2.1</span>,<span class="fl">12.6</span>,<span class="fl">17</span>,<span class="fl">8.43</span>,<span class="fl">11</span>,<span class="fl">2</span>,<span class="fl">3</span>,<span class="fl">9</span>,<span class="fl">5</span>,<span class="fl">3</span>,<span class="fl">0.5</span><span class="op">)</span>
+
+<span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">d</span><span class="op">)</span>
+<span class="co">#&gt; [1] 4.821066</span></code></pre></div>
+<p>Finally, we can cover variance. Variance is the measure of distance between two numbers. This statistic is often used to measure how spread out your data is and can be used to determine your model’s accuracy. Typically, a higher variance means your model is inaccurate. So, when building models and reviewing your summary statistics, you want your variance to be as low as possible. There is a var() function that will find the variance of a variable for you, however typically you will create a confusion matrix (discussed in a later section) that will help you determine the variance, and thus accuracy of your model.</p>
+</div>
+<div id="anscombes-quartet" class="section level3" number="9.3.2">
+<h3>
+<span class="header-section-number">9.3.2</span> Anscombe’s Quartet<a class="anchor" aria-label="anchor" href="#anscombes-quartet"><i class="fas fa-link"></i></a>
+</h3>
+<p>You may be asking now, why bother visualizing data if I have all these numbers that will tell me what I need to know about my data? You are correct in saying that statistical data is very useful, and in many cases essential, however visualization is equally as important. Anscombe’s Quartet is a statistical phenomenon where four sets of data have very similar statistical properties, but very are completely different when graphed. Let’s take a look at the data:</p>
+<pre><code>#&gt;    x1 x2 x3 x4    y1   y2    y3    y4
+#&gt; 1  10 10 10  8  8.04 9.14  7.46  6.58
+#&gt; 2   8  8  8  8  6.95 8.14  6.77  5.76
+#&gt; 3  13 13 13  8  7.58 8.74 12.74  7.71
+#&gt; 4   9  9  9  8  8.81 8.77  7.11  8.84
+#&gt; 5  11 11 11  8  8.33 9.26  7.81  8.47
+#&gt; 6  14 14 14  8  9.96 8.10  8.84  7.04
+#&gt; 7   6  6  6  8  7.24 6.13  6.08  5.25
+#&gt; 8   4  4  4 19  4.26 3.10  5.39 12.50
+#&gt; 9  12 12 12  8 10.84 9.13  8.15  5.56
+#&gt; 10  7  7  7  8  4.82 7.26  6.42  7.91
+#&gt; 11  5  5  5  8  5.68 4.74  5.73  6.89</code></pre>
+<pre><code>#&gt;                    x1        x2        x3        x4
+#&gt; nobs        11.000000 11.000000 11.000000 11.000000
+#&gt; NAs          0.000000  0.000000  0.000000  0.000000
+#&gt; Minimum      4.000000  4.000000  4.000000  8.000000
+#&gt; Maximum     14.000000 14.000000 14.000000 19.000000
+#&gt; 1. Quartile  6.500000  6.500000  6.500000  8.000000
+#&gt; 3. Quartile 11.500000 11.500000 11.500000  8.000000
+#&gt; Mean         9.000000  9.000000  9.000000  9.000000
+#&gt; Median       9.000000  9.000000  9.000000  8.000000
+#&gt; Sum         99.000000 99.000000 99.000000 99.000000
+#&gt; SE Mean      1.000000  1.000000  1.000000  1.000000
+#&gt; LCL Mean     6.771861  6.771861  6.771861  6.771861
+#&gt; UCL Mean    11.228139 11.228139 11.228139 11.228139
+#&gt; Variance    11.000000 11.000000 11.000000 11.000000
+#&gt; Stdev        3.316625  3.316625  3.316625  3.316625
+#&gt; Skewness     0.000000  0.000000  0.000000  2.466911
+#&gt; Kurtosis    -1.528926 -1.528926 -1.528926  4.520661
+#&gt;                    y1        y2        y3        y4
+#&gt; nobs        11.000000 11.000000 11.000000 11.000000
+#&gt; NAs          0.000000  0.000000  0.000000  0.000000
+#&gt; Minimum      4.260000  3.100000  5.390000  5.250000
+#&gt; Maximum     10.840000  9.260000 12.740000 12.500000
+#&gt; 1. Quartile  6.315000  6.695000  6.250000  6.170000
+#&gt; 3. Quartile  8.570000  8.950000  7.980000  8.190000
+#&gt; Mean         7.500909  7.500909  7.500000  7.500909
+#&gt; Median       7.580000  8.140000  7.110000  7.040000
+#&gt; Sum         82.510000 82.510000 82.500000 82.510000
+#&gt; SE Mean      0.612541  0.612568  0.612196  0.612242
+#&gt; LCL Mean     6.136083  6.136024  6.135943  6.136748
+#&gt; UCL Mean     8.865735  8.865795  8.864057  8.865070
+#&gt; Variance     4.127269  4.127629  4.122620  4.123249
+#&gt; Stdev        2.031568  2.031657  2.030424  2.030579
+#&gt; Skewness    -0.048374 -0.978693  1.380120  1.120774
+#&gt; Kurtosis    -1.199123 -0.514319  1.240044  0.628751</code></pre>
+<p>As you can see from the table, the summary statistics for the four tables look very similar, however let’s graph these and see what kind of visualizations we get.</p>
+<div class="inline-figure"><img src="13-arithmetic_files/figure-html/unnamed-chunk-23-1.png" width="672"></div>
+<p>Pretty rad right? So yes, statistical data is vital, however it should not be the only thing you look at, sometimes a visualization can help you understand the data more! Later in this book, and in the upper level data analytics courses, we will cover visualizations more and how they can be useful.</p>
+</div>
+</div>
+<div id="exercises-1" class="section level2" number="9.4">
+<h2>
+<span class="header-section-number">9.4</span> Exercises<a class="anchor" aria-label="anchor" href="#exercises-1"><i class="fas fa-link"></i></a>
+</h2>
+<ol style="list-style-type: decimal">
+<li>Define</li>
+</ol>
+<div class="sourceCode" id="cb40"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">x</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">4</span>,<span class="fl">2</span>,<span class="fl">6</span><span class="op">)</span>
+<span class="va">y</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">0</span>,<span class="op">-</span><span class="fl">1</span><span class="op">)</span></code></pre></div>
+<ol start="2" style="list-style-type: decimal">
+<li>Decide what the result will be of the following:
+<ul>
+<li>length(x)</li>
+<li>sum(x)</li>
+<li>sum(x^2)</li>
+<li>x+y</li>
+<li>x*y</li>
+<li>x-2</li>
+<li>x^2</li>
+</ul>
+</li>
+<li>Use R to check your answers.</li>
+<li>Decide what the following sequences are and use R to check your answers:
+<ul>
+<li>7:11</li>
+<li>seq(2,9)</li>
+<li>seq(4,10,by=2)</li>
+<li>seq(3,30,length=10)</li>
+<li>seq(6,-4,by=-2)</li>
+</ul>
+</li>
+<li>Determine what the result will be of the following R expressions, and then use R to check if you are right:
+<ul>
+<li>rep(2,4)</li>
+<li>rep(c(1,2),4)</li>
+<li>rep(c(1,2),c(4,4))</li>
+<li>rep(1:4,4)</li>
+<li>rep(1:4,rep(3,4))</li>
+</ul>
+</li>
+<li>Use the rep function to define simply the following vectors in R.
+<ul>
+<li>6,6,6,6,6,6</li>
+<li>5,8,5,8,5,8,5,8</li>
+<li>5,5,5,5,8,8,8,8</li>
+</ul>
+</li>
+</ol>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="r-basics.html"><span class="header-section-number">8</span> R basics and workflows</a></div>
+<div class="next"><a href="summaries-and-subscripting.html"><span class="header-section-number">10</span> Summaries and Subscripting</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#objects-and-arithmetic"><span class="header-section-number">9</span> Objects and Arithmetic</a></li>
+<li><a class="nav-link" href="#introduction-1"><span class="header-section-number">9.1</span> Introduction</a></li>
+<li><a class="nav-link" href="#basic-functions"><span class="header-section-number">9.2</span> Basic Functions</a></li>
+<li>
+<a class="nav-link" href="#statistics-and-summaries"><span class="header-section-number">9.3</span> Statistics and Summaries</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#statistical-analysis"><span class="header-section-number">9.3.1</span> Statistical Analysis</a></li>
+<li><a class="nav-link" href="#anscombes-quartet"><span class="header-section-number">9.3.2</span> Anscombe’s Quartet</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#exercises-1"><span class="header-section-number">9.4</span> Exercises</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/rstudio/bookdown-demo/blob/master/13-arithmetic.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/rstudio/bookdown-demo/edit/master/13-arithmetic.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>BADM 371 Intro to Data Analytics</strong>" was written by BADM 371. It was last built on 2022-02-24.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+</body>
+</html>
