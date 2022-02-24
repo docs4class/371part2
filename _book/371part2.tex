@@ -1,0 +1,1287 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{book}
+\title{BADM 371 Intro to Data Analytics}
+\author{BADM 371}
+\date{2022-02-24}
+
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={BADM 371 Intro to Data Analytics},
+  pdfauthor={BADM 371},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\usepackage{booktabs}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage[]{natbib}
+\bibliographystyle{apalike}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\hypertarget{introduction}{%
+\chapter{Introduction}\label{introduction}}
+
+This is a book written which contains all the materials and lessons for \textbf{BADM 371 Intro to Data Analytics}. If you miss a day, want to review something we covered in class, or for any reason want to look for a worksheet, this is where you can go.
+
+Each chapter contains a different topic we will cover during the semester. Some larger topics are split into two chapters to make accessing the materials a little more intuitive.
+
+This book is updated automatically with any changes made to the documents during the semester, so if at any point you are told there was a change in the assignment, you can come here to get the updated version.
+
+Also, this book has benefited greatly from lots of free, readily available resources posted on the web and we leverage these extensively. I would encourage you to review these resources in your analytics journey. Some that we specifically use with great frequency are these (and I say loud \textbf{THANK YOU} to the authors!):
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://r4ds.had.co.nz/}{R for Data Science}
+\item
+  \href{https://trevorhastie.github.io/ISLR/}{An Introduction to Statistical Learning with Applications in R}
+\item
+  \href{https://gsp.humboldt.edu/olm/R/Tutorials/BestFirstRTutorial.pdf}{R: A self-learn tutorial}
+\item
+  \href{https://datasciencebox.org/}{Data Science in a Box}
+\item
+  \href{https://stackoverflow.com/questions/4862178/remove-rows-with-all-or-some-nas-missing-values-in-data-frame?rq=1}{stackoverflow.com, for example}
+\end{itemize}
+
+\hypertarget{dplyr}{%
+\chapter{DPLYR}\label{dplyr}}
+
+\hypertarget{introduction-1}{%
+\section{Introduction}\label{introduction-1}}
+
+For more help \textbf{PLEASE} check out \href{https://dplyr.tidyverse.org/articles/dplyr.html}{Introduction to dplyr} introducing the key functionality of the dplyr package.
+
+\begin{quote}
+Your life is about to change. For the better, even.
+\end{quote}
+
+\hypertarget{a-neat-resource}{%
+\section{A Neat Resource}\label{a-neat-resource}}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{http://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf}{RStudio's Data Wrangling Cheat Sheet} for dplyr and tidyr
+\end{itemize}
+
+\hypertarget{single-table-verbs}{%
+\section{Single table verbs}\label{single-table-verbs}}
+
+\texttt{dplyr} aims to provide a function for each basic verb of data manipulation. These verbs can be organised into three categories based on the component of the dataset that they work with:
+
+Rows:
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{filter()} chooses rows based on column values.
+\item
+  \texttt{slice()} chooses rows based on location.
+\item
+  \texttt{arrange()} changes the order of the rows.
+\end{itemize}
+
+Columns:
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{select()} changes whether or not a column is included.
+\item
+  \texttt{rename()} changes the name of columns.
+  \texttt{mutate()} changes the values of columns and creates new columns.
+\item
+  \texttt{relocate()} changes the order of the columns.
+  Groups of rows:
+\item
+  \texttt{summarise()} collapses a group into a single row. It's not that useful until we learn the \texttt{group\_by()} verb below.
+\end{itemize}
+
+\hypertarget{the-pipe}{%
+\section{The pipe}\label{the-pipe}}
+
+All of the \texttt{dplyr} functions take a data frame (or tibble) as the first argument. Rather than forcing the user to either save intermediate objects or nest functions, dplyr provides the \texttt{\%\textgreater{}\%} operator from magrittr. x \%\textgreater\% f(y) turns into f(x, y) so the result from one step is then ``piped'' into the next step. You can use the pipe to rewrite multiple operations that you can read left-to-right, top-to-bottom (reading the pipe operator as ``then'').
+
+\hypertarget{loading-dplyr-and-the-nycflights13-dataset}{%
+\section{Loading dplyr and the nycflights13 dataset}\label{loading-dplyr-and-the-nycflights13-dataset}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# load packages}
+\FunctionTok{suppressMessages}\NormalTok{(}\FunctionTok{library}\NormalTok{(dplyr))}
+\FunctionTok{library}\NormalTok{(nycflights13)}
+
+\CommentTok{\# print the flights dataset from nycflights13}
+\FunctionTok{head}\NormalTok{(flights)}
+\CommentTok{\#\textgreater{} \# A tibble: 6 x 19}
+\CommentTok{\#\textgreater{}    year month   day dep\_time sched\_dep\_time dep\_delay}
+\CommentTok{\#\textgreater{}   \textless{}int\textgreater{} \textless{}int\textgreater{} \textless{}int\textgreater{}    \textless{}int\textgreater{}          \textless{}int\textgreater{}     \textless{}dbl\textgreater{}}
+\CommentTok{\#\textgreater{} 1  2013     1     1      517            515         2}
+\CommentTok{\#\textgreater{} 2  2013     1     1      533            529         4}
+\CommentTok{\#\textgreater{} 3  2013     1     1      542            540         2}
+\CommentTok{\#\textgreater{} 4  2013     1     1      544            545        {-}1}
+\CommentTok{\#\textgreater{} 5  2013     1     1      554            600        {-}6}
+\CommentTok{\#\textgreater{} 6  2013     1     1      554            558        {-}4}
+\CommentTok{\#\textgreater{} \# ... with 13 more variables: arr\_time \textless{}int\textgreater{},}
+\CommentTok{\#\textgreater{} \#   sched\_arr\_time \textless{}int\textgreater{}, arr\_delay \textless{}dbl\textgreater{}, carrier \textless{}chr\textgreater{},}
+\CommentTok{\#\textgreater{} \#   flight \textless{}int\textgreater{}, tailnum \textless{}chr\textgreater{}, origin \textless{}chr\textgreater{}, dest \textless{}chr\textgreater{},}
+\CommentTok{\#\textgreater{} \#   air\_time \textless{}dbl\textgreater{}, distance \textless{}dbl\textgreater{}, hour \textless{}dbl\textgreater{},}
+\CommentTok{\#\textgreater{} \#   minute \textless{}dbl\textgreater{}, time\_hour \textless{}dttm\textgreater{}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{choosing-columns-select-rename}{%
+\section{Choosing columns: select, rename}\label{choosing-columns-select-rename}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# besides just using select() to pick columns...}
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{select}\NormalTok{(carrier, flight)}
+\CommentTok{\#\textgreater{} \# A tibble: 336,776 x 2}
+\CommentTok{\#\textgreater{}    carrier flight}
+\CommentTok{\#\textgreater{}    \textless{}chr\textgreater{}    \textless{}int\textgreater{}}
+\CommentTok{\#\textgreater{}  1 UA        1545}
+\CommentTok{\#\textgreater{}  2 UA        1714}
+\CommentTok{\#\textgreater{}  3 AA        1141}
+\CommentTok{\#\textgreater{}  4 B6         725}
+\CommentTok{\#\textgreater{}  5 DL         461}
+\CommentTok{\#\textgreater{}  6 UA        1696}
+\CommentTok{\#\textgreater{}  7 B6         507}
+\CommentTok{\#\textgreater{}  8 EV        5708}
+\CommentTok{\#\textgreater{}  9 B6          79}
+\CommentTok{\#\textgreater{} 10 AA         301}
+\CommentTok{\#\textgreater{} \# ... with 336,766 more rows}
+
+\CommentTok{\# ...you can use the minus sign to hide columns}
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{select}\NormalTok{(}\SpecialCharTok{{-}}\NormalTok{month, }\SpecialCharTok{{-}}\NormalTok{day)}
+\CommentTok{\#\textgreater{} \# A tibble: 336,776 x 17}
+\CommentTok{\#\textgreater{}     year dep\_time sched\_dep\_time dep\_delay arr\_time}
+\CommentTok{\#\textgreater{}    \textless{}int\textgreater{}    \textless{}int\textgreater{}          \textless{}int\textgreater{}     \textless{}dbl\textgreater{}    \textless{}int\textgreater{}}
+\CommentTok{\#\textgreater{}  1  2013      517            515         2      830}
+\CommentTok{\#\textgreater{}  2  2013      533            529         4      850}
+\CommentTok{\#\textgreater{}  3  2013      542            540         2      923}
+\CommentTok{\#\textgreater{}  4  2013      544            545        {-}1     1004}
+\CommentTok{\#\textgreater{}  5  2013      554            600        {-}6      812}
+\CommentTok{\#\textgreater{}  6  2013      554            558        {-}4      740}
+\CommentTok{\#\textgreater{}  7  2013      555            600        {-}5      913}
+\CommentTok{\#\textgreater{}  8  2013      557            600        {-}3      709}
+\CommentTok{\#\textgreater{}  9  2013      557            600        {-}3      838}
+\CommentTok{\#\textgreater{} 10  2013      558            600        {-}2      753}
+\CommentTok{\#\textgreater{} \# ... with 336,766 more rows, and 12 more variables:}
+\CommentTok{\#\textgreater{} \#   sched\_arr\_time \textless{}int\textgreater{}, arr\_delay \textless{}dbl\textgreater{}, carrier \textless{}chr\textgreater{},}
+\CommentTok{\#\textgreater{} \#   flight \textless{}int\textgreater{}, tailnum \textless{}chr\textgreater{}, origin \textless{}chr\textgreater{}, dest \textless{}chr\textgreater{},}
+\CommentTok{\#\textgreater{} \#   air\_time \textless{}dbl\textgreater{}, distance \textless{}dbl\textgreater{}, hour \textless{}dbl\textgreater{},}
+\CommentTok{\#\textgreater{} \#   minute \textless{}dbl\textgreater{}, time\_hour \textless{}dttm\textgreater{}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# hide a range of columns}
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{select}\NormalTok{(}\SpecialCharTok{{-}}\NormalTok{(dep\_time}\SpecialCharTok{:}\NormalTok{arr\_delay))}
+
+\CommentTok{\# hide any column with a matching name}
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{select}\NormalTok{(}\SpecialCharTok{{-}}\FunctionTok{contains}\NormalTok{(}\StringTok{"time"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# pick columns using a character vector of column names}
+\NormalTok{cols }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"carrier"}\NormalTok{, }\StringTok{"flight"}\NormalTok{, }\StringTok{"tailnum"}\NormalTok{)}
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{select}\NormalTok{(}\FunctionTok{one\_of}\NormalTok{(cols))}
+\CommentTok{\#\textgreater{} \# A tibble: 336,776 x 3}
+\CommentTok{\#\textgreater{}    carrier flight tailnum}
+\CommentTok{\#\textgreater{}    \textless{}chr\textgreater{}    \textless{}int\textgreater{} \textless{}chr\textgreater{}  }
+\CommentTok{\#\textgreater{}  1 UA        1545 N14228 }
+\CommentTok{\#\textgreater{}  2 UA        1714 N24211 }
+\CommentTok{\#\textgreater{}  3 AA        1141 N619AA }
+\CommentTok{\#\textgreater{}  4 B6         725 N804JB }
+\CommentTok{\#\textgreater{}  5 DL         461 N668DN }
+\CommentTok{\#\textgreater{}  6 UA        1696 N39463 }
+\CommentTok{\#\textgreater{}  7 B6         507 N516JB }
+\CommentTok{\#\textgreater{}  8 EV        5708 N829AS }
+\CommentTok{\#\textgreater{}  9 B6          79 N593JB }
+\CommentTok{\#\textgreater{} 10 AA         301 N3ALAA }
+\CommentTok{\#\textgreater{} \# ... with 336,766 more rows}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# select() can be used to rename columns, though all columns not mentioned are dropped}
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{select}\NormalTok{(}\AttributeTok{tail =}\NormalTok{ tailnum)}
+\CommentTok{\#\textgreater{} \# A tibble: 336,776 x 1}
+\CommentTok{\#\textgreater{}    tail  }
+\CommentTok{\#\textgreater{}    \textless{}chr\textgreater{} }
+\CommentTok{\#\textgreater{}  1 N14228}
+\CommentTok{\#\textgreater{}  2 N24211}
+\CommentTok{\#\textgreater{}  3 N619AA}
+\CommentTok{\#\textgreater{}  4 N804JB}
+\CommentTok{\#\textgreater{}  5 N668DN}
+\CommentTok{\#\textgreater{}  6 N39463}
+\CommentTok{\#\textgreater{}  7 N516JB}
+\CommentTok{\#\textgreater{}  8 N829AS}
+\CommentTok{\#\textgreater{}  9 N593JB}
+\CommentTok{\#\textgreater{} 10 N3ALAA}
+\CommentTok{\#\textgreater{} \# ... with 336,766 more rows}
+
+\CommentTok{\# rename() does the same thing, except all columns not mentioned are kept}
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{rename}\NormalTok{(}\AttributeTok{tail =}\NormalTok{ tailnum)}
+\CommentTok{\#\textgreater{} \# A tibble: 336,776 x 19}
+\CommentTok{\#\textgreater{}     year month   day dep\_time sched\_dep\_time dep\_delay}
+\CommentTok{\#\textgreater{}    \textless{}int\textgreater{} \textless{}int\textgreater{} \textless{}int\textgreater{}    \textless{}int\textgreater{}          \textless{}int\textgreater{}     \textless{}dbl\textgreater{}}
+\CommentTok{\#\textgreater{}  1  2013     1     1      517            515         2}
+\CommentTok{\#\textgreater{}  2  2013     1     1      533            529         4}
+\CommentTok{\#\textgreater{}  3  2013     1     1      542            540         2}
+\CommentTok{\#\textgreater{}  4  2013     1     1      544            545        {-}1}
+\CommentTok{\#\textgreater{}  5  2013     1     1      554            600        {-}6}
+\CommentTok{\#\textgreater{}  6  2013     1     1      554            558        {-}4}
+\CommentTok{\#\textgreater{}  7  2013     1     1      555            600        {-}5}
+\CommentTok{\#\textgreater{}  8  2013     1     1      557            600        {-}3}
+\CommentTok{\#\textgreater{}  9  2013     1     1      557            600        {-}3}
+\CommentTok{\#\textgreater{} 10  2013     1     1      558            600        {-}2}
+\CommentTok{\#\textgreater{} \# ... with 336,766 more rows, and 13 more variables:}
+\CommentTok{\#\textgreater{} \#   arr\_time \textless{}int\textgreater{}, sched\_arr\_time \textless{}int\textgreater{}, arr\_delay \textless{}dbl\textgreater{},}
+\CommentTok{\#\textgreater{} \#   carrier \textless{}chr\textgreater{}, flight \textless{}int\textgreater{}, tail \textless{}chr\textgreater{}, origin \textless{}chr\textgreater{},}
+\CommentTok{\#\textgreater{} \#   dest \textless{}chr\textgreater{}, air\_time \textless{}dbl\textgreater{}, distance \textless{}dbl\textgreater{}, hour \textless{}dbl\textgreater{},}
+\CommentTok{\#\textgreater{} \#   minute \textless{}dbl\textgreater{}, time\_hour \textless{}dttm\textgreater{}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{choosing-rows-filter-between-slice-sample_n-top_n-distinct}{%
+\section{Choosing rows: filter, between, slice, sample\_n, top\_n, distinct}\label{choosing-rows-filter-between-slice-sample_n-top_n-distinct}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# filter() supports the use of multiple conditions}
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{(dep\_time }\SpecialCharTok{\textgreater{}=} \DecValTok{600}\NormalTok{, dep\_time }\SpecialCharTok{\textless{}=} \DecValTok{605}\NormalTok{)}
+\CommentTok{\#\textgreater{} \# A tibble: 2,460 x 19}
+\CommentTok{\#\textgreater{}     year month   day dep\_time sched\_dep\_time dep\_delay}
+\CommentTok{\#\textgreater{}    \textless{}int\textgreater{} \textless{}int\textgreater{} \textless{}int\textgreater{}    \textless{}int\textgreater{}          \textless{}int\textgreater{}     \textless{}dbl\textgreater{}}
+\CommentTok{\#\textgreater{}  1  2013     1     1      600            600         0}
+\CommentTok{\#\textgreater{}  2  2013     1     1      600            600         0}
+\CommentTok{\#\textgreater{}  3  2013     1     1      601            600         1}
+\CommentTok{\#\textgreater{}  4  2013     1     1      602            610        {-}8}
+\CommentTok{\#\textgreater{}  5  2013     1     1      602            605        {-}3}
+\CommentTok{\#\textgreater{}  6  2013     1     2      600            600         0}
+\CommentTok{\#\textgreater{}  7  2013     1     2      600            605        {-}5}
+\CommentTok{\#\textgreater{}  8  2013     1     2      600            600         0}
+\CommentTok{\#\textgreater{}  9  2013     1     2      600            600         0}
+\CommentTok{\#\textgreater{} 10  2013     1     2      600            600         0}
+\CommentTok{\#\textgreater{} \# ... with 2,450 more rows, and 13 more variables:}
+\CommentTok{\#\textgreater{} \#   arr\_time \textless{}int\textgreater{}, sched\_arr\_time \textless{}int\textgreater{}, arr\_delay \textless{}dbl\textgreater{},}
+\CommentTok{\#\textgreater{} \#   carrier \textless{}chr\textgreater{}, flight \textless{}int\textgreater{}, tailnum \textless{}chr\textgreater{},}
+\CommentTok{\#\textgreater{} \#   origin \textless{}chr\textgreater{}, dest \textless{}chr\textgreater{}, air\_time \textless{}dbl\textgreater{},}
+\CommentTok{\#\textgreater{} \#   distance \textless{}dbl\textgreater{}, hour \textless{}dbl\textgreater{}, minute \textless{}dbl\textgreater{},}
+\CommentTok{\#\textgreater{} \#   time\_hour \textless{}dttm\textgreater{}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# between() is a concise alternative for determing if numeric values fall in a range}
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{(}\FunctionTok{between}\NormalTok{(dep\_time, }\DecValTok{600}\NormalTok{, }\DecValTok{605}\NormalTok{))}
+
+\CommentTok{\# side note: is.na() can also be useful when filtering}
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{(}\SpecialCharTok{!}\FunctionTok{is.na}\NormalTok{(dep\_time))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# slice() filters rows by position}
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{slice}\NormalTok{(}\DecValTok{1000}\SpecialCharTok{:}\DecValTok{1005}\NormalTok{)}
+\CommentTok{\#\textgreater{} \# A tibble: 6 x 19}
+\CommentTok{\#\textgreater{}    year month   day dep\_time sched\_dep\_time dep\_delay}
+\CommentTok{\#\textgreater{}   \textless{}int\textgreater{} \textless{}int\textgreater{} \textless{}int\textgreater{}    \textless{}int\textgreater{}          \textless{}int\textgreater{}     \textless{}dbl\textgreater{}}
+\CommentTok{\#\textgreater{} 1  2013     1     2      809            810        {-}1}
+\CommentTok{\#\textgreater{} 2  2013     1     2      810            800        10}
+\CommentTok{\#\textgreater{} 3  2013     1     2      811            815        {-}4}
+\CommentTok{\#\textgreater{} 4  2013     1     2      811            815        {-}4}
+\CommentTok{\#\textgreater{} 5  2013     1     2      811            820        {-}9}
+\CommentTok{\#\textgreater{} 6  2013     1     2      815            815         0}
+\CommentTok{\#\textgreater{} \# ... with 13 more variables: arr\_time \textless{}int\textgreater{},}
+\CommentTok{\#\textgreater{} \#   sched\_arr\_time \textless{}int\textgreater{}, arr\_delay \textless{}dbl\textgreater{}, carrier \textless{}chr\textgreater{},}
+\CommentTok{\#\textgreater{} \#   flight \textless{}int\textgreater{}, tailnum \textless{}chr\textgreater{}, origin \textless{}chr\textgreater{}, dest \textless{}chr\textgreater{},}
+\CommentTok{\#\textgreater{} \#   air\_time \textless{}dbl\textgreater{}, distance \textless{}dbl\textgreater{}, hour \textless{}dbl\textgreater{},}
+\CommentTok{\#\textgreater{} \#   minute \textless{}dbl\textgreater{}, time\_hour \textless{}dttm\textgreater{}}
+
+\CommentTok{\# keep the first three rows within each group}
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{group\_by}\NormalTok{(month, day) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{slice}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{3}\NormalTok{)}
+\CommentTok{\#\textgreater{} \# A tibble: 1,095 x 19}
+\CommentTok{\#\textgreater{} \# Groups:   month, day [365]}
+\CommentTok{\#\textgreater{}     year month   day dep\_time sched\_dep\_time dep\_delay}
+\CommentTok{\#\textgreater{}    \textless{}int\textgreater{} \textless{}int\textgreater{} \textless{}int\textgreater{}    \textless{}int\textgreater{}          \textless{}int\textgreater{}     \textless{}dbl\textgreater{}}
+\CommentTok{\#\textgreater{}  1  2013     1     1      517            515         2}
+\CommentTok{\#\textgreater{}  2  2013     1     1      533            529         4}
+\CommentTok{\#\textgreater{}  3  2013     1     1      542            540         2}
+\CommentTok{\#\textgreater{}  4  2013     1     2       42           2359        43}
+\CommentTok{\#\textgreater{}  5  2013     1     2      126           2250       156}
+\CommentTok{\#\textgreater{}  6  2013     1     2      458            500        {-}2}
+\CommentTok{\#\textgreater{}  7  2013     1     3       32           2359        33}
+\CommentTok{\#\textgreater{}  8  2013     1     3       50           2145       185}
+\CommentTok{\#\textgreater{}  9  2013     1     3      235           2359       156}
+\CommentTok{\#\textgreater{} 10  2013     1     4       25           2359        26}
+\CommentTok{\#\textgreater{} \# ... with 1,085 more rows, and 13 more variables:}
+\CommentTok{\#\textgreater{} \#   arr\_time \textless{}int\textgreater{}, sched\_arr\_time \textless{}int\textgreater{}, arr\_delay \textless{}dbl\textgreater{},}
+\CommentTok{\#\textgreater{} \#   carrier \textless{}chr\textgreater{}, flight \textless{}int\textgreater{}, tailnum \textless{}chr\textgreater{},}
+\CommentTok{\#\textgreater{} \#   origin \textless{}chr\textgreater{}, dest \textless{}chr\textgreater{}, air\_time \textless{}dbl\textgreater{},}
+\CommentTok{\#\textgreater{} \#   distance \textless{}dbl\textgreater{}, hour \textless{}dbl\textgreater{}, minute \textless{}dbl\textgreater{},}
+\CommentTok{\#\textgreater{} \#   time\_hour \textless{}dttm\textgreater{}}
+
+\CommentTok{\# sample three rows from each group}
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{group\_by}\NormalTok{(month, day) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{sample\_n}\NormalTok{(}\DecValTok{3}\NormalTok{)}
+\CommentTok{\#\textgreater{} \# A tibble: 1,095 x 19}
+\CommentTok{\#\textgreater{} \# Groups:   month, day [365]}
+\CommentTok{\#\textgreater{}     year month   day dep\_time sched\_dep\_time dep\_delay}
+\CommentTok{\#\textgreater{}    \textless{}int\textgreater{} \textless{}int\textgreater{} \textless{}int\textgreater{}    \textless{}int\textgreater{}          \textless{}int\textgreater{}     \textless{}dbl\textgreater{}}
+\CommentTok{\#\textgreater{}  1  2013     1     1     2058           2100        {-}2}
+\CommentTok{\#\textgreater{}  2  2013     1     1     1945           1940         5}
+\CommentTok{\#\textgreater{}  3  2013     1     1     1615           1602        13}
+\CommentTok{\#\textgreater{}  4  2013     1     2     2041           1942        59}
+\CommentTok{\#\textgreater{}  5  2013     1     2     1331           1201        90}
+\CommentTok{\#\textgreater{}  6  2013     1     2     1156           1200        {-}4}
+\CommentTok{\#\textgreater{}  7  2013     1     3     2030           2029         1}
+\CommentTok{\#\textgreater{}  8  2013     1     3      835            835         0}
+\CommentTok{\#\textgreater{}  9  2013     1     3      622            630        {-}8}
+\CommentTok{\#\textgreater{} 10  2013     1     4     1033           1000        33}
+\CommentTok{\#\textgreater{} \# ... with 1,085 more rows, and 13 more variables:}
+\CommentTok{\#\textgreater{} \#   arr\_time \textless{}int\textgreater{}, sched\_arr\_time \textless{}int\textgreater{}, arr\_delay \textless{}dbl\textgreater{},}
+\CommentTok{\#\textgreater{} \#   carrier \textless{}chr\textgreater{}, flight \textless{}int\textgreater{}, tailnum \textless{}chr\textgreater{},}
+\CommentTok{\#\textgreater{} \#   origin \textless{}chr\textgreater{}, dest \textless{}chr\textgreater{}, air\_time \textless{}dbl\textgreater{},}
+\CommentTok{\#\textgreater{} \#   distance \textless{}dbl\textgreater{}, hour \textless{}dbl\textgreater{}, minute \textless{}dbl\textgreater{},}
+\CommentTok{\#\textgreater{} \#   time\_hour \textless{}dttm\textgreater{}}
+
+\CommentTok{\# keep three rows from each group with the top dep\_delay}
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{group\_by}\NormalTok{(month, day) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{top\_n}\NormalTok{(}\DecValTok{3}\NormalTok{, dep\_delay)}
+\CommentTok{\#\textgreater{} \# A tibble: 1,108 x 19}
+\CommentTok{\#\textgreater{} \# Groups:   month, day [365]}
+\CommentTok{\#\textgreater{}     year month   day dep\_time sched\_dep\_time dep\_delay}
+\CommentTok{\#\textgreater{}    \textless{}int\textgreater{} \textless{}int\textgreater{} \textless{}int\textgreater{}    \textless{}int\textgreater{}          \textless{}int\textgreater{}     \textless{}dbl\textgreater{}}
+\CommentTok{\#\textgreater{}  1  2013     1     1      848           1835       853}
+\CommentTok{\#\textgreater{}  2  2013     1     1     1815           1325       290}
+\CommentTok{\#\textgreater{}  3  2013     1     1     2343           1724       379}
+\CommentTok{\#\textgreater{}  4  2013     1     2     1412            838       334}
+\CommentTok{\#\textgreater{}  5  2013     1     2     1607           1030       337}
+\CommentTok{\#\textgreater{}  6  2013     1     2     2131           1512       379}
+\CommentTok{\#\textgreater{}  7  2013     1     3     2008           1540       268}
+\CommentTok{\#\textgreater{}  8  2013     1     3     2012           1600       252}
+\CommentTok{\#\textgreater{}  9  2013     1     3     2056           1605       291}
+\CommentTok{\#\textgreater{} 10  2013     1     4     2058           1730       208}
+\CommentTok{\#\textgreater{} \# ... with 1,098 more rows, and 13 more variables:}
+\CommentTok{\#\textgreater{} \#   arr\_time \textless{}int\textgreater{}, sched\_arr\_time \textless{}int\textgreater{}, arr\_delay \textless{}dbl\textgreater{},}
+\CommentTok{\#\textgreater{} \#   carrier \textless{}chr\textgreater{}, flight \textless{}int\textgreater{}, tailnum \textless{}chr\textgreater{},}
+\CommentTok{\#\textgreater{} \#   origin \textless{}chr\textgreater{}, dest \textless{}chr\textgreater{}, air\_time \textless{}dbl\textgreater{},}
+\CommentTok{\#\textgreater{} \#   distance \textless{}dbl\textgreater{}, hour \textless{}dbl\textgreater{}, minute \textless{}dbl\textgreater{},}
+\CommentTok{\#\textgreater{} \#   time\_hour \textless{}dttm\textgreater{}}
+
+\CommentTok{\# also sort by dep\_delay within each group}
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{group\_by}\NormalTok{(month, day) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{top\_n}\NormalTok{(}\DecValTok{3}\NormalTok{, dep\_delay) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{arrange}\NormalTok{(}\FunctionTok{desc}\NormalTok{(dep\_delay))}
+\CommentTok{\#\textgreater{} \# A tibble: 1,108 x 19}
+\CommentTok{\#\textgreater{} \# Groups:   month, day [365]}
+\CommentTok{\#\textgreater{}     year month   day dep\_time sched\_dep\_time dep\_delay}
+\CommentTok{\#\textgreater{}    \textless{}int\textgreater{} \textless{}int\textgreater{} \textless{}int\textgreater{}    \textless{}int\textgreater{}          \textless{}int\textgreater{}     \textless{}dbl\textgreater{}}
+\CommentTok{\#\textgreater{}  1  2013     1     9      641            900      1301}
+\CommentTok{\#\textgreater{}  2  2013     6    15     1432           1935      1137}
+\CommentTok{\#\textgreater{}  3  2013     1    10     1121           1635      1126}
+\CommentTok{\#\textgreater{}  4  2013     9    20     1139           1845      1014}
+\CommentTok{\#\textgreater{}  5  2013     7    22      845           1600      1005}
+\CommentTok{\#\textgreater{}  6  2013     4    10     1100           1900       960}
+\CommentTok{\#\textgreater{}  7  2013     3    17     2321            810       911}
+\CommentTok{\#\textgreater{}  8  2013     6    27      959           1900       899}
+\CommentTok{\#\textgreater{}  9  2013     7    22     2257            759       898}
+\CommentTok{\#\textgreater{} 10  2013    12     5      756           1700       896}
+\CommentTok{\#\textgreater{} \# ... with 1,098 more rows, and 13 more variables:}
+\CommentTok{\#\textgreater{} \#   arr\_time \textless{}int\textgreater{}, sched\_arr\_time \textless{}int\textgreater{}, arr\_delay \textless{}dbl\textgreater{},}
+\CommentTok{\#\textgreater{} \#   carrier \textless{}chr\textgreater{}, flight \textless{}int\textgreater{}, tailnum \textless{}chr\textgreater{},}
+\CommentTok{\#\textgreater{} \#   origin \textless{}chr\textgreater{}, dest \textless{}chr\textgreater{}, air\_time \textless{}dbl\textgreater{},}
+\CommentTok{\#\textgreater{} \#   distance \textless{}dbl\textgreater{}, hour \textless{}dbl\textgreater{}, minute \textless{}dbl\textgreater{},}
+\CommentTok{\#\textgreater{} \#   time\_hour \textless{}dttm\textgreater{}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# unique rows can be identified using unique() from base R}
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{select}\NormalTok{(origin, dest) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{unique}\NormalTok{()}
+\CommentTok{\#\textgreater{} \# A tibble: 224 x 2}
+\CommentTok{\#\textgreater{}    origin dest }
+\CommentTok{\#\textgreater{}    \textless{}chr\textgreater{}  \textless{}chr\textgreater{}}
+\CommentTok{\#\textgreater{}  1 EWR    IAH  }
+\CommentTok{\#\textgreater{}  2 LGA    IAH  }
+\CommentTok{\#\textgreater{}  3 JFK    MIA  }
+\CommentTok{\#\textgreater{}  4 JFK    BQN  }
+\CommentTok{\#\textgreater{}  5 LGA    ATL  }
+\CommentTok{\#\textgreater{}  6 EWR    ORD  }
+\CommentTok{\#\textgreater{}  7 EWR    FLL  }
+\CommentTok{\#\textgreater{}  8 LGA    IAD  }
+\CommentTok{\#\textgreater{}  9 JFK    MCO  }
+\CommentTok{\#\textgreater{} 10 LGA    ORD  }
+\CommentTok{\#\textgreater{} \# ... with 214 more rows}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# dplyr provides an alternative that is more "efficient"}
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{select}\NormalTok{(origin, dest) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{distinct}\NormalTok{()}
+
+\CommentTok{\# side note: when chaining, you don\textquotesingle{}t have to include the parentheses if there are no arguments}
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{select}\NormalTok{(origin, dest) }\SpecialCharTok{\%\textgreater{}\%}\NormalTok{ distinct}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{excercies}{%
+\section{Excercies}\label{excercies}}
+
+Using the nycflights13 dataset and the dplyr package, answer these questions. Some answers are given in square brackets for you to check your answers.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  How many flights in Sept were late departing flights? {[}7815{]}
+\item
+  How many flights in Sept were late departing flights that originated at JFK airport? {[}2649{]}
+\item
+  How many flights in Sept were late departing flights with an origin of JFK airport and had an destination of anywhere except MIA? {[}2572{]}
+\item
+  Which carrier had the most flights in this data set? {[}UA with 58665{]}
+\item
+  Which destination had the most flights in this data set? {[}ORD with 17283{]}
+\item
+  Which destination had the most flights with departure delays of greater than 60 minutes in this data set? {[}ORD with 1480{]}
+\item
+  What was the longest arrival delay in this dataset? {[}1272{]}
+\item
+  Which carrier in September had the most late departing flights? {[}UA with 1559{]}
+\item
+  Create a variable called total.annoyance which arrival delay plus the departure delay for each flight.
+\item
+  Which carrier with more than 10 flights in September had greatest \% late departing flights?
+\end{enumerate}
+
+\hypertarget{adding-new-variables-mutate-transmute-add_rownames}{%
+\section{Adding new variables: mutate, transmute, add\_rownames}\label{adding-new-variables-mutate-transmute-add_rownames}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# mutate() creates a new variable (and keeps all existing variables)}
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{mutate}\NormalTok{(}\AttributeTok{speed =}\NormalTok{ distance}\SpecialCharTok{/}\NormalTok{air\_time}\SpecialCharTok{*}\DecValTok{60}\NormalTok{)}
+\CommentTok{\#\textgreater{} \# A tibble: 336,776 x 20}
+\CommentTok{\#\textgreater{}     year month   day dep\_time sched\_dep\_time dep\_delay}
+\CommentTok{\#\textgreater{}    \textless{}int\textgreater{} \textless{}int\textgreater{} \textless{}int\textgreater{}    \textless{}int\textgreater{}          \textless{}int\textgreater{}     \textless{}dbl\textgreater{}}
+\CommentTok{\#\textgreater{}  1  2013     1     1      517            515         2}
+\CommentTok{\#\textgreater{}  2  2013     1     1      533            529         4}
+\CommentTok{\#\textgreater{}  3  2013     1     1      542            540         2}
+\CommentTok{\#\textgreater{}  4  2013     1     1      544            545        {-}1}
+\CommentTok{\#\textgreater{}  5  2013     1     1      554            600        {-}6}
+\CommentTok{\#\textgreater{}  6  2013     1     1      554            558        {-}4}
+\CommentTok{\#\textgreater{}  7  2013     1     1      555            600        {-}5}
+\CommentTok{\#\textgreater{}  8  2013     1     1      557            600        {-}3}
+\CommentTok{\#\textgreater{}  9  2013     1     1      557            600        {-}3}
+\CommentTok{\#\textgreater{} 10  2013     1     1      558            600        {-}2}
+\CommentTok{\#\textgreater{} \# ... with 336,766 more rows, and 14 more variables:}
+\CommentTok{\#\textgreater{} \#   arr\_time \textless{}int\textgreater{}, sched\_arr\_time \textless{}int\textgreater{}, arr\_delay \textless{}dbl\textgreater{},}
+\CommentTok{\#\textgreater{} \#   carrier \textless{}chr\textgreater{}, flight \textless{}int\textgreater{}, tailnum \textless{}chr\textgreater{},}
+\CommentTok{\#\textgreater{} \#   origin \textless{}chr\textgreater{}, dest \textless{}chr\textgreater{}, air\_time \textless{}dbl\textgreater{},}
+\CommentTok{\#\textgreater{} \#   distance \textless{}dbl\textgreater{}, hour \textless{}dbl\textgreater{}, minute \textless{}dbl\textgreater{},}
+\CommentTok{\#\textgreater{} \#   time\_hour \textless{}dttm\textgreater{}, speed \textless{}dbl\textgreater{}}
+
+\CommentTok{\# transmute() only keeps the new variables}
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{transmute}\NormalTok{(}\AttributeTok{speed =}\NormalTok{ distance}\SpecialCharTok{/}\NormalTok{air\_time}\SpecialCharTok{*}\DecValTok{60}\NormalTok{)}
+\CommentTok{\#\textgreater{} \# A tibble: 336,776 x 1}
+\CommentTok{\#\textgreater{}    speed}
+\CommentTok{\#\textgreater{}    \textless{}dbl\textgreater{}}
+\CommentTok{\#\textgreater{}  1  370.}
+\CommentTok{\#\textgreater{}  2  374.}
+\CommentTok{\#\textgreater{}  3  408.}
+\CommentTok{\#\textgreater{}  4  517.}
+\CommentTok{\#\textgreater{}  5  394.}
+\CommentTok{\#\textgreater{}  6  288.}
+\CommentTok{\#\textgreater{}  7  404.}
+\CommentTok{\#\textgreater{}  8  259.}
+\CommentTok{\#\textgreater{}  9  405.}
+\CommentTok{\#\textgreater{} 10  319.}
+\CommentTok{\#\textgreater{} \# ... with 336,766 more rows}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# example data frame with row names}
+\NormalTok{mtcars }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{head}\NormalTok{()}
+\CommentTok{\#\textgreater{}                    mpg cyl disp  hp drat    wt  qsec vs am}
+\CommentTok{\#\textgreater{} Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1}
+\CommentTok{\#\textgreater{} Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1}
+\CommentTok{\#\textgreater{} Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1}
+\CommentTok{\#\textgreater{} Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0}
+\CommentTok{\#\textgreater{} Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0}
+\CommentTok{\#\textgreater{} Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0}
+\CommentTok{\#\textgreater{}                   gear carb}
+\CommentTok{\#\textgreater{} Mazda RX4            4    4}
+\CommentTok{\#\textgreater{} Mazda RX4 Wag        4    4}
+\CommentTok{\#\textgreater{} Datsun 710           4    1}
+\CommentTok{\#\textgreater{} Hornet 4 Drive       3    1}
+\CommentTok{\#\textgreater{} Hornet Sportabout    3    2}
+\CommentTok{\#\textgreater{} Valiant              3    1}
+
+\CommentTok{\# add\_rownames() turns row names into an explicit variable}
+\NormalTok{mtcars }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{add\_rownames}\NormalTok{(}\StringTok{"model"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{head}\NormalTok{()}
+\CommentTok{\#\textgreater{} Warning: \textasciigrave{}add\_rownames()\textasciigrave{} was deprecated in dplyr 1.0.0.}
+\CommentTok{\#\textgreater{} Please use \textasciigrave{}tibble::rownames\_to\_column()\textasciigrave{} instead.}
+\CommentTok{\#\textgreater{} This warning is displayed once every 8 hours.}
+\CommentTok{\#\textgreater{} Call \textasciigrave{}lifecycle::last\_lifecycle\_warnings()\textasciigrave{} to see where this warning was generated.}
+\CommentTok{\#\textgreater{} \# A tibble: 6 x 12}
+\CommentTok{\#\textgreater{}   model        mpg   cyl  disp    hp  drat    wt  qsec    vs}
+\CommentTok{\#\textgreater{}   \textless{}chr\textgreater{}      \textless{}dbl\textgreater{} \textless{}dbl\textgreater{} \textless{}dbl\textgreater{} \textless{}dbl\textgreater{} \textless{}dbl\textgreater{} \textless{}dbl\textgreater{} \textless{}dbl\textgreater{} \textless{}dbl\textgreater{}}
+\CommentTok{\#\textgreater{} 1 Mazda RX4   21       6   160   110  3.9   2.62  16.5     0}
+\CommentTok{\#\textgreater{} 2 Mazda RX4\textasciitilde{}  21       6   160   110  3.9   2.88  17.0     0}
+\CommentTok{\#\textgreater{} 3 Datsun 710  22.8     4   108    93  3.85  2.32  18.6     1}
+\CommentTok{\#\textgreater{} 4 Hornet 4 \textasciitilde{}  21.4     6   258   110  3.08  3.22  19.4     1}
+\CommentTok{\#\textgreater{} 5 Hornet Sp\textasciitilde{}  18.7     8   360   175  3.15  3.44  17.0     0}
+\CommentTok{\#\textgreater{} 6 Valiant     18.1     6   225   105  2.76  3.46  20.2     1}
+\CommentTok{\#\textgreater{} \# ... with 3 more variables: am \textless{}dbl\textgreater{}, gear \textless{}dbl\textgreater{},}
+\CommentTok{\#\textgreater{} \#   carb \textless{}dbl\textgreater{}}
+
+\CommentTok{\# side note: dplyr no longer prints row names (ever) for local data frames}
+\NormalTok{mtcars }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{tbl\_df}\NormalTok{()}
+\CommentTok{\#\textgreater{} Warning: \textasciigrave{}tbl\_df()\textasciigrave{} was deprecated in dplyr 1.0.0.}
+\CommentTok{\#\textgreater{} Please use \textasciigrave{}tibble::as\_tibble()\textasciigrave{} instead.}
+\CommentTok{\#\textgreater{} This warning is displayed once every 8 hours.}
+\CommentTok{\#\textgreater{} Call \textasciigrave{}lifecycle::last\_lifecycle\_warnings()\textasciigrave{} to see where this warning was generated.}
+\CommentTok{\#\textgreater{} \# A tibble: 32 x 11}
+\CommentTok{\#\textgreater{}      mpg   cyl  disp    hp  drat    wt  qsec    vs    am}
+\CommentTok{\#\textgreater{}    \textless{}dbl\textgreater{} \textless{}dbl\textgreater{} \textless{}dbl\textgreater{} \textless{}dbl\textgreater{} \textless{}dbl\textgreater{} \textless{}dbl\textgreater{} \textless{}dbl\textgreater{} \textless{}dbl\textgreater{} \textless{}dbl\textgreater{}}
+\CommentTok{\#\textgreater{}  1  21       6  160    110  3.9   2.62  16.5     0     1}
+\CommentTok{\#\textgreater{}  2  21       6  160    110  3.9   2.88  17.0     0     1}
+\CommentTok{\#\textgreater{}  3  22.8     4  108     93  3.85  2.32  18.6     1     1}
+\CommentTok{\#\textgreater{}  4  21.4     6  258    110  3.08  3.22  19.4     1     0}
+\CommentTok{\#\textgreater{}  5  18.7     8  360    175  3.15  3.44  17.0     0     0}
+\CommentTok{\#\textgreater{}  6  18.1     6  225    105  2.76  3.46  20.2     1     0}
+\CommentTok{\#\textgreater{}  7  14.3     8  360    245  3.21  3.57  15.8     0     0}
+\CommentTok{\#\textgreater{}  8  24.4     4  147.    62  3.69  3.19  20       1     0}
+\CommentTok{\#\textgreater{}  9  22.8     4  141.    95  3.92  3.15  22.9     1     0}
+\CommentTok{\#\textgreater{} 10  19.2     6  168.   123  3.92  3.44  18.3     1     0}
+\CommentTok{\#\textgreater{} \# ... with 22 more rows, and 2 more variables: gear \textless{}dbl\textgreater{},}
+\CommentTok{\#\textgreater{} \#   carb \textless{}dbl\textgreater{}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{grouping-and-counting-summarise-tally-count-group_size-n_groups-ungroup}{%
+\chapter{Grouping and counting: summarise, tally, count, group\_size, n\_groups, ungroup}\label{grouping-and-counting-summarise-tally-count-group_size-n_groups-ungroup}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# summarise() can be used to count the number of rows in each group}
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{group\_by}\NormalTok{(month) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{summarise}\NormalTok{(}\AttributeTok{cnt =} \FunctionTok{n}\NormalTok{())}
+\CommentTok{\#\textgreater{} \# A tibble: 12 x 2}
+\CommentTok{\#\textgreater{}    month   cnt}
+\CommentTok{\#\textgreater{}    \textless{}int\textgreater{} \textless{}int\textgreater{}}
+\CommentTok{\#\textgreater{}  1     1 27004}
+\CommentTok{\#\textgreater{}  2     2 24951}
+\CommentTok{\#\textgreater{}  3     3 28834}
+\CommentTok{\#\textgreater{}  4     4 28330}
+\CommentTok{\#\textgreater{}  5     5 28796}
+\CommentTok{\#\textgreater{}  6     6 28243}
+\CommentTok{\#\textgreater{}  7     7 29425}
+\CommentTok{\#\textgreater{}  8     8 29327}
+\CommentTok{\#\textgreater{}  9     9 27574}
+\CommentTok{\#\textgreater{} 10    10 28889}
+\CommentTok{\#\textgreater{} 11    11 27268}
+\CommentTok{\#\textgreater{} 12    12 28135}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# tally() and count() can do this more concisely}
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{group\_by}\NormalTok{(month) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{tally}\NormalTok{()}
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{count}\NormalTok{(month)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# you can sort by the count}
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{group\_by}\NormalTok{(month) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{summarise}\NormalTok{(}\AttributeTok{cnt =} \FunctionTok{n}\NormalTok{()) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{arrange}\NormalTok{(}\FunctionTok{desc}\NormalTok{(cnt))}
+\CommentTok{\#\textgreater{} \# A tibble: 12 x 2}
+\CommentTok{\#\textgreater{}    month   cnt}
+\CommentTok{\#\textgreater{}    \textless{}int\textgreater{} \textless{}int\textgreater{}}
+\CommentTok{\#\textgreater{}  1     7 29425}
+\CommentTok{\#\textgreater{}  2     8 29327}
+\CommentTok{\#\textgreater{}  3    10 28889}
+\CommentTok{\#\textgreater{}  4     3 28834}
+\CommentTok{\#\textgreater{}  5     5 28796}
+\CommentTok{\#\textgreater{}  6     4 28330}
+\CommentTok{\#\textgreater{}  7     6 28243}
+\CommentTok{\#\textgreater{}  8    12 28135}
+\CommentTok{\#\textgreater{}  9     9 27574}
+\CommentTok{\#\textgreater{} 10    11 27268}
+\CommentTok{\#\textgreater{} 11     1 27004}
+\CommentTok{\#\textgreater{} 12     2 24951}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# tally() and count() have a sort parameter for this purpose}
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{group\_by}\NormalTok{(month) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{tally}\NormalTok{(}\AttributeTok{sort=}\ConstantTok{TRUE}\NormalTok{)}
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{count}\NormalTok{(month, }\AttributeTok{sort=}\ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# you can sum over a specific variable instead of simply counting rows}
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{group\_by}\NormalTok{(month) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{summarise}\NormalTok{(}\AttributeTok{dist =} \FunctionTok{sum}\NormalTok{(distance))}
+\CommentTok{\#\textgreater{} \# A tibble: 12 x 2}
+\CommentTok{\#\textgreater{}    month     dist}
+\CommentTok{\#\textgreater{}    \textless{}int\textgreater{}    \textless{}dbl\textgreater{}}
+\CommentTok{\#\textgreater{}  1     1 27188805}
+\CommentTok{\#\textgreater{}  2     2 24975509}
+\CommentTok{\#\textgreater{}  3     3 29179636}
+\CommentTok{\#\textgreater{}  4     4 29427294}
+\CommentTok{\#\textgreater{}  5     5 29974128}
+\CommentTok{\#\textgreater{}  6     6 29856388}
+\CommentTok{\#\textgreater{}  7     7 31149199}
+\CommentTok{\#\textgreater{}  8     8 31149334}
+\CommentTok{\#\textgreater{}  9     9 28711426}
+\CommentTok{\#\textgreater{} 10    10 30012086}
+\CommentTok{\#\textgreater{} 11    11 28639718}
+\CommentTok{\#\textgreater{} 12    12 29954084}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# tally() and count() have a wt parameter for this purpose}
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{group\_by}\NormalTok{(month) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{tally}\NormalTok{(}\AttributeTok{wt =}\NormalTok{ distance)}
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{count}\NormalTok{(month, }\AttributeTok{wt =}\NormalTok{ distance)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# group\_size() returns the counts as a vector}
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{group\_by}\NormalTok{(month) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{group\_size}\NormalTok{()}
+\CommentTok{\#\textgreater{}  [1] 27004 24951 28834 28330 28796 28243 29425 29327 27574}
+\CommentTok{\#\textgreater{} [10] 28889 27268 28135}
+
+\CommentTok{\# n\_groups() simply reports the number of groups}
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{group\_by}\NormalTok{(month) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{n\_groups}\NormalTok{()}
+\CommentTok{\#\textgreater{} [1] 12}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# group by two variables, summarise, arrange (output is possibly confusing)}
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{group\_by}\NormalTok{(month, day) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{summarise}\NormalTok{(}\AttributeTok{cnt =} \FunctionTok{n}\NormalTok{()) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{arrange}\NormalTok{(}\FunctionTok{desc}\NormalTok{(cnt)) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{print}\NormalTok{(}\AttributeTok{n =} \DecValTok{40}\NormalTok{)}
+\CommentTok{\#\textgreater{} \textasciigrave{}summarise()\textasciigrave{} has grouped output by \textquotesingle{}month\textquotesingle{}. You can override using the \textasciigrave{}.groups\textasciigrave{} argument.}
+\CommentTok{\#\textgreater{} \# A tibble: 365 x 3}
+\CommentTok{\#\textgreater{} \# Groups:   month [12]}
+\CommentTok{\#\textgreater{}    month   day   cnt}
+\CommentTok{\#\textgreater{}    \textless{}int\textgreater{} \textless{}int\textgreater{} \textless{}int\textgreater{}}
+\CommentTok{\#\textgreater{}  1    11    27  1014}
+\CommentTok{\#\textgreater{}  2     7    11  1006}
+\CommentTok{\#\textgreater{}  3     7     8  1004}
+\CommentTok{\#\textgreater{}  4     7    10  1004}
+\CommentTok{\#\textgreater{}  5    12     2  1004}
+\CommentTok{\#\textgreater{}  6     7    18  1003}
+\CommentTok{\#\textgreater{}  7     7    25  1003}
+\CommentTok{\#\textgreater{}  8     7    12  1002}
+\CommentTok{\#\textgreater{}  9     7     9  1001}
+\CommentTok{\#\textgreater{} 10     7    17  1001}
+\CommentTok{\#\textgreater{} 11     7    31  1001}
+\CommentTok{\#\textgreater{} 12     8     7  1001}
+\CommentTok{\#\textgreater{} 13     8     8  1001}
+\CommentTok{\#\textgreater{} 14     8    12  1001}
+\CommentTok{\#\textgreater{} 15     7    22  1000}
+\CommentTok{\#\textgreater{} 16     7    24  1000}
+\CommentTok{\#\textgreater{} 17     8     1  1000}
+\CommentTok{\#\textgreater{} 18     8     5  1000}
+\CommentTok{\#\textgreater{} 19     8    15  1000}
+\CommentTok{\#\textgreater{} 20    11    21  1000}
+\CommentTok{\#\textgreater{} 21     7    15   999}
+\CommentTok{\#\textgreater{} 22     7    19   999}
+\CommentTok{\#\textgreater{} 23     7    26   999}
+\CommentTok{\#\textgreater{} 24     7    29   999}
+\CommentTok{\#\textgreater{} 25     8     2   999}
+\CommentTok{\#\textgreater{} 26     8     9   999}
+\CommentTok{\#\textgreater{} 27    11    22   999}
+\CommentTok{\#\textgreater{} 28     8    16   998}
+\CommentTok{\#\textgreater{} 29     7    23   997}
+\CommentTok{\#\textgreater{} 30     7    30   997}
+\CommentTok{\#\textgreater{} 31     8    14   997}
+\CommentTok{\#\textgreater{} 32     7    16   996}
+\CommentTok{\#\textgreater{} 33     8     6   996}
+\CommentTok{\#\textgreater{} 34     8    19   996}
+\CommentTok{\#\textgreater{} 35     9    13   996}
+\CommentTok{\#\textgreater{} 36     9    26   996}
+\CommentTok{\#\textgreater{} 37     9    27   996}
+\CommentTok{\#\textgreater{} 38     4    15   995}
+\CommentTok{\#\textgreater{} 39     6    20   995}
+\CommentTok{\#\textgreater{} 40     6    26   995}
+\CommentTok{\#\textgreater{} \# ... with 325 more rows}
+
+\CommentTok{\# ungroup() before arranging to arrange across all groups}
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{group\_by}\NormalTok{(month, day) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{summarise}\NormalTok{(}\AttributeTok{cnt =} \FunctionTok{n}\NormalTok{()) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{ungroup}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{arrange}\NormalTok{(}\FunctionTok{desc}\NormalTok{(cnt))}
+\CommentTok{\#\textgreater{} \textasciigrave{}summarise()\textasciigrave{} has grouped output by \textquotesingle{}month\textquotesingle{}. You can override using the \textasciigrave{}.groups\textasciigrave{} argument.}
+\CommentTok{\#\textgreater{} \# A tibble: 365 x 3}
+\CommentTok{\#\textgreater{}    month   day   cnt}
+\CommentTok{\#\textgreater{}    \textless{}int\textgreater{} \textless{}int\textgreater{} \textless{}int\textgreater{}}
+\CommentTok{\#\textgreater{}  1    11    27  1014}
+\CommentTok{\#\textgreater{}  2     7    11  1006}
+\CommentTok{\#\textgreater{}  3     7     8  1004}
+\CommentTok{\#\textgreater{}  4     7    10  1004}
+\CommentTok{\#\textgreater{}  5    12     2  1004}
+\CommentTok{\#\textgreater{}  6     7    18  1003}
+\CommentTok{\#\textgreater{}  7     7    25  1003}
+\CommentTok{\#\textgreater{}  8     7    12  1002}
+\CommentTok{\#\textgreater{}  9     7     9  1001}
+\CommentTok{\#\textgreater{} 10     7    17  1001}
+\CommentTok{\#\textgreater{} \# ... with 355 more rows}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{creating-data-frames-data_frame}{%
+\chapter{Creating data frames: data\_frame}\label{creating-data-frames-data_frame}}
+
+\texttt{data\_frame()} is a better way than \texttt{data.frame()} for creating data frames. Benefits of \texttt{data\_frame()}:
+
+\begin{itemize}
+\tightlist
+\item
+  You can use previously defined columns to compute new columns.
+\item
+  It never coerces column types.
+\item
+  It never munges column names.
+\item
+  It never adds row names.
+\item
+  It only recycles length 1 input.
+\item
+  It returns a local data frame (a tbl\_df).
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# data\_frame() example}
+\FunctionTok{data\_frame}\NormalTok{(}\AttributeTok{a =} \DecValTok{1}\SpecialCharTok{:}\DecValTok{6}\NormalTok{, }\AttributeTok{b =}\NormalTok{ a}\SpecialCharTok{*}\DecValTok{2}\NormalTok{, }\AttributeTok{c =} \StringTok{\textquotesingle{}string\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}d+e\textquotesingle{}} \OtherTok{=} \DecValTok{1}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{glimpse}\NormalTok{()}
+\CommentTok{\#\textgreater{} Warning: \textasciigrave{}data\_frame()\textasciigrave{} was deprecated in tibble 1.1.0.}
+\CommentTok{\#\textgreater{} Please use \textasciigrave{}tibble()\textasciigrave{} instead.}
+\CommentTok{\#\textgreater{} This warning is displayed once every 8 hours.}
+\CommentTok{\#\textgreater{} Call \textasciigrave{}lifecycle::last\_lifecycle\_warnings()\textasciigrave{} to see where this warning was generated.}
+\CommentTok{\#\textgreater{} Rows: 6}
+\CommentTok{\#\textgreater{} Columns: 4}
+\CommentTok{\#\textgreater{} $ a     \textless{}int\textgreater{} 1, 2, 3, 4, 5, 6}
+\CommentTok{\#\textgreater{} $ b     \textless{}dbl\textgreater{} 2, 4, 6, 8, 10, 12}
+\CommentTok{\#\textgreater{} $ c     \textless{}chr\textgreater{} "string", "string", "string", "string", "str\textasciitilde{}}
+\CommentTok{\#\textgreater{} $ \textasciigrave{}d+e\textasciigrave{} \textless{}dbl\textgreater{} 1, 1, 1, 1, 1, 1}
+
+\CommentTok{\# data.frame() example}
+\FunctionTok{data.frame}\NormalTok{(}\AttributeTok{a =} \DecValTok{1}\SpecialCharTok{:}\DecValTok{6}\NormalTok{, }\AttributeTok{c =} \StringTok{\textquotesingle{}string\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}d+e\textquotesingle{}} \OtherTok{=} \DecValTok{1}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{glimpse}\NormalTok{()}
+\CommentTok{\#\textgreater{} Rows: 6}
+\CommentTok{\#\textgreater{} Columns: 3}
+\CommentTok{\#\textgreater{} $ a   \textless{}int\textgreater{} 1, 2, 3, 4, 5, 6}
+\CommentTok{\#\textgreater{} $ c   \textless{}chr\textgreater{} "string", "string", "string", "string", "strin\textasciitilde{}}
+\CommentTok{\#\textgreater{} $ d.e \textless{}dbl\textgreater{} 1, 1, 1, 1, 1, 1}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{joining-merging-tables-left_join-right_join-inner_join-full_join-semi_join-anti_join}{%
+\chapter{Joining (merging) tables: left\_join, right\_join, inner\_join, full\_join, semi\_join, anti\_join}\label{joining-merging-tables-left_join-right_join-inner_join-full_join-semi_join-anti_join}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# create two simple data frames}
+\NormalTok{(a }\OtherTok{\textless{}{-}} \FunctionTok{data\_frame}\NormalTok{(}\AttributeTok{color =} \FunctionTok{c}\NormalTok{(}\StringTok{"green"}\NormalTok{,}\StringTok{"yellow"}\NormalTok{,}\StringTok{"red"}\NormalTok{), }\AttributeTok{num =} \DecValTok{1}\SpecialCharTok{:}\DecValTok{3}\NormalTok{))}
+\CommentTok{\#\textgreater{} \# A tibble: 3 x 2}
+\CommentTok{\#\textgreater{}   color    num}
+\CommentTok{\#\textgreater{}   \textless{}chr\textgreater{}  \textless{}int\textgreater{}}
+\CommentTok{\#\textgreater{} 1 green      1}
+\CommentTok{\#\textgreater{} 2 yellow     2}
+\CommentTok{\#\textgreater{} 3 red        3}
+\NormalTok{(b }\OtherTok{\textless{}{-}} \FunctionTok{data\_frame}\NormalTok{(}\AttributeTok{color =} \FunctionTok{c}\NormalTok{(}\StringTok{"green"}\NormalTok{,}\StringTok{"yellow"}\NormalTok{,}\StringTok{"pink"}\NormalTok{), }\AttributeTok{size =} \FunctionTok{c}\NormalTok{(}\StringTok{"S"}\NormalTok{,}\StringTok{"M"}\NormalTok{,}\StringTok{"L"}\NormalTok{)))}
+\CommentTok{\#\textgreater{} \# A tibble: 3 x 2}
+\CommentTok{\#\textgreater{}   color  size }
+\CommentTok{\#\textgreater{}   \textless{}chr\textgreater{}  \textless{}chr\textgreater{}}
+\CommentTok{\#\textgreater{} 1 green  S    }
+\CommentTok{\#\textgreater{} 2 yellow M    }
+\CommentTok{\#\textgreater{} 3 pink   L}
+
+\CommentTok{\# only include observations found in both "a" and "b" (automatically joins on variables that appear in both tables)}
+\FunctionTok{inner\_join}\NormalTok{(a, b)}
+\CommentTok{\#\textgreater{} Joining, by = "color"}
+\CommentTok{\#\textgreater{} \# A tibble: 2 x 3}
+\CommentTok{\#\textgreater{}   color    num size }
+\CommentTok{\#\textgreater{}   \textless{}chr\textgreater{}  \textless{}int\textgreater{} \textless{}chr\textgreater{}}
+\CommentTok{\#\textgreater{} 1 green      1 S    }
+\CommentTok{\#\textgreater{} 2 yellow     2 M}
+
+\CommentTok{\# include observations found in either "a" or "b"}
+\FunctionTok{full\_join}\NormalTok{(a, b)}
+\CommentTok{\#\textgreater{} Joining, by = "color"}
+\CommentTok{\#\textgreater{} \# A tibble: 4 x 3}
+\CommentTok{\#\textgreater{}   color    num size }
+\CommentTok{\#\textgreater{}   \textless{}chr\textgreater{}  \textless{}int\textgreater{} \textless{}chr\textgreater{}}
+\CommentTok{\#\textgreater{} 1 green      1 S    }
+\CommentTok{\#\textgreater{} 2 yellow     2 M    }
+\CommentTok{\#\textgreater{} 3 red        3 \textless{}NA\textgreater{} }
+\CommentTok{\#\textgreater{} 4 pink      NA L}
+
+\CommentTok{\# include all observations found in "a"}
+\FunctionTok{left\_join}\NormalTok{(a, b)}
+\CommentTok{\#\textgreater{} Joining, by = "color"}
+\CommentTok{\#\textgreater{} \# A tibble: 3 x 3}
+\CommentTok{\#\textgreater{}   color    num size }
+\CommentTok{\#\textgreater{}   \textless{}chr\textgreater{}  \textless{}int\textgreater{} \textless{}chr\textgreater{}}
+\CommentTok{\#\textgreater{} 1 green      1 S    }
+\CommentTok{\#\textgreater{} 2 yellow     2 M    }
+\CommentTok{\#\textgreater{} 3 red        3 \textless{}NA\textgreater{}}
+
+\CommentTok{\# include all observations found in "b"}
+\FunctionTok{right\_join}\NormalTok{(a, b)}
+\CommentTok{\#\textgreater{} Joining, by = "color"}
+\CommentTok{\#\textgreater{} \# A tibble: 3 x 3}
+\CommentTok{\#\textgreater{}   color    num size }
+\CommentTok{\#\textgreater{}   \textless{}chr\textgreater{}  \textless{}int\textgreater{} \textless{}chr\textgreater{}}
+\CommentTok{\#\textgreater{} 1 green      1 S    }
+\CommentTok{\#\textgreater{} 2 yellow     2 M    }
+\CommentTok{\#\textgreater{} 3 pink      NA L}
+
+\CommentTok{\# right\_join(a, b) is identical to left\_join(b, a) except for column ordering}
+\FunctionTok{left\_join}\NormalTok{(b, a)}
+\CommentTok{\#\textgreater{} Joining, by = "color"}
+\CommentTok{\#\textgreater{} \# A tibble: 3 x 3}
+\CommentTok{\#\textgreater{}   color  size    num}
+\CommentTok{\#\textgreater{}   \textless{}chr\textgreater{}  \textless{}chr\textgreater{} \textless{}int\textgreater{}}
+\CommentTok{\#\textgreater{} 1 green  S         1}
+\CommentTok{\#\textgreater{} 2 yellow M         2}
+\CommentTok{\#\textgreater{} 3 pink   L        NA}
+
+\CommentTok{\# filter "a" to only show observations that match "b"}
+\FunctionTok{semi\_join}\NormalTok{(a, b)}
+\CommentTok{\#\textgreater{} Joining, by = "color"}
+\CommentTok{\#\textgreater{} \# A tibble: 2 x 2}
+\CommentTok{\#\textgreater{}   color    num}
+\CommentTok{\#\textgreater{}   \textless{}chr\textgreater{}  \textless{}int\textgreater{}}
+\CommentTok{\#\textgreater{} 1 green      1}
+\CommentTok{\#\textgreater{} 2 yellow     2}
+
+\CommentTok{\# filter "a" to only show observations that don\textquotesingle{}t match "b"}
+\FunctionTok{anti\_join}\NormalTok{(a, b)}
+\CommentTok{\#\textgreater{} Joining, by = "color"}
+\CommentTok{\#\textgreater{} \# A tibble: 1 x 2}
+\CommentTok{\#\textgreater{}   color   num}
+\CommentTok{\#\textgreater{}   \textless{}chr\textgreater{} \textless{}int\textgreater{}}
+\CommentTok{\#\textgreater{} 1 red       3}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# sometimes matching variables don\textquotesingle{}t have identical names}
+\NormalTok{b }\OtherTok{\textless{}{-}}\NormalTok{ b }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{rename}\NormalTok{(}\AttributeTok{col =}\NormalTok{ color)}
+
+\CommentTok{\# specify that the join should occur by matching "color" in "a" with "col" in "b"}
+\FunctionTok{inner\_join}\NormalTok{(a, b, }\AttributeTok{by=}\FunctionTok{c}\NormalTok{(}\StringTok{"color"} \OtherTok{=} \StringTok{"col"}\NormalTok{))}
+\CommentTok{\#\textgreater{} \# A tibble: 2 x 3}
+\CommentTok{\#\textgreater{}   color    num size }
+\CommentTok{\#\textgreater{}   \textless{}chr\textgreater{}  \textless{}int\textgreater{} \textless{}chr\textgreater{}}
+\CommentTok{\#\textgreater{} 1 green      1 S    }
+\CommentTok{\#\textgreater{} 2 yellow     2 M}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{viewing-more-output-print-view}{%
+\chapter{Viewing more output: print, View}\label{viewing-more-output-print-view}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# specify that you want to see more rows}
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{print}\NormalTok{(}\AttributeTok{n =} \DecValTok{15}\NormalTok{)}
+\CommentTok{\#\textgreater{} \# A tibble: 336,776 x 19}
+\CommentTok{\#\textgreater{}     year month   day dep\_time sched\_dep\_time dep\_delay}
+\CommentTok{\#\textgreater{}    \textless{}int\textgreater{} \textless{}int\textgreater{} \textless{}int\textgreater{}    \textless{}int\textgreater{}          \textless{}int\textgreater{}     \textless{}dbl\textgreater{}}
+\CommentTok{\#\textgreater{}  1  2013     1     1      517            515         2}
+\CommentTok{\#\textgreater{}  2  2013     1     1      533            529         4}
+\CommentTok{\#\textgreater{}  3  2013     1     1      542            540         2}
+\CommentTok{\#\textgreater{}  4  2013     1     1      544            545        {-}1}
+\CommentTok{\#\textgreater{}  5  2013     1     1      554            600        {-}6}
+\CommentTok{\#\textgreater{}  6  2013     1     1      554            558        {-}4}
+\CommentTok{\#\textgreater{}  7  2013     1     1      555            600        {-}5}
+\CommentTok{\#\textgreater{}  8  2013     1     1      557            600        {-}3}
+\CommentTok{\#\textgreater{}  9  2013     1     1      557            600        {-}3}
+\CommentTok{\#\textgreater{} 10  2013     1     1      558            600        {-}2}
+\CommentTok{\#\textgreater{} 11  2013     1     1      558            600        {-}2}
+\CommentTok{\#\textgreater{} 12  2013     1     1      558            600        {-}2}
+\CommentTok{\#\textgreater{} 13  2013     1     1      558            600        {-}2}
+\CommentTok{\#\textgreater{} 14  2013     1     1      558            600        {-}2}
+\CommentTok{\#\textgreater{} 15  2013     1     1      559            600        {-}1}
+\CommentTok{\#\textgreater{} \# ... with 336,761 more rows, and 13 more variables:}
+\CommentTok{\#\textgreater{} \#   arr\_time \textless{}int\textgreater{}, sched\_arr\_time \textless{}int\textgreater{}, arr\_delay \textless{}dbl\textgreater{},}
+\CommentTok{\#\textgreater{} \#   carrier \textless{}chr\textgreater{}, flight \textless{}int\textgreater{}, tailnum \textless{}chr\textgreater{},}
+\CommentTok{\#\textgreater{} \#   origin \textless{}chr\textgreater{}, dest \textless{}chr\textgreater{}, air\_time \textless{}dbl\textgreater{},}
+\CommentTok{\#\textgreater{} \#   distance \textless{}dbl\textgreater{}, hour \textless{}dbl\textgreater{}, minute \textless{}dbl\textgreater{},}
+\CommentTok{\#\textgreater{} \#   time\_hour \textless{}dttm\textgreater{}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# specify that you want to see ALL rows (don\textquotesingle{}t run this!)}
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{print}\NormalTok{(}\AttributeTok{n =} \ConstantTok{Inf}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# specify that you want to see all columns}
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{print}\NormalTok{(}\AttributeTok{width =} \ConstantTok{Inf}\NormalTok{)}
+\CommentTok{\#\textgreater{} \# A tibble: 336,776 x 19}
+\CommentTok{\#\textgreater{}     year month   day dep\_time sched\_dep\_time dep\_delay}
+\CommentTok{\#\textgreater{}    \textless{}int\textgreater{} \textless{}int\textgreater{} \textless{}int\textgreater{}    \textless{}int\textgreater{}          \textless{}int\textgreater{}     \textless{}dbl\textgreater{}}
+\CommentTok{\#\textgreater{}  1  2013     1     1      517            515         2}
+\CommentTok{\#\textgreater{}  2  2013     1     1      533            529         4}
+\CommentTok{\#\textgreater{}  3  2013     1     1      542            540         2}
+\CommentTok{\#\textgreater{}  4  2013     1     1      544            545        {-}1}
+\CommentTok{\#\textgreater{}  5  2013     1     1      554            600        {-}6}
+\CommentTok{\#\textgreater{}  6  2013     1     1      554            558        {-}4}
+\CommentTok{\#\textgreater{}  7  2013     1     1      555            600        {-}5}
+\CommentTok{\#\textgreater{}  8  2013     1     1      557            600        {-}3}
+\CommentTok{\#\textgreater{}  9  2013     1     1      557            600        {-}3}
+\CommentTok{\#\textgreater{} 10  2013     1     1      558            600        {-}2}
+\CommentTok{\#\textgreater{}    arr\_time sched\_arr\_time arr\_delay carrier flight tailnum}
+\CommentTok{\#\textgreater{}       \textless{}int\textgreater{}          \textless{}int\textgreater{}     \textless{}dbl\textgreater{} \textless{}chr\textgreater{}    \textless{}int\textgreater{} \textless{}chr\textgreater{}  }
+\CommentTok{\#\textgreater{}  1      830            819        11 UA        1545 N14228 }
+\CommentTok{\#\textgreater{}  2      850            830        20 UA        1714 N24211 }
+\CommentTok{\#\textgreater{}  3      923            850        33 AA        1141 N619AA }
+\CommentTok{\#\textgreater{}  4     1004           1022       {-}18 B6         725 N804JB }
+\CommentTok{\#\textgreater{}  5      812            837       {-}25 DL         461 N668DN }
+\CommentTok{\#\textgreater{}  6      740            728        12 UA        1696 N39463 }
+\CommentTok{\#\textgreater{}  7      913            854        19 B6         507 N516JB }
+\CommentTok{\#\textgreater{}  8      709            723       {-}14 EV        5708 N829AS }
+\CommentTok{\#\textgreater{}  9      838            846        {-}8 B6          79 N593JB }
+\CommentTok{\#\textgreater{} 10      753            745         8 AA         301 N3ALAA }
+\CommentTok{\#\textgreater{}    origin dest  air\_time distance  hour minute}
+\CommentTok{\#\textgreater{}    \textless{}chr\textgreater{}  \textless{}chr\textgreater{}    \textless{}dbl\textgreater{}    \textless{}dbl\textgreater{} \textless{}dbl\textgreater{}  \textless{}dbl\textgreater{}}
+\CommentTok{\#\textgreater{}  1 EWR    IAH        227     1400     5     15}
+\CommentTok{\#\textgreater{}  2 LGA    IAH        227     1416     5     29}
+\CommentTok{\#\textgreater{}  3 JFK    MIA        160     1089     5     40}
+\CommentTok{\#\textgreater{}  4 JFK    BQN        183     1576     5     45}
+\CommentTok{\#\textgreater{}  5 LGA    ATL        116      762     6      0}
+\CommentTok{\#\textgreater{}  6 EWR    ORD        150      719     5     58}
+\CommentTok{\#\textgreater{}  7 EWR    FLL        158     1065     6      0}
+\CommentTok{\#\textgreater{}  8 LGA    IAD         53      229     6      0}
+\CommentTok{\#\textgreater{}  9 JFK    MCO        140      944     6      0}
+\CommentTok{\#\textgreater{} 10 LGA    ORD        138      733     6      0}
+\CommentTok{\#\textgreater{}    time\_hour          }
+\CommentTok{\#\textgreater{}    \textless{}dttm\textgreater{}             }
+\CommentTok{\#\textgreater{}  1 2013{-}01{-}01 05:00:00}
+\CommentTok{\#\textgreater{}  2 2013{-}01{-}01 05:00:00}
+\CommentTok{\#\textgreater{}  3 2013{-}01{-}01 05:00:00}
+\CommentTok{\#\textgreater{}  4 2013{-}01{-}01 05:00:00}
+\CommentTok{\#\textgreater{}  5 2013{-}01{-}01 06:00:00}
+\CommentTok{\#\textgreater{}  6 2013{-}01{-}01 05:00:00}
+\CommentTok{\#\textgreater{}  7 2013{-}01{-}01 06:00:00}
+\CommentTok{\#\textgreater{}  8 2013{-}01{-}01 06:00:00}
+\CommentTok{\#\textgreater{}  9 2013{-}01{-}01 06:00:00}
+\CommentTok{\#\textgreater{} 10 2013{-}01{-}01 06:00:00}
+\CommentTok{\#\textgreater{} \# ... with 336,766 more rows}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# show up to 1000 rows and all columns}
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{View}\NormalTok{()}
+
+\CommentTok{\# set option to see all columns and fewer rows}
+\FunctionTok{options}\NormalTok{(}\AttributeTok{dplyr.width =} \ConstantTok{Inf}\NormalTok{, }\AttributeTok{dplyr.print\_min =} \DecValTok{6}\NormalTok{)}
+
+\CommentTok{\# reset options (or just close R)}
+\FunctionTok{options}\NormalTok{(}\AttributeTok{dplyr.width =} \ConstantTok{NULL}\NormalTok{, }\AttributeTok{dplyr.print\_min =} \DecValTok{10}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{dplyr-excercies}{%
+\chapter{DPLYR Excercies}\label{dplyr-excercies}}
+
+Using the nycflights13 dataset and the dplyr package, answer these questions. Some answers are given in square brackets for you to check your answers.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  How many flights in Sept were late departing flights? {[}7815{]}
+\item
+  How many flights in Sept were late departing flights that originated at JFK airport? {[}2649{]}
+\item
+  How many flights in Sept were late departing flights with an origin of JFK airport and had an destination of anywhere except MIA? {[}2572{]}
+\item
+  Which carrier had the most flights in this data set? {[}UA with 58665{]}
+\item
+  Which destination had the most flights in this data set? {[}ORD with 17283{]}
+\item
+  Which destination had the most flights with departure delays of greater than 60 minutes in this data set? {[}ORD with 1480{]}
+\item
+  What was the longest arrival delay in this dataset? {[}1272{]}
+\item
+  Which carrier in September had the most late departing flights? {[}UA with 1559{]}
+\item
+  Create a variable called total.annoyance which arrival delay plus the departure delay for each flight.
+\item
+  Which carrier with more than 10 flights in September had greatest \% late departing flights?
+\end{enumerate}
+
+\hypertarget{more-dplyr}{%
+\chapter{More DPLYR}\label{more-dplyr}}
+
+\hypertarget{introduction-2}{%
+\section{Introduction}\label{introduction-2}}
+
+For more help \textbf{PLEASE} check out \href{https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html}{Introduction to dplyr} introducing the key functionality of the dplyr package.
+
+\begin{quote}
+Your life is about to change. \textbf{For the better, even.}
+\end{quote}
+
+\hypertarget{single-table-verbs-1}{%
+\section{Single table verbs}\label{single-table-verbs-1}}
+
+\texttt{dplyr} aims to provide a function for each basic verb of data manipulation. These verbs can be organised into three categories based on the component of the dataset that they work with:
+
+Rows:
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{filter()} chooses rows based on column values.
+\item
+  \texttt{slice()} chooses rows based on location.
+\item
+  \texttt{arrange()} changes the order of the rows.
+\end{itemize}
+
+Columns:
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{select()} changes whether or not a column is included.
+\item
+  \texttt{rename()} changes the name of columns.
+\item
+  \texttt{mutate()} changes the values of columns and creates new columns.
+\item
+  \texttt{relocate()} changes the order of the columns.
+  Groups of rows:
+\item
+  \texttt{summarise()} collapses a group into a single row. Itâs not that useful until we learn \texttt{group\_by()}
+\item
+  \texttt{group\_by()} usually works with \texttt{summarise()}
+\end{itemize}
+
+\hypertarget{more-with-the-pipe}{%
+\section{More with the pipe}\label{more-with-the-pipe}}
+
+All of the \texttt{dplyr} functions take a data frame (or tibble) as the first argument. Rather than forcing the user to either save intermediate objects or nest functions, dplyr provides the \texttt{\%\textgreater{}\%} operator from \texttt{magrittr}. One step is then âpipedâ into the next step. You can use the pipe to rewrite multiple operations that you can read left-to-right, top-to-bottom (reading the pipe operator as âthenâ).
+
+\begin{quote}
+What is this: \texttt{\%\textgreater{}\%}?
+\end{quote}
+
+\hypertarget{loading-dplyr-and-the-starwars-dataset}{%
+\section{\texorpdfstring{Loading \texttt{dplyr} and the \texttt{starwars} dataset}{Loading dplyr and the starwars dataset}}\label{loading-dplyr-and-the-starwars-dataset}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# You should already have done this but you\textquotesingle{}ll need it}
+\FunctionTok{install.packages}\NormalTok{(}\StringTok{"dplyr"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(dplyr)}
+
+\NormalTok{starwars }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{filter}\NormalTok{(species }\SpecialCharTok{==} \StringTok{"Droid"}\NormalTok{)}
+
+
+\NormalTok{starwars }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{select}\NormalTok{(name, }\FunctionTok{ends\_with}\NormalTok{(}\StringTok{"color"}\NormalTok{))}
+
+
+\NormalTok{starwars }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(name, }\AttributeTok{bmi =}\NormalTok{ mass }\SpecialCharTok{/}\NormalTok{ ((height }\SpecialCharTok{/} \DecValTok{100}\NormalTok{)  }\SpecialCharTok{\^{}} \DecValTok{2}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{select}\NormalTok{(name}\SpecialCharTok{:}\NormalTok{mass, bmi)}
+
+
+\NormalTok{starwars }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{arrange}\NormalTok{(}\FunctionTok{desc}\NormalTok{(mass))}
+
+\NormalTok{starwars }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{group\_by}\NormalTok{(species) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{summarise}\NormalTok{(}
+    \AttributeTok{n =} \FunctionTok{n}\NormalTok{(),}
+    \AttributeTok{mass =} \FunctionTok{mean}\NormalTok{(mass, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{)}
+\NormalTok{  ) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{filter}\NormalTok{(}
+\NormalTok{    n }\SpecialCharTok{\textgreater{}} \DecValTok{1}\NormalTok{,}
+\NormalTok{    mass }\SpecialCharTok{\textgreater{}} \DecValTok{50}
+\NormalTok{  )}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{starwars-excercises}{%
+\section{\texorpdfstring{\texttt{starwars} Excercises}{starwars Excercises}}\label{starwars-excercises}}
+
+Please use the \texttt{starwars} dataset from the \texttt{dplyr} package to answer the following questions:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  How may humans are in this dataset?
+\item
+  How many characters are taller than 89 cm?
+\item
+  How many characters are taller than 37 inches?
+\item
+  How many characters are taller than 37 inches and weigh more than 55 pounds?
+\item
+  How many characters are not human or droid?
+\item
+  How many characters are not human or droid and are taller than 47 inches?
+\item
+  Which species has the most individuals included in this data set?
+\item
+  Which species has the tallest individuals on average?
+\item
+  What is the tallest individual for each species?
+\item
+  Calculate the BMI for each individual and determine which individual has the highest BMI. Use the formula \texttt{bmi\ =\ mass/((height/100)\^{}2)} to calculate bmi.
+\item
+  Which homeworld has the most individuals included in this data set?
+\item
+  Which homeworld has the tallest individuals on average?
+\item
+  What is the tallest individual for each eye color?
+\end{enumerate}
+
+  \bibliography{book.bib,packages.bib}
+
+\end{document}
